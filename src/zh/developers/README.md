@@ -1,8 +1,11 @@
-# Developer Documentation
+# 开发者文档
 
-Kele Pool is a first of its kind ETH2 Proof of Stake Protocol, designed to be community owned, decentralised, trustless and compatible with staking in Ethereum 2.0.
+ 欢迎使用 Kele Pool 开发人员文档，本文档用于学习如何集成KelePool的API来实现自己的质押管理功能。如果您正在了解如何质押挖矿，请查看[挖矿指南](https://docs.kelepool.com/zh/guides/)部分。👈
 
-If you wish to secure your node, understand the smart node CLI better, figure out how to build on top of our smart contracts or even use our javascript library to build your own frontend for the protocol as a whitelabel staking solution, then you're at the right place.
+# 为什么使用可乐矿池API？
 
-If you're after guides on how to install our smart node stack on your home server or a variety of other providers and operating systems, please checkout the [guides section](/guides) :point_left:
+- 作为一站式质押管理平台，为开发人员提供了丰富的API，避免开发人员重复造轮子。
+- 智能合约、API均经过安全人员审计，无需担心资金安全。
+- 简单易用的接口让开发效率提升数倍。
+- 便捷的技术支持
 

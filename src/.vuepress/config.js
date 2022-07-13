@@ -3,6 +3,8 @@ const { path } = require('@vuepress/utils')
 const { defaultTheme } = require('vuepress')
 const { searchPlugin } = require('@vuepress/plugin-search')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+const getConfig = require("vuepress-bar");
+const fs = require("fs");
 
 module.exports = {
   lang: 'zh-CN',
@@ -44,11 +46,11 @@ module.exports = {
         navbar: [
           {
             text: 'Guides',
-            link: '/guides/'
+            link: '/en/guides/'
           },
           {
             text: 'For Developers',
-            link: '/developers/'
+            link: '/en/developers/'
           },
           {
             text: 'Website',
@@ -56,25 +58,36 @@ module.exports = {
           },
         ],
         sidebar:{
-          '/guides/': [
+          '/en/guides/': [
             {
-              text: 'Guide',
-              children: [{
-                text: 'github',
-                link: 'https://github.com',
-                children: [],
-              },],
+              text: 'Guides',
+              children: ['/en/guides/README.md'],
             },
           ],
-          '/developers/': [
+          '/en/developers/': [
             {
-              text: 'Developers',
-              children: [{
-                text: 'github',
-                link: 'https://github.com',
-                children: [],
-              },],
+              text: 'Ethereum',
+              collapsible: false,
+              children:[
+                '/en/developers/ethereum/introductions/README.md',
+                '/en/developers/ethereum/contracts/README.md',
+                '/en/developers/ethereum/api/README.md',
+              ]
             },
+            {
+              text: 'Mina Network',
+              collapsible: true,
+              children:[
+                '/en/developers/mina/api/README.md',
+              ]
+            },
+            {
+              text: 'PlatON Network',
+              collapsible: true,
+              children:[
+                '/en/developers/platon/api/README.md',
+              ]
+            }
           ],
         }
       },
@@ -84,7 +97,7 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         navbar: [
           {
-            text: '指南',
+            text: '挖矿指南',
             link: '/zh/guides/'
           },
           {
@@ -97,11 +110,36 @@ module.exports = {
           },
         ],
         sidebar:{
-          '/guides/': [
-
+          '/zh/guides/': [
+            {
+              text: '挖矿指南',
+              children: ['/zh/guides/README.md'],
+            },
           ],
-          '/developers/': [
-
+          '/zh/developers/': [
+            {
+              text: 'Ethereum',
+              collapsible: false,
+              children:[
+                '/zh/developers/ethereum/introductions/README.md',
+                '/zh/developers/ethereum/contracts/README.md',
+                '/zh/developers/ethereum/api/README.md',
+              ]
+            },
+            {
+              text: 'Mina',
+              collapsible: true,
+              children:[
+                '/zh/developers/mina/api/README.md',
+              ]
+            },
+            {
+              text: 'PlatON',
+              collapsible: true,
+              children:[
+                '/zh/developers/platon/api/README.md',
+              ]
+            }
           ],
         }
       },
@@ -137,3 +175,31 @@ module.exports = {
     }),
   ]
 }
+
+// function getSideBar(folder, title) {
+//   const extension = [".md"];
+//   console.log("???")
+//   const files = fs
+//     .readdirSync(path.join(`${__dirname}/../${folder}`))
+//     .filter(
+//       (item) =>
+//         item.toLowerCase() != "readme.md" &&
+//         fs.statSync(path.join(`${__dirname}/../${folder}`, item)).isFile() &&
+//         extension.includes(path.extname(item))
+//     );
+//     //{ text: title,link:'', children: ["", ...files] }
+// console.log(files)
+//   return [{
+//     text: '',
+//     link: '',
+//     children: [
+//       {
+//         text: 'github',
+//         link: 'https://github.com',
+//         children: [],
+//       },
+//       '/foo/bar.md',
+//     ],
+//   },];
+// }
+
