@@ -259,3 +259,51 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
     ]
 }
 ```
+
+
+## 生成验证者公钥
+#### POST [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
+
+> 请求参数：
+> - `deposit_credentials` ：用户提款凭证
+> - `count` ：生成验证节点数量，批量质押时可根据`质押数量 / 32` 得出`count`参数的数量。
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validator/keypair
+
+{
+    "deposit_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
+    "count":2
+}
+```
+
+> 请求返回值：
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `pubkey` ：验证者公钥
+> - `withdrawal_credentials` ：提款凭证
+> - `signature` ：验证者签名
+> - `deposit_data_root` ：默克尔树根
+> - `network_name` ：ETH网络名称
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":[
+        {
+            "pubkey":"86ee4eecf1c83725020cf8667c555b286b54445691da44aa7a671b6d18abf118452e60876216f9adec5e64ff09c3e231",
+            "withdrawal_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
+            "signature":"a61e5ed96b5b22ec9da92cf3f09c24cf9230ec1db99918e9dedfc9440de473f64b7520b5fb40558d0bc9f009dd20731917c3dbf6b3cfd98b48377a190d9e2959df3d2fa2dcec9c09e8be420accc9daa25301d4a2ce1636a5413ac066e7a4628f",
+            "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
+            "network_name":"ropsten"
+        },
+        {
+            "pubkey":"83909737754d15dd3ad1281a3f0e62baa64d3c0abb3ed218c3baf7ff250058a24fe1143a5243c3b015e3f93ed6af1e18",
+            "withdrawal_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
+            "signature":"b95af475d67e8438e49cfaad12dacd789c705938fd6a8fee93a1a170ef6322c2cf37c643d1d010b23734c04e9028b58d034435dd6c9f19610090bfdefb7522c69e99b0a7830f6d967f1d07e3ff30128c8b516d40232e5595ac91d746420da993",
+            "deposit_data_root":"f08ca526395300d60ccc6db28d931ba129944f44d4bb92c773424e120dde222b",
+            "network_name":"ropsten"
+        }
+    ]
+}
+```

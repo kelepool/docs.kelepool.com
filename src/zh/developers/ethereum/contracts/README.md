@@ -109,13 +109,15 @@ console.log(`小额质押交易哈希: ${tx.hash}`);
 
 [Ropsten测试网API：https://test-api.kelepool.com](https://test-api.kelepool.com)
 
+#### POST [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
 
 > 请求参数：
-> - POST 
 > - `deposit_credentials` ：用户提款凭证
 > - `count` ：生成验证节点数量，批量质押时可根据`质押数量 / 32` 得出`count`参数的数量。
 
-```json
+```bash
+https://test-api.kelepool.com/eth2/v2/validator/keypair
+
 {
     "deposit_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
     "count":2
