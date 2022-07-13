@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+.temp
+.cache
+
+# dependencies
+node_modules
+
+# production
+src/.vuepress/dist
