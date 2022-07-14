@@ -30,7 +30,7 @@ Third-party developers need to contact Kele Pool to apply for a long-term valid 
     - Sign with `authority_key` with `hmac_blake2b`, get `sign`
 
 ```json
-用于测试的 authority_key 及 token ：
+Only for test : authority_key & token
 
 {
     "authority_key": "2fb8098e1cac29c559191993e606e692b7d15314164ac8c55bcaa5a05b635843f067a35bf50ab9707675f7dff7dae934f6b2c189311e9c53ba874f572643b8ed",
