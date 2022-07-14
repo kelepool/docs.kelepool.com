@@ -42,7 +42,7 @@ If you want to increase your income, you can refer to the following suggestions:
 
 - Choose a reliable staking platform with a proper service fee, such as a Kele Pool.
 
-Kele Pool official website: https://www.kelepool.com/
+Kele Pool official website: [Kelepool.com](https://www.kelepool.com/)
 
 ![img](https://miro.medium.com/max/1400/1*QGtwnlgxVFHiniUffPbbmA.png)
 
@@ -50,4 +50,4 @@ Kele Pool official website: https://www.kelepool.com/
 
 **One-stand Staking Platform**: Kele Pool provides a flexible staking model. You can freely choose the amount you want to stake and enjoy a low service fee. ETH is now supported in Kele Pool and more currencies will be released in the near future. 
 
-For details, please check the official website: https://www.kelepool.com/
+For details, please check the official website: [Kelepool.com](https://www.kelepool.com/)
