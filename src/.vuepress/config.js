@@ -88,7 +88,7 @@ module.exports = {
           '/en/wiki/': [
             {
               text: 'Wiki',
-              children: ['/en/wiki/README.md'],
+              children: ['/en/wiki/pos/staking-intro.md','/en/wiki/pos/staking-guide.md'],
             },
           ],
           '/en/developers/': [
@@ -160,7 +160,7 @@ module.exports = {
           '/zh/wiki/': [
             {
               text: '百科',
-              children: ['/zh/wiki/README.md'],
+              children: ['/zh/wiki/pos/staking-intro.md','/zh/wiki/pos/staking-guide.md'],
             },
           ],
           '/zh/developers/': [
