@@ -22,7 +22,7 @@ import Navbar from '@theme/Navbar.vue'
           <div>
             <div><RouterLink :to="$page.frontmatter.guideUrl" class="feature-text"><img src="/images/guide.png" class="feature-logo" ></RouterLink></div>
             <div style="padding:10px">
-              <div >
+              <div  class="feature-text">
                 <RouterLink :to="$page.frontmatter.guideUrl" class="feature-text">{{$page.frontmatter.guideName}}</RouterLink>
               </div>
             </div>
