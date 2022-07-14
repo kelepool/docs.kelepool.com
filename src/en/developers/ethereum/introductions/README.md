@@ -1,5 +1,4 @@
-# 
-What is ETH2.0 staking?
+# What is ETH2.0 staking?
 
 ## About ETH2.0
 

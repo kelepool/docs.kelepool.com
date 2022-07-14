@@ -1,8 +1,8 @@
-#How to query user pledge information?
+# How to query user staking information?
 
 Cola Mining Pool has opened all ETH2.0 revenue query interfaces. Developers can use wallet addresses to query users' pledge amount, total revenue, age, curve (hours, days), node status, operation history, historical revenue and other data.
 
-## API query node
+## API Node
 
 [Kele Pool Mainnet API：https://api.kelepool.com](https://api.kelepool.com)
 
@@ -118,7 +118,7 @@ https://test-api.kelepool.com/eth2/v2/global
 ```
 
 
-## Earnings History List
+## User Earnings History
 #### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > Request parameters:
@@ -154,7 +154,7 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 }
 ```
 
-## Node Status List
+## Validator Node Status
 #### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > Request parameters:
@@ -212,7 +212,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 }
 ```
 
-## User operation history
+## User Operation History
 #### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > Request parameters:
@@ -261,7 +261,7 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 ```
 
 
-## Generate validator public key
+## Generate Validator Public Key
 #### POST [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
 
 > Request parameters:

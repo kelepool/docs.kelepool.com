@@ -75,14 +75,14 @@ module.exports = {
               ]
             },
             {
-              text: 'Mina Network',
+              text: 'Mina',
               collapsible: true,
               children:[
                 '/en/developers/mina/api/README.md',
               ]
             },
             {
-              text: 'PlatON Network',
+              text: 'PlatON',
               collapsible: true,
               children:[
                 '/en/developers/platon/api/README.md',
