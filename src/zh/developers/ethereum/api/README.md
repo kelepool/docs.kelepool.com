@@ -45,21 +45,19 @@ import hashlib
 import hmac
 import requests
 
-url = 'https://test-bxh5.kelepool.com/eth2/v1/getrewardkline'
+
+url = 'https://test-api.kelepool.com/eth2/v2/miner/income/query'
 params = {
-  'unit' : 'hour',
-  'sub_uid' : 1,
-  'timezone' : "8",
-  'unitcount' : 1
+    "address":"0xB49F98416aa4B158c2e752FD8031Fb295D330B22"
 }
 
 sign_str = '&'.join(['%s=%s' % (k, params[k]) for k in sorted(params)])
 
-authority_key='c0406ea61xxxxxxxx42db838dxxxxxxxxa70'
+authority_key='2fb8098e1xxxxxxxxxxa874f572643b8ed'
 
 sign=hmac.new(authority_key.encode('utf-8'), sign_str.encode('utf-8'), digestmod=hashlib.blake2b).hexdigest()
 
-token='eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.xxxxxxxxxxxfcT_iuJqABpevnMI448'
+token='eyJ0eXxxxxxxxxxxxxxxx36jpgZRWc'
 
 headers = {'Content-Type': 'application/json', 'Accept':'application/json',
 'Kele-ThirdParty-Authority':token,
@@ -79,7 +77,7 @@ print(r_json.text)
 > 请求参数：
 > - `payee_addr` ：用户质押钱包地址
 > - `token` ：质押代币（eth）
-> - `source` ：数据来源便于商务合作统计（例如：onekey）
+> - `source` ：数据来源便于商务合作统计（例如：ThirdParty）
 
 ```bash
 https://test-api.kelepool.com/user/v2/anonymouslogin
@@ -87,7 +85,7 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 {
     "payee_addr":"0xA49F98416aa4B158c2e752FD8031Fb295D330B22",
     "token":"eth",
-    "source":"onekey"
+    "source":"ThirdParty"
 }
 ```
 
