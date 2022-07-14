@@ -45,6 +45,10 @@ module.exports = {
         editLinkText: 'Edit this page on GitHub',
         navbar: [
           {
+            text: 'Wiki',
+            link: '/zh/wiki/'
+          },
+          {
             text: 'Guides',
             link: '/en/guides/'
           },
@@ -96,6 +100,10 @@ module.exports = {
         selectLanguageText: '语言',
         editLinkText: '在 GitHub 上编辑此页',
         navbar: [
+          {
+            text: '百科',
+            link: '/zh/wiki/'
+          },
           {
             text: '挖矿指南',
             link: '/zh/guides/'

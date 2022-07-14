@@ -2,7 +2,7 @@
 
 ## About ETH2.0
 
-ETH2.0 is an important stage in the transition of ETH from PoW mechanism to PoS mechanism, and the PoS stage can provide users with pledge income. Participating in ETH2.0 requires 32 ETHs and node construction technology to be mortgaged, and the lock-up period is long. In order to lower the threshold for users to participate in pledge, Cola Pool provides users with a one-click pledge service, 100% of the income on the chain is distributed, and ETH can be earned safely.
+ETH2.0 is an important stage in the transition of ETH from PoW mechanism to PoS mechanism, and the PoS stage can provide users with pledge income. Participating in ETH2.0 requires 32 ETHs and node construction technology to be mortgaged, and the lock-up period is long. In order to lower the threshold for users to participate in pledge, Kele Pool provides users with a one-click pledge service, 100% of the income on the chain is distributed, and ETH can be earned safely.
 
 [Kele Pool - Mainnet](https://kelepool.com/pos/eth/mining)
 

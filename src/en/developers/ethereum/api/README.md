@@ -12,6 +12,87 @@ Cola Mining Pool has opened all ETH2.0 revenue query interfaces. Developers can 
 > - `code` : an integer number, equal to 0 for success, greater than 0 for failure
 > - `message` : the message to return after failure
 
+
+## API Authorization
+Third-party developers need to contact Kele Pool to apply for a long-term valid signature `authority_key` and `token`, the third party can use these two keys for signature and data source confirmation.
+
+### 1. Authorization step
+- Contact Kele Pool to apply for `authority_key` and `token`
+- If the user is calling the Kele Pool API for the first time, he needs to call `/user/v2/anonymouslogin` in advance to register the user address
+- Use `authority_key` and `token` to sign each interface of Kele Pool and put it in the Header for verification
+
+### 2. How to use
+
+- Add Kele-ThirdParty-Authority=`token` in the request header
+- Add Kele-ThirdParty-Sign = `sign` to the request header
+    - The logic for getting `sign` is as follows:
+    - Arrange request parameters in ascending lexicographical order and use '&' to concatenate
+    - Sign with `authority_key` with `hmac_blake2b`, get `sign`
+
+### 3. Sample code
+```python
+import hashlib
+import hmac
+import requests
+
+url = 'https://test-bxh5.kelepool.com/eth2/v1/getrewardkline'
+params = {
+  'unit' : 'hour',
+  'sub_uid' : 1,
+  'timezone' : "8",
+  'unitcount' : 1
+}
+
+sign_str = '&'.join(['%s=%s' % (k, params[k]) for k in sorted(params)])
+
+authority_key='c0406ea61xxxxxxxx42db838dxxxxxxxxa70'
+
+sign=hmac.new(authority_key.encode('utf-8'), sign_str.encode('utf-8'), digestmod=hashlib.blake2b).hexdigest()
+
+token='eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.xxxxxxxxxxxfcT_iuJqABpevnMI448'
+
+headers = {'Content-Type': 'application/json', 'Accept':'application/json',
+'Kele-ThirdParty-Authority':token,
+'Kele-ThirdParty-Sign':sign
+}
+
+r_json = requests.get(url,params=params,headers=headers)
+print(r_json.text)
+
+```
+
+
+## User Address Registration
+#### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
+
+This interface is called when third-party users use the Kele Pool API for the first time. It is mainly used to count the pledge amount of each third-party user, etc., and there is no need to call it again after that.
+
+> Request parameters:
+> - `payee_addr` : User pledge wallet address
+> - `token` : the pledged token (eth)
+> - `source` : The data source is convenient for business cooperation statistics (eg: onekey)
+
+```bash
+https://test-api.kelepool.com/user/v2/anonymouslogin
+
+{
+    "payee_addr":"0xA49F98416aa4B158c2e752FD8031Fb295D330B22",
+    "token":"eth",
+    "source":"onekey"
+}
+```
+
+> Request return value:
+> - Judging that `code` is 0 means success, otherwise the registration fails
+> - return `token` is not a required field for authentication, ignore it
+> - Other fields returned are ignored and not used as registered address
+```bash
+{
+   "code":0,
+   "message":"success"
+}
+```
+
 ## User Staking Overview
 #### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
 

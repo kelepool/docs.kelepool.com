@@ -33,10 +33,10 @@ The following is the ABI data of the cola mining pool ETH pledge contract. This 
 ``` 
 
 ## 4.Stake ＜ 32 ETH
-Users can pledge a minimum of 0.01ETH and a maximum amount of ETH. When the total amount of small pledges in the contract exceeds 32ETH, the Cola Pool will use the [Ethereum official CLI tool](https://github.com/ethereum/staking-deposit-cli) generates withdrawal credentials in the cold wallet and automatically creates a verification node. The user's funds are managed and secured by the cola mining pool. After the official launch of ETH2.0 in the future, the cola mining pool will open the withdrawal interface for users.
+Users can pledge a minimum of 0.01ETH and a maximum amount of ETH. When the total amount of small pledges in the contract exceeds 32ETH, the Kele Pool will use the [Ethereum official CLI tool](https://github.com/ethereum/staking-deposit-cli) generates withdrawal credentials in the cold wallet and automatically creates a verification node. The user's funds are managed and secured by the cola mining pool. After the official launch of ETH2.0 in the future, the cola mining pool will open the withdrawal interface for users.
 
-- Small staking is as simple as depositing tokens into the cola pool smart contract
-- Suppose we intend to pledge `125.0172ETH`, after the pledge, Cola Pool will immediately create `3 validating nodes` (32ETH each)
+- Small staking is as simple as depositing tokens into the Kele Pool smart contract
+- Suppose we intend to pledge `125.0172ETH`, after the pledge, Kele Pool will immediately create `3 validating nodes` (32ETH each)
 - The remaining `29.0172ETH` in the contract will be pledged, and a verification node will be created after other users pledge enough `32ETH`
 
 ``` javascript
@@ -82,7 +82,7 @@ Large-amount pledge is mainly divided into three steps:
 
 Large staking requires users to use [Ethereum official CLI tool](https://github.com/ethereum/staking-deposit-cli) to generate withdrawal vouchers. The tool will generate two files, `deposit_*.json` or `keystore-*.json`. Users must save their own mnemonic phrases. With the mnemonic phrases, these two files can be regenerated at any time.
 
-Cola Pool only needs the value of the `withdrawal_credentials` attribute in the `deposit_*.json` file, which will be used as the ETH2.0 withdrawal certificate. The generated related tutorials can be viewed [here](https://kelepool.gitbook.io/help-center-zh/pos/FAQ/eth-deposit-cli) or [here](https://hackmd.io/urta4YBdTrqSaNqiHgP7Cw ).
+Kele Pool only needs the value of the `withdrawal_credentials` attribute in the `deposit_*.json` file, which will be used as the ETH2.0 withdrawal certificate. The generated related tutorials can be viewed [here](https://kelepool.gitbook.io/help-center-zh/pos/FAQ/eth-deposit-cli) or [here](https://hackmd.io/urta4YBdTrqSaNqiHgP7Cw ).
 
 Below is an example of the deposit_*.json we generated with the official Ethereum CLI tool:
 
