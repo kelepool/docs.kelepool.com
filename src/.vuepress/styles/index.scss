@@ -24,15 +24,24 @@
     height: 30px;
     margin: 20px 15px 20px 15px;
   }
-  .line{
+  .line-small{
     height: 1px;
     width: 100%;
     background-color: #F9F9F9;
-    margin-bottom: 50px;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .line-large{
+    height: 2px;
+    width: 100%;
+    background-color: #F9F9F9;
+    max-width: 1060px;
+    margin: 0 auto;
   }
   .feature-items{
     display: grid;
-    gap: 30px;
+    gap: 20px;
+    margin-top: 50px;
     grid-template-columns: 250px 250px 250px 250px;
     grid-auto-rows: minmax(100px, auto);
     margin-bottom: 90px;
@@ -49,14 +58,21 @@
 
   .feature-text{
     font-size: 20px;
-    font-weight:normal;
-    margin:10px;
+    font-weight:bold;
+    margin-top:30px;
     color:#333333
+  }
+
+  .feature-arrow{
+    width: 10px;
+    height: 16px;
+    margin: 8px 5px 0 5px;
+    line-height: 20px;
   }
 
   a.feature-text:hover{
     font-size: 20px;
-    font-weight:normal;
+    font-weight:bold;
     margin:10px;
     color:#27ad40
   }
