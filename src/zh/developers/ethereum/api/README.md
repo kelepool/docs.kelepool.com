@@ -29,6 +29,15 @@
     - 将请求参数按字典序升序排列，并用 '&' 前后拼接
     - 用 `hmac_blake2b` 以 `authority_key` 进行签名，得到 `sign`
 
+```json
+用于测试的 authority_key 及 token ：
+
+{
+    "authority_key": "2fb8098e1cac29c559191993e606e692b7d15314164ac8c55bcaa5a05b635843f067a35bf50ab9707675f7dff7dae934f6b2c189311e9c53ba874f572643b8ed",
+    "token": "eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6Im9uZWtleSIsInZlcnNpb24iOiIwIiwiZXhwIjoxODMwNTcwNTU4fQ.gNdTZxcThOBKJB2oGFUAC1vxP9FRXQBPPx36jpgZRWc"
+}
+```
+
 ### 3.示例代码
 ```python
 import hashlib

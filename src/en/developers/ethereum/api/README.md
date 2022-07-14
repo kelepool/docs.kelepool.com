@@ -29,8 +29,18 @@ Third-party developers need to contact Kele Pool to apply for a long-term valid 
     - Arrange request parameters in ascending lexicographical order and use '&' to concatenate
     - Sign with `authority_key` with `hmac_blake2b`, get `sign`
 
+```json
+用于测试的 authority_key 及 token ：
+
+{
+    "authority_key": "2fb8098e1cac29c559191993e606e692b7d15314164ac8c55bcaa5a05b635843f067a35bf50ab9707675f7dff7dae934f6b2c189311e9c53ba874f572643b8ed",
+    "token": "eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6Im9uZWtleSIsInZlcnNpb24iOiIwIiwiZXhwIjoxODMwNTcwNTU4fQ.gNdTZxcThOBKJB2oGFUAC1vxP9FRXQBPPx36jpgZRWc"
+}
+```
+
 ### 3. Sample code
 ```python
+
 import hashlib
 import hmac
 import requests
@@ -58,6 +68,7 @@ headers = {'Content-Type': 'application/json', 'Accept':'application/json',
 
 r_json = requests.get(url,params=params,headers=headers)
 print(r_json.text)
+
 
 ```
 
