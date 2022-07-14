@@ -38,7 +38,7 @@ Third-party developers need to contact Kele Pool to apply for a long-term valid 
 }
 ```
 
-### 3. Sample code
+### 3. Python Sample code
 ```python
 
 import hashlib
