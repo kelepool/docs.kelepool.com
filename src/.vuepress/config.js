@@ -11,19 +11,26 @@ module.exports = {
   title: 'Kele Pool',
   description: 'Kele Pool Documentation - Decentralised Proof of Stake Protocol',
   head: [
-    ['meta', { name: '', content: '' }],
-    ['link', { rel: '', href: '' }],
+    ['link', { rel: "shortcut icon", href: "/favicon.ico"}],
   ],
   locales: {
     '/': {
       lang: 'en-US',
       title: 'Kele Pool',
       description: 'Kele Pool Documentation - Decentralised Proof of Stake Protocol',
+      head: [
+        ['meta', { name: 'keywords', content: 'ETH2.0 Staking, Pos Staking, Pow Mining, Mina Staking, Platon Staking'}],
+        ['meta', { name: 'description', content: 'Kele Pool Documentation - Decentralised Proof of Stake Protocol'}],
+      ],
     },
     '/zh/': {
       lang: 'zh-CN',
       title: '可乐矿池',
       description: '可乐矿池文档 - Pow & Pos 一站式质押管理平台',
+      head: [
+        ['meta', { name: 'keywords', content: 'ETH2.0 质押, Pos 质押, Pow 挖矿, Mina 质押, Platon 质押'}],
+        ['meta', { name: 'description', content: '可乐矿池文档 - Pow & Pos 一站式质押管理平台'}],
+      ],
     },
   },
   prev: true,
