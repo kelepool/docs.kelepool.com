@@ -18,7 +18,7 @@
 
 ### 1.授权步骤
 - 联系可乐矿池申请`authority_key` 以及 `token`
-- 如果用户是第一次调用可乐矿池API，则需提前调用`/user/v2/anonymouslogin` 进行用户地址注册
+- 如果用户是第一次调用可乐矿池API，则需提前调用`/user/v2/anonymouslogin` 进行[用户地址注册](#用户地址注册)
 - 调用可乐矿池每个接口时使用 `authority_key` 以及 `token` 签名并放入Header中验证
 
 ### 2.使用方式

@@ -18,7 +18,7 @@ Third-party developers need to contact Kele Pool to apply for a long-term valid 
 
 ### 1. Authorization step
 - Contact Kele Pool to apply for `authority_key` and `token`
-- If the user is calling the Kele Pool API for the first time, he needs to call `/user/v2/anonymouslogin` in advance to register the user address
+- If the user is calling the Kele Pool API for the first time, he needs to call `/user/v2/anonymouslogin` in advance to [register the user address](#User Address Registration)
 - Use `authority_key` and `token` to sign each interface of Kele Pool and put it in the Header for verification
 
 ### 2. How to use
