@@ -40,7 +40,7 @@ Staking是最为简单的加密货币赚取方式，也不需要太多硬件设�
 
 - 在对市场没有十足把握的情况下，最好投资主流币种，如ETH
 
-- 选择可靠且费率低的staking平台，如可乐矿池：https://www.kelepool.com/
+- 选择可靠且费率低的staking平台，如[可乐矿池](https://www.kelepool.com/)
 
 ![img](https://miro.medium.com/max/1400/1*QGtwnlgxVFHiniUffPbbmA.png)
 
@@ -48,4 +48,4 @@ Staking是最为简单的加密货币赚取方式，也不需要太多硬件设�
 
 **灵活质押**：可乐矿池提供灵活且低费率的质押模式，可以满足各种额度的ETH质押，近期还会上线更多主流币种，详情请至官网查看。
 
-可乐矿池官网：https://www.kelepool.com/
+可乐矿池官网：[点击进入官网](https://www.kelepool.com/)
