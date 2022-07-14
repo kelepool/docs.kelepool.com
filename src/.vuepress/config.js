@@ -45,15 +45,19 @@ module.exports = {
         editLinkText: 'Edit this page on GitHub',
         navbar: [
           {
-            text: 'Wiki',
-            link: '/zh/wiki/'
-          },
-          {
             text: 'Guides',
             link: '/en/guides/'
           },
           {
-            text: 'For Developers',
+            text: 'Announcements',
+            link: '/en/announcements/'
+          },
+          {
+            text: 'Wiki',
+            link: '/en/wiki/'
+          },
+          {
+            text: 'Developers',
             link: '/en/developers/'
           },
           {
@@ -68,10 +72,22 @@ module.exports = {
               children: ['/en/guides/README.md'],
             },
           ],
+          '/en/announcements/': [
+            {
+              text: 'Announcements',
+              children: ['/en/announcements/README.md'],
+            },
+          ],
+          '/en/wiki/': [
+            {
+              text: 'Wiki',
+              children: ['/en/wiki/README.md'],
+            },
+          ],
           '/en/developers/': [
             {
               text: 'Ethereum',
-              collapsible: false,
+              collapsible: true,
               children:[
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
@@ -101,12 +117,16 @@ module.exports = {
         editLinkText: '在 GitHub 上编辑此页',
         navbar: [
           {
-            text: '百科',
-            link: '/zh/wiki/'
-          },
-          {
             text: '挖矿指南',
             link: '/zh/guides/'
+          },
+          {
+            text: '公告',
+            link: '/zh/announcements/'
+          },
+          {
+            text: '百科',
+            link: '/zh/wiki/'
           },
           {
             text: '开发者文档',
@@ -124,10 +144,22 @@ module.exports = {
               children: ['/zh/guides/README.md'],
             },
           ],
+          '/zh/announcements/': [
+            {
+              text: '公告',
+              children: ['/zh/announcements/README.md'],
+            },
+          ],
+          '/zh/wiki/': [
+            {
+              text: '百科',
+              children: ['/zh/wiki/README.md'],
+            },
+          ],
           '/zh/developers/': [
             {
               text: 'Ethereum',
-              collapsible: false,
+              collapsible: true,
               children:[
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',

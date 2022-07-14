@@ -2,11 +2,11 @@
 home: false
 layout: home
 guideUrl: '/zh/guides'
-guideName: '挖矿指南'
+guideName: 'Guides'
 noticeUrl: '/zh/announcements'
-noticeName: '官方公告'
+noticeName: 'Announcements'
 wikiUrl: '/zh/wiki'
-wikiName: '矿业百科'
+wikiName: 'Wiki'
 developerUrl: '/zh/developers'
-developerName: '开发者文档'
+developerName: 'Developers'
 ---

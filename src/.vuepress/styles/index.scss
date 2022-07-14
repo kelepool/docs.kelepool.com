@@ -11,7 +11,7 @@
     height: 100%;
     max-width: 456px;
     max-height: 104px;
-    margin: 250px auto 70px auto;
+    margin: 170px auto 70px auto;
   }
   .social-items{
     display: flex;
@@ -31,10 +31,109 @@
     margin-bottom: 50px;
   }
   .feature-items{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-auto-rows: minmax(100px, auto);
     margin-bottom: 90px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .feature-logo{
+    width:100%;
+    height:100%;
+    max-width:300px;
+    max-height:200px;
+  }
+
+  .feature-text{
+    font-size: 20px;
+    font-weight:normal;
+    margin:10px;
+    color:#333333
+  }
+
+  a.feature-text:hover{
+    font-size: 20px;
+    font-weight:normal;
+    margin:10px;
+    color:#27ad40
+  }
+
+  @media only screen and (max-width: 600px) {
+    .feature-items{
+      grid-template-columns: 250px;
+    }
+    .main-logo{
+      max-width: 228px;
+      max-height: 52px;
+    }
+
+    .social-logo{
+      width: 30px;
+      height: 30px;
+      margin: 20px 5px 20px 5px;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .feature-items{
+      grid-template-columns: 250px 250px ;
+    }
+    .main-logo{
+      max-width: 228px;
+      max-height: 52px;
+    }
+    .social-logo{
+      width: 30px;
+      height: 30px;
+      margin: 20px 5px 20px 5px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    .feature-items{
+      grid-template-columns: 250px 250px ;
+    }
+    .main-logo{
+      max-width: 456px;
+      max-height:104px;
+    }
+    .social-logo{
+      width: 30px;
+      height: 30px;
+      margin: 20px 15px 20px 15px;
+    }
+  }
+
+  @media only screen and (min-width: 992px) {
+    .feature-items{
+      grid-template-columns: 250px 250px ;
+    }
+    .main-logo{
+      max-width: 456px;
+      max-height:104px;
+    }
+    .social-logo{
+      width: 30px;
+      height: 30px;
+      margin: 20px 15px 20px 15px;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .feature-items{
+      grid-template-columns: 250px 250px 250px 250px;
+    }
+    .main-logo{
+      max-width: 456px;
+      max-height:104px;
+    }
+    .social-logo{
+      width: 30px;
+      height: 30px;
+      margin: 20px 15px 20px 15px;
+    }
   }
 }

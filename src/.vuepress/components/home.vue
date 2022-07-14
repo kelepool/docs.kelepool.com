@@ -6,9 +6,9 @@ import Navbar from '@theme/Navbar.vue'
 </script>
 
 <template>
-  <main class="home">
+  <main>
     <Navbar />
-    <div>
+    <div style="width:100%">
         <div class="main-items"><img src="/images/logo-large.png" class="main-logo" alt="Kele Pool"> </div>
         <div class="social-items">
           <div><a href="https://t.me/kelepoolcom" target="_blank"><img src="/images/telegram.png" class="social-logo" alt="telegram"> </a></div>
@@ -18,21 +18,40 @@ import Navbar from '@theme/Navbar.vue'
           <div><a href="https://www.facebook.com/KelePool/" target="_blank"><img src="/images/facebook.png" class="social-logo" alt="facebook"> </a></div>
         </div>
         <div class="line"></div>
-        <!-- <div class="feature-items">
-          <div style="width:260px;height:314px;border:1px solid #F9F9F9;">
-            <div><img src="/images/tutorials.png" class="feature-logo" style="width:100%;height:100%;max-width:260px;max-height:100px;"></div>
+        <div class="feature-items">
+          <div>
+            <div><RouterLink :to="$page.frontmatter.guideUrl" class="feature-text"><img src="/images/guide.png" class="feature-logo" ></RouterLink></div>
             <div style="padding:10px">
-              <div>
-
+              <div >
+                <RouterLink :to="$page.frontmatter.guideUrl" class="feature-text">{{$page.frontmatter.guideName}}</RouterLink>
               </div>
-              <div></div>
-              <div></div>
             </div>
           </div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div> -->
+          <div>
+            <div><RouterLink :to="$page.frontmatter.noticeUrl" class="feature-text"><img src="/images/notice.png" class="feature-logo" ></RouterLink></div>
+            <div style="padding:10px">
+              <div class="feature-text">
+                <RouterLink :to="$page.frontmatter.noticeUrl" class="feature-text">{{$page.frontmatter.noticeName}}</RouterLink>
+              </div>
+            </div>
+          </div>
+                    <div>
+            <div><RouterLink :to="$page.frontmatter.wikiUrl" class="feature-text"><img src="/images/wiki.png" class="feature-logo" ></RouterLink></div>
+            <div style="padding:10px">
+              <div class="feature-text">
+                <RouterLink :to="$page.frontmatter.wikiUrl" class="feature-text">{{$page.frontmatter.wikiName}}</RouterLink>
+              </div>
+            </div>
+          </div>
+                    <div>
+            <div><RouterLink :to="$page.frontmatter.developerUrl" class="feature-text"><img src="/images/developer.png" class="feature-logo"></RouterLink></div>
+            <div style="padding:10px">
+              <div class="feature-text">
+                <RouterLink :to="$page.frontmatter.developerUrl" class="feature-text">{{$page.frontmatter.developerName}}</RouterLink>
+              </div>
+            </div>
+          </div>
+        </div>
     </div> 
 
     <HomeContent />
