@@ -54,4 +54,4 @@ If you don't want to manage the equipment and take the risk of running the node,
 
 For now, Kele Pool supports ETH as a staking currency, and more networks will be launched shortly, which can be viewed on the official website.
 
-Official website: https://www.kelepool.com/
+Official website: [Kelepool.com](https://www.kelepool.com/)
