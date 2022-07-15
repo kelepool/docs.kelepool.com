@@ -32,7 +32,7 @@ https://launchpad.ethereum.org/en/
 
 如果你不想自己管理设备、承担运行节点的风险，可以选择通过矿池参与staking。根据不同的质押金额、管理模式，各大矿池也推出了不同质押方式。如可乐矿池目前支持两种质押方式：
 
-①质押至少32ETH，可以获得非托管的完整验证节点。可乐矿池主要提供硬件支持，同时减少了繁琐操作和风险，费率相对更低。
+①质押至少32ETH，可以获得非托管的完整验证节点。[可乐矿池](https://www.kelepool.com/)主要提供硬件支持，同时减少了繁琐操作和风险，费率相对更低。
 
 ![img](https://miro.medium.com/max/1400/1*JNZ1iik4jaOAiQKanetXdQ.png)
 
@@ -46,4 +46,4 @@ https://launchpad.ethereum.org/en/
 
 目前可乐矿池支持的币种为ETH，近期还会有更多质押网络推出，具体可以去官网查看。
 
-可乐矿池官网：https://www.kelepool.com/
+可乐矿池官网：[点击进入官网](https://www.kelepool.com/)
