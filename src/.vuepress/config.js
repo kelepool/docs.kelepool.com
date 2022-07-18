@@ -5,6 +5,7 @@ const { searchPlugin } = require('@vuepress/plugin-search')
 const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
 const getConfig = require("vuepress-bar");
 const fs = require("fs");
+const { sitemapPlugin } = require("vuepress-plugin-sitemap2");
 
 module.exports = {
   lang: 'zh-CN',
@@ -210,6 +211,7 @@ module.exports = {
     registerComponentsPlugin({
       componentsDir: path.resolve(__dirname, './components'),
     }),
+    sitemapPlugin({hostname: "https://docs.kelepool.com",}),
     searchPlugin({
       locales: {
         '/': {
