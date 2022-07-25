@@ -50,4 +50,6 @@ Kele Pool official website: [Kelepool.com](https://www.kelepool.com/)
 
 **One-stand Staking Platform**: Kele Pool provides a flexible staking model. You can freely choose the amount you want to stake and enjoy a low service fee. ETH is now supported in Kele Pool and more currencies will be released in the near future. 
 
-For details, please check the official website: [Kelepool.com](https://www.kelepool.com/)
+**For details, please check the official website: [https://www.kelepool.com/](https://www.kelepool.com/)**
+
+**Join our Telegram group: [https://t.me/kelepool_en](https://t.me/kelepool_en)**
