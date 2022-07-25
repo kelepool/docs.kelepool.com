@@ -89,7 +89,7 @@ module.exports = {
           '/en/wiki/': [
             {
               text: 'Wiki',
-              children: ['/en/wiki/pos/staking-intro.md','/en/wiki/pos/staking-guide.md'],
+              children: ['/en/wiki/pos/staking-intro.md','/en/wiki/pos/staking-guide.md','/en/wiki/pos/staking-difference.md'],
             },
           ],
           '/en/developers/': [
@@ -161,7 +161,7 @@ module.exports = {
           '/zh/wiki/': [
             {
               text: '百科',
-              children: ['/zh/wiki/pos/staking-intro.md','/zh/wiki/pos/staking-guide.md'],
+              children: ['/zh/wiki/pos/staking-intro.md','/zh/wiki/pos/staking-guide.md','/zh/wiki/pos/staking-difference.md'],
             },
           ],
           '/zh/developers/': [
