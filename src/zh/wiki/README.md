@@ -4,7 +4,7 @@
 
 同时也欢迎加入我们的社区参与讨论、了解最新行业资讯、获取可乐矿池新动态。
 
-> Telegram中文群：https://t.me/kelepoolcom
+> Telegram中文群：[点此加入](https://t.me/kelepoolcom)
 >
 > [🐦Twitter](https://twitter.com/PoolCola)
 >
