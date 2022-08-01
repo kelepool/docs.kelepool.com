@@ -161,7 +161,7 @@ module.exports = {
           '/zh/wiki/': [
             {
               text: '百科',
-              children: ['/zh/wiki/pos/staking-intro.md','/zh/wiki/pos/staking-guide.md','/zh/wiki/pos/staking-difference.md'],
+              children: ['/zh/wiki/platform.md','/zh/wiki/pos/staking-intro.md','/zh/wiki/pos/staking-guide.md','/zh/wiki/pos/staking-difference.md'],
             },
           ],
           '/zh/developers/': [
