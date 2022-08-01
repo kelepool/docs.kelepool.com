@@ -1,0 +1,1 @@
+import{_ as n,o as a,c as t,a as e,b as c}from"./app.f30db192.js";const o={},r=e("h1",{id:"announcement",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#announcement","aria-hidden":"true"},"#"),c(" Announcement")],-1),s=[r];function _(d,i){return a(),t("div",null,s)}var l=n(o,[["render",_],["__file","index.html.vue"]]);export{l as default};

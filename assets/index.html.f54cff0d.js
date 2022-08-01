@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as o,a as e,b as r}from"./app.f30db192.js";const n={},c=e("h1",{id:"platon-network",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#platon-network","aria-hidden":"true"},"#"),r(" PlatON Network")],-1),s=[c];function _(d,i){return a(),o("div",null,s)}var h=t(n,[["render",_],["__file","index.html.vue"]]);export{h as default};

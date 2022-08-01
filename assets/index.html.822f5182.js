@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1266199d","path":"/en/developers/platon/api/","title":"API Reference","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/developers/platon/api/README.md"}');export{e as data};

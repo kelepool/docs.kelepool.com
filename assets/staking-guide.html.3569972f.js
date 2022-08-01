@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-7d643ae0","path":"/en/wiki/pos/staking-guide.html","title":"Staking Guide: How to Stake Cryptocurrency","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/wiki/pos/staking-guide.md"}');export{e as data};

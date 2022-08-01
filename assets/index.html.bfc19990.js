@@ -1,0 +1,1 @@
+import{_ as a,o as t,c as n,a as e,b as r}from"./app.f30db192.js";const o={},c=e("h1",{id:"mina-network",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#mina-network","aria-hidden":"true"},"#"),r(" Mina Network")],-1),s=[c];function i(_,d){return t(),n("div",null,s)}var l=a(o,[["render",i],["__file","index.html.vue"]]);export{l as default};

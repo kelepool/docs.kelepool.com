@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-77269520","path":"/en/wiki/pos/staking-intro.html","title":"What is Staking in Cryptocurrency?","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/wiki/pos/staking-intro.md"}');export{t as data};

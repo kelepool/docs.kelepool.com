@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-4a912316","path":"/zh/wiki/pos/staking-intro.html","title":"\u6743\u76CA\u8D28\u62BC\uFF08Staking\uFF09\u662F\u4EC0\u4E48\u610F\u601D\uFF1F","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/wiki/pos/staking-intro.md"}');export{t as data};
