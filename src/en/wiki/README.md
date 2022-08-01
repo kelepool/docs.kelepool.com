@@ -4,7 +4,7 @@ Published by the name of Kele Pool, we hope this column can help you to better u
 
 We are also inviting you to join our community! You can find more people sharing the love for cryptocurrency here and catch the latest information about Kele Pool.
 
-> Telegram (English): https://t.me/kelepool_en
+> Telegram: [Join Now](https://t.me/kelepoolcom)
 >
 > [🐦Twitter](https://twitter.com/PoolCola)
 >
