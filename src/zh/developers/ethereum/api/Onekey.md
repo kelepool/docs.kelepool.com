@@ -13,7 +13,7 @@ Ropsten测试网代理合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](http
 
 ### 第一步：ETH1地址转ETH2提款凭证
 
-OneKey需要使用官方提供的[ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将用户ETH1存款地址转换成ETH2的提款凭证，具体转换方式如下：
+OneKey需要使用官方提供的[ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将用户ETH1存款地址转换成ETH2的提款凭证，注意转换后的提款凭证都是小写字母，具体转换方式如下：
 
 - ETH2提款凭证 =  `0x01 + 11个00 + 去掉0x的ETH1地址`
 
