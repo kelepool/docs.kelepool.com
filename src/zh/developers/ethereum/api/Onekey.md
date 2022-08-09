@@ -28,7 +28,7 @@ ETH2提款凭证：0x0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219b
 
 #####  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
-此接口主要用于统计第三方各个用户的质押数量等，只需在第一次使用可乐矿池API时调用，当然你也可以多次调用。
+此接口主要用于统计第三方各个用户的质押数量等，只需在用户第一次质押的时候调用，当然你也可以在每次用户质押时候调用。
 
 ```bash
 POST https://test-api.kelepool.com/user/v2/anonymouslogin
