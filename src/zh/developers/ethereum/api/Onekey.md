@@ -131,7 +131,7 @@ const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
 
 
 // 组装大额质押数据
-let data = [] // API返回的data对象
+let data = [] // /eth2/v2/validator/keypair API返回的data对象
 let stakingPublicKey = ''
 let stakingSignature = ''
 let stakingCredentials = '0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606' // 用户提款凭证
