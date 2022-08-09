@@ -100,6 +100,7 @@ module.exports = {
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
                 '/en/developers/ethereum/api/README.md',
+                '/en/developers/ethereum/api/OneKey.md',
               ]
             },
             {

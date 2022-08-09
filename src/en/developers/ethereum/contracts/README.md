@@ -5,10 +5,9 @@
 The two main functions of the contract are large pledge and small pledge. Developers can use javascript to call the contract of the cola mining pool for pledge. The contract adopts the upgradeable scheme of the open source project [Openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts), so `be sure to call the proxy contract To stake `, the logic contract will be updated and replaced when ETH2.0 is launched or the function changes.
 
 
-Proxy contract:[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
+Mainnet contract:[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-
-Logical contract:[0x3b27417d971d6aec8a8406143c507095f729bff0](https://etherscan.io/address/0x3b27417d971d6aec8a8406143c507095f729bff0#code)
+Ropsten contract:[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
 
 Contract source code:[https://github.com/kelepool/ethstaking](https://github.com/kelepool/ethstaking)
 

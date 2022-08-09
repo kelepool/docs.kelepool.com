@@ -7,6 +7,8 @@
 - 大额质押：用户自己管理提款凭证，最低支持32ETH，最大支持3200ETH，质押量须是32的整数倍。
 - 小额质押：可乐平台多签管理提款凭证，最低支持0.01ETH，最大支持100000000000ETH。
 
+Ropsten测试网代理合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
+
 ## 大额质押
 
 ### 第一步：ETH1地址转ETH2提款凭证
@@ -122,7 +124,7 @@ let userAddress = await signer.getAddress();
 
 // 初始化合约参数
 const kelepool = {
-  address: "0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758",// 可乐矿池【代理合约】，这里必须是代理合约！！！
+  address: "0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa",// 可乐矿池【代理合约】，这里必须是代理合约！！！
   abi: [{"anonymous":false....　}] // 将上面的合约ABI数组放到这里,
 };
 const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
@@ -132,7 +134,7 @@ const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
 let data = [] // API返回的data对象
 let stakingPublicKey = ''
 let stakingSignature = ''
-let stakingCredentials = '001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb' // 用户提款凭证
+let stakingCredentials = '0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606' // 用户提款凭证
 let stakingRoot = []
 for (let i = 0; i < data.length; i++) {
     let validator = data[i]
@@ -148,16 +150,14 @@ let withdrawal_credentials = ethers.utils.arrayify(prefix + stakingCredentials)
 let signature = ethers.utils.arrayify(prefix + stakingSignature)
 let deposit_data_root = stakingRoot
 
-// 执行合约小额质押方法，最低质押32ETH，这里我们质押96ETH，由于每个节点需要0.05ETH手续费，因此3个节点需要质押96.15ETH
-let amount = ethers.utils.parseUnits('96.15', 'ether')
+// 执行合约大额质押方法，最低质押32ETH，这里我们质押64ETH，由于每个节点需要0.05ETH手续费，因此2个节点需要质押64.1ETH
+let amount = ethers.utils.parseUnits('64.1', 'ether')
 const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
     gasLimit: 10000000 // 最大Gas限制
 })
 console.log(`大额质押交易哈希: ${tx.hash}`);
-
-
 ```
 
 
@@ -202,7 +202,7 @@ let userAddress = await signer.getAddress();
 
 // 初始化合约参数
 const kelepool = {
-  address: "0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758",// 可乐矿池【代理合约】，这里必须是代理合约！！！
+  address: "0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa",// 可乐矿池【代理合约】，这里必须是代理合约！！！
   abi: [{"anonymous":false....　}] // 将上面的合约ABI数组放到这里,
 };
 const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);

@@ -4,9 +4,9 @@
 
 合约的两个主要功能是大额质押、小额质押。开发人员可通过javascript来调用可乐矿池的合约进行质押，合约采用了开源项目[Openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts)的可升级方案，因此`一定要调用代理合约来质押`，逻辑合约在ETH2.0上线或功能变更时会被更新替换。
 
-代理合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
+Mainnet主网代理合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-逻辑合约：[0x3b27417d971d6aec8a8406143c507095f729bff0](https://etherscan.io/address/0x3b27417d971d6aec8a8406143c507095f729bff0#code)
+Ropsten测试网代理合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
 
 合约开源代码：[https://github.com/kelepool/ethstaking](https://github.com/kelepool/ethstaking)
 
