@@ -172,6 +172,7 @@ module.exports = {
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
+                '/zh/developers/ethereum/api/OneKey.md',
               ]
             },
             {
