@@ -1,4 +1,4 @@
-# How to use OneKey as an example to integrate it?
+# Take OneKey as an example to integrate interface
 
 First of all, OneKey needs to help users to judge, or let users choose the following two pledge methods. If OneKey decides to let users choose the pledge method, it needs to provide two pledge entries (large amount and small amount) and inform the user of the difference.
 
