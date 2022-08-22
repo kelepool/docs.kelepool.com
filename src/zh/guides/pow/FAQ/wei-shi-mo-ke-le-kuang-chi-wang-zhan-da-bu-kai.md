@@ -4,6 +4,6 @@
 
 举例：
 
-![](<../../.gitbook/assets/image (52).png>)
+![](<../../.gitbook/assets/image(52).png>)
 
 网站地址： [`https://www.kelepool.com/`](https://www.kelepool.com/)

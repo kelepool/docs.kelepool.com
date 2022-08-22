@@ -74,4 +74,4 @@ Handshake采用PoW共识，挖矿算法为Blake2B+SHA3，支持ASIC矿机（如�
 
 2、前往可乐矿池的总览页面查看活跃矿机数量和算力是否正常，预估收益可能出现偏差，以第二天实际结算的收益为准。
 
-![](<../../.gitbook/assets/image (36).png>)
+![](<../../.gitbook/assets/image(36).png>)

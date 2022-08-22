@@ -10,6 +10,6 @@
 
 **手续费：**目前提现手续费由平台承担。
 
-![](<../../.gitbook/assets/image (213).png>)
+![](<../../.gitbook/assets/image(213).png>)
 
-![](<../../.gitbook/assets/image (59).png>)
+![](<../../.gitbook/assets/image(59).png>)

@@ -2,4 +2,4 @@
 
 每个币种收益模式不同，您可前往“首页-支持的币种”查看币种收益模式
 
-![](<../../.gitbook/assets/image (64).png>)
+![](<../../.gitbook/assets/image(64).png>)

@@ -25,6 +25,7 @@
     "vuepress-theme-default-prefers-color-scheme": "^2.0.0"
   },
   "dependencies": {
+    "@centerforopenscience/markdown-it-video": "^1.0.0",
     "markdown-it-html5-embed": "^1.0.0",
     "vuepress-bar": "^0.4.4",
     "vuepress-plugin-code-copy": "^1.0.6"

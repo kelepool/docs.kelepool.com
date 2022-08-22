@@ -35,15 +35,15 @@ Hashrate:13.9Kh/s
 
 下载地址：[https://www.bixin.im](https://www.bixin.im) (需要梯子访问)
 
-![](<../../.gitbook/assets/image (184).png>)
+![](<../../.gitbook/assets/image(184).png>)
 
 #### 2.2 进入 KelePool <a href="#ycq0o" id="ycq0o"></a>
 
-![](<../../.gitbook/assets/image (164).png>)
+![](<../../.gitbook/assets/image(164).png>)
 
 #### 2.3 创建子账户 <a href="#khq5m" id="khq5m"></a>
 
-![](<../../.gitbook/assets/image (158).png>)
+![](<../../.gitbook/assets/image(158).png>)
 
 #### 2.4 设置收款地址 <a href="#rrftn" id="rrftn"></a>
 
@@ -61,15 +61,15 @@ Hashrate:13.9Kh/s
 
 如果 STC-BOX 插上电源后电源不工作，可尝试重新短接。
 
-![](<../../.gitbook/assets/image (106).png>)
+![](<../../.gitbook/assets/image(106).png>)
 
 接电后，正常状态：红绿灯闪烁后，绿灯常亮（若绿灯常亮后，红灯亮起，可先不管，继续走流程）。
 
-![](<../../.gitbook/assets/image (181).png>)
+![](<../../.gitbook/assets/image(181).png>)
 
 #### 3.2 接入网线 <a href="#fke7g" id="fke7g"></a>
 
-![](<../../.gitbook/assets/image (194).png>)
+![](<../../.gitbook/assets/image(194).png>)
 
 #### 3.3 配置矿池 <a href="#fc5jh" id="fc5jh"></a>
 
@@ -83,15 +83,15 @@ Hashrate:13.9Kh/s
 * 矿机必须与您的浏览器处于同一局域网；
 * 页面右上角可切换语言；
 
-![](<../../.gitbook/assets/image (101).png>)
+![](<../../.gitbook/assets/image(101).png>)
 
 **2）解锁控制台**
 
 初始密码：123456789
 
-![](<../../.gitbook/assets/image (127).png>)
+![](<../../.gitbook/assets/image(127).png>)
 
-![](<../../.gitbook/assets/image (147).png>)
+![](<../../.gitbook/assets/image(147).png>)
 
 **3）添加矿池**
 
@@ -110,7 +110,7 @@ URL（支持 TLS/SSL）：
 
 密码：输入123
 
-![](<../../.gitbook/assets/image (103).png>)
+![](<../../.gitbook/assets/image(103).png>)
 
 **4）检查矿池配置**
 
@@ -118,11 +118,11 @@ URL（支持 TLS/SSL）：
 
 你也可以在下方添加更多的备用地址。
 
-![](<../../.gitbook/assets/image (150).png>)
+![](<../../.gitbook/assets/image(150).png>)
 
 #### 3.4 查看算力 <a href="#gy2nq" id="gy2nq"></a>
 
-![](<../../.gitbook/assets/image (185).png>)
+![](<../../.gitbook/assets/image(185).png>)
 
 ## 四、转账及更多设置 <a href="#yevcw" id="yevcw"></a>
 
@@ -130,19 +130,19 @@ URL（支持 TLS/SSL）：
 
 可以查看当天预估收益和昨日收益。
 
-![](<../../.gitbook/assets/image (162).png>)
+![](<../../.gitbook/assets/image(162).png>)
 
 #### 4.2 设置算力报警 <a href="#i0gdd" id="i0gdd"></a>
 
 建议设置“算力报警”，STC-BOX 离线时可以获得及时提醒。
 
-![](<../../.gitbook/assets/image (135).png>)
+![](<../../.gitbook/assets/image(135).png>)
 
 #### 4.3 提现或转账 <a href="#r1xao" id="r1xao"></a>
 
 币信钱包支持 address（以 0x 开头）和 收款地址（以 stc 开头）。
 
-![](<../../.gitbook/assets/image (175).png>)
+![](<../../.gitbook/assets/image(175).png>)
 
 ## 五、严选交易 <a href="#qbtql" id="qbtql"></a>
 
@@ -150,7 +150,7 @@ URL（支持 TLS/SSL）：
 
 除了 STC，严选交易也支持主流币种的交易。
 
-![](<../../.gitbook/assets/image (153).png>)
+![](<../../.gitbook/assets/image(153).png>)
 
 ## 六、常见问题 <a href="#fkdlq" id="fkdlq"></a>
 
@@ -162,7 +162,7 @@ URL（支持 TLS/SSL）：
 
 进入矿机页面，右侧展示了当前固件版本“2.1.4”，是可以升级的。
 
-![](<../../.gitbook/assets/image (105).png>)
+![](<../../.gitbook/assets/image(105).png>)
 
 **2）下载最新的固件**
 
@@ -174,11 +174,11 @@ URL（支持 TLS/SSL）：
 
 请不要使用非正常途径获取的固件，以免产生问题。
 
-![](<../../.gitbook/assets/image (179).png>)
+![](<../../.gitbook/assets/image(179).png>)
 
 **3）控制台更新固件**
 
-![](<../../.gitbook/assets/image (134).png>)
+![](<../../.gitbook/assets/image(134).png>)
 
 #### 6.2 矿机恢复出厂设置(不推荐) <a href="#oduji" id="oduji"></a>
 
@@ -193,8 +193,8 @@ URL（支持 TLS/SSL）：
 
 用 卡针 长按 reset 键 10s 左右，如下图所示：
 
-![](<../../.gitbook/assets/image (139).png>)
+![](<../../.gitbook/assets/image(139).png>)
 
 **2）方式二：控制台重置**
 
-![](<../../.gitbook/assets/image (100).png>)
+![](<../../.gitbook/assets/image(100).png>)

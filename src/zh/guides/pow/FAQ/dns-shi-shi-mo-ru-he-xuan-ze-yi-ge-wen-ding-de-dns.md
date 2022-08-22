@@ -64,15 +64,15 @@ DNS的作用即让我们记住zhenhao.com即可访问至192.168.176.19。
 
 1.“开始”—“运行”—”输入CMD“，打开命令行窗口输入 nslookup，按回车。Address后的一串数字即为DNS。
 
-![](<../../.gitbook/assets/image (195).png>)
+![](<../../.gitbook/assets/image(195).png>)
 
 2.“设置”—“网络和Internet”—“WLAN”/”以太网“—”网络和共享中心—“连接”—“详细信息”
 
-![](<../../.gitbook/assets/image (168).png>)
+![](<../../.gitbook/assets/image(168).png>)
 
 3.矿机后台Network中，查看DNS Servers。
 
-![](<../../.gitbook/assets/image (148).png>)
+![](<../../.gitbook/assets/image(148).png>)
 
 ### **四、如何修改DNS？** <a href="#yn3cs" id="yn3cs"></a>
 
@@ -82,15 +82,15 @@ DNS的作用即让我们记住zhenhao.com即可访问至192.168.176.19。
 
 （1）登录小米路由器网页版，点击“常用设置”。
 
-![](<../../.gitbook/assets/image (192).png>)
+![](<../../.gitbook/assets/image(192).png>)
 
 （2）点击“上网设置”
 
-![](<../../.gitbook/assets/image (132).png>)
+![](<../../.gitbook/assets/image(132).png>)
 
 （3）“手动配置DNS”选项
 
-![](<../../.gitbook/assets/image (142).png>)
+![](<../../.gitbook/assets/image(142).png>)
 
 \*其他路由器界面略有不同，找到“手动配置DNS”选项进行设置即可。
 
@@ -107,7 +107,7 @@ DNS的作用即让我们记住zhenhao.com即可访问至192.168.176.19。
 
 “设置”—“网络和Internet”—“WLAN”/”以太网“—”网络和共享中心—“连接”（点击正在链接的网络）—“属性”—“Internet协议版本4（TCP/IPv4）”—“属性”—使用下面的DNS服务器地址“—填写推荐的DNS地址即可
 
-![](<../../.gitbook/assets/image (152).png>)
+![](<../../.gitbook/assets/image(152).png>)
 
 **3.矿机修改（以蚂蚁机型为例）**
 
@@ -119,20 +119,20 @@ DNS的作用即让我们记住zhenhao.com即可访问至192.168.176.19。
 
 （1）进入矿机后台，点击Network。
 
-![](<../../.gitbook/assets/image (102).png>)
+![](<../../.gitbook/assets/image(102).png>)
 
 （2）点击DHCP，选择Static。
 
-![](<../../.gitbook/assets/image (160).png>)
+![](<../../.gitbook/assets/image(160).png>)
 
 （3）填写矿机的网络信息。
 
-![](<../../.gitbook/assets/image (173).png>)
+![](<../../.gitbook/assets/image(173).png>)
 
 修改时矿机后台会有默认IP、子网掩码、网关和DNS，修改DNS为**推荐**即可，也可参考电脑网络连接详细信息。（“设置”—“网络和Internet”—“WLAN”/”以太网“—”网络和共享中心—“连接”—“详细信息”）
 
-![](<../../.gitbook/assets/image (169).png>)
+![](<../../.gitbook/assets/image(169).png>)
 
 （4）点击”Save\&Apply“。
 
-![](<../../.gitbook/assets/image (145).png>)
+![](<../../.gitbook/assets/image(145).png>)

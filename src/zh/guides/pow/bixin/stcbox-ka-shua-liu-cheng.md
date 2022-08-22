@@ -16,7 +16,7 @@
 
 下载地址：[https://wwa.lanzoui.com/b0f8vlkij](https://wwa.lanzoui.com/b0f8vlkij) 密码: star
 
-![](<../../.gitbook/assets/image (128).png>)
+![](<../../.gitbook/assets/image(128).png>)
 
 ### 2.2 安装刻录软件 <a href="#u8h8a" id="u8h8a"></a>
 
@@ -24,7 +24,7 @@
 
 解压 IBSMK Setup 1.8.5.rar，并安装软件，打开如下：
 
-![](<../../.gitbook/assets/image (167).png>)
+![](<../../.gitbook/assets/image(167).png>)
 
 ### 2.3 准备读卡器和 SD 卡 <a href="#zafx4" id="zafx4"></a>
 
@@ -32,7 +32,7 @@
 
 再准备一个支持 SD 卡的读卡器。
 
-![](<../../.gitbook/assets/image (154).png>)
+![](<../../.gitbook/assets/image(154).png>)
 
 ### 2.4 镜像刻录 SD 卡 <a href="#yazuo" id="yazuo"></a>
 
@@ -40,7 +40,7 @@
 
 按下面截图中的操作，待刻录完成后，可以取出 SD 卡。
 
-![](<../../.gitbook/assets/image (191).png>)
+![](<../../.gitbook/assets/image(191).png>)
 
 ## 三、设备烧录 <a href="#gxgvh" id="gxgvh"></a>
 
@@ -48,7 +48,7 @@
 
 SD 卡要确保插入，可按压尝试。
 
-![](<../../.gitbook/assets/image (116).png>)
+![](<../../.gitbook/assets/image(116).png>)
 
 ### 3.2 通电、烧录 <a href="#ubkt7" id="ubkt7"></a>
 
@@ -56,7 +56,7 @@ SD 卡要确保插入，可按压尝试。
 
 烧录完成后，应该是蓝色灯常亮（此时 SD 卡未弹出）：
 
-![](<../../.gitbook/assets/image (108).png>)
+![](<../../.gitbook/assets/image(108).png>)
 
 ### 3.3 通电状态下按压弹出 SD 卡 <a href="#zjflq" id="zjflq"></a>
 

@@ -17,25 +17,25 @@ description: >-
 
 1. 进入首页点击“质押挖矿”或通过“支持网络”选择币种
 
-![](<../../.gitbook/assets/image (43).png>)
+![](<../../.gitbook/assets/image(43).png>)
 
 2\. 进入质押主页，选择**ETH**
 
-![下拉选择ETH](<../../.gitbook/assets/image (250).png>)
+![下拉选择ETH](<../../.gitbook/assets/image(250).png>)
 
 3\. 点击“连接钱包”，使用浏览器工具栏中的图标打开MetaMask面板，单击顶部工具栏中的网络下拉菜单，选择**以太坊主网**。
 
-![连接钱包](<../../.gitbook/assets/image (26).png>)
+![连接钱包](<../../.gitbook/assets/image(26).png>)
 
-![](<../../.gitbook/assets/image (285).png>)
+![](<../../.gitbook/assets/image(285).png>)
 
-![](<../../.gitbook/assets/image (60).png>)
+![](<../../.gitbook/assets/image(60).png>)
 
 ## **2.立即质押**
 
 点击**小**额质押中的“立即质押”按钮，进入质押页面。
 
-![](<../../.gitbook/assets/image (212).png>)
+![](<../../.gitbook/assets/image(212).png>)
 
 1. 设置质押数量，最少质押0.01ETH(补图)
 2.  信息确认(补图)
@@ -46,7 +46,7 @@ description: >-
 
 
 
-![输入质押数量](<../../.gitbook/assets/image (240).png>)
+![输入质押数量](<../../.gitbook/assets/image(240).png>)
 
 ## **3.审查协议**
 
@@ -54,9 +54,9 @@ description: >-
 
 **服务费：**收取您收益的10%作为服务费，用于维护节点运营。
 
-![阅读协议完成签名](<../../.gitbook/assets/image (21).png>)
+![阅读协议完成签名](<../../.gitbook/assets/image(21).png>)
 
-****![](<../../.gitbook/assets/image (42).png>)****
+****![](<../../.gitbook/assets/image(42).png>)****
 
 ## **4.确认并广播**
 
@@ -66,17 +66,17 @@ description: >-
 
 Gas费：当前交易支付给矿工的手续费，该费用为预估数据，具体以实际支付时为准。
 
-![核对质押信息，完成签名](<../../.gitbook/assets/image (211).png>)
+![核对质押信息，完成签名](<../../.gitbook/assets/image(211).png>)
 
-![完成签名](<../../.gitbook/assets/image (246).png>)
+![完成签名](<../../.gitbook/assets/image(246).png>)
 
-![不要关闭页面，等待交易处理](<../../.gitbook/assets/image (259).png>)
+![不要关闭页面，等待交易处理](<../../.gitbook/assets/image(259).png>)
 
 ## **5.存款交易成功**
 
 交易成功后，可点击查看数据进入总览页面查看数据，或使用交易ID在[Etherscan](https://etherscan.io/)查询交易信息。
 
-![交易完成](<../../.gitbook/assets/image (241).png>)
+![交易完成](<../../.gitbook/assets/image(241).png>)
 
 ## **6.查看质押进度**
 
@@ -86,11 +86,11 @@ Gas费：当前交易支付给矿工的手续费，该费用为预估数据，�
 
 通过查看“总览-资金”或“总览-操作历史”页面中的待生效、已生效查看进度，待生效表示这部分资金尚未产生收益，已生效表示这部分资金开始产生收益。
 
-![查看待生效数据](<../../.gitbook/assets/image (223).png>)
+![查看待生效数据](<../../.gitbook/assets/image(223).png>)
 
-![查看操作历史](<../../.gitbook/assets/image (44).png>)
+![查看操作历史](<../../.gitbook/assets/image(44).png>)
 
-![查看明细](<../../.gitbook/assets/image (274).png>)
+![查看明细](<../../.gitbook/assets/image(274).png>)
 
 ## **7.查看收益明细**
 
@@ -107,9 +107,9 @@ Gas费：当前交易支付给矿工的手续费，该费用为预估数据，�
 
 2. 可通过菜单“收益”查看每日收益，收益结算周期为00:00-24:00 (UTC+0)，国内用户次日早8点后可查看上一日收益。
 
-![总览页面](<../../.gitbook/assets/image (226).png>)
+![总览页面](<../../.gitbook/assets/image(226).png>)
 
-![收益明细](<../../.gitbook/assets/image (264).png>)
+![收益明细](<../../.gitbook/assets/image(264).png>)
 
 ## **8.查看验证节点**
 
@@ -119,5 +119,5 @@ Gas费：当前交易支付给矿工的手续费，该费用为预估数据，�
 
 可通过菜单“验证节点”查看节点信息，或通过验证节点公钥在[信标链](https://mainnet.beaconcha.in/)查询。
 
-![验证节点](<../../.gitbook/assets/image (273).png>)
+![验证节点](<../../.gitbook/assets/image(273).png>)
 

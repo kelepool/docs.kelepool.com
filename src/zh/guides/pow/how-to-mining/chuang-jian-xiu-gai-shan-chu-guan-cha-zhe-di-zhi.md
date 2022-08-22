@@ -4,8 +4,8 @@
 * 输入“备注”，例如备注该链接分享给哪个合作伙伴，点击保存。
 * 确定观察者地址，复制链接发送合作伙伴即可。
 
-![](<../../.gitbook/assets/image (54).png>)
+![](<../../.gitbook/assets/image(54).png>)
 
 ![](../../.gitbook/assets/image.png)
 
-![](<../../.gitbook/assets/image (83).png>)
+![](<../../.gitbook/assets/image(83).png>)

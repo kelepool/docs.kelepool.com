@@ -150,7 +150,109 @@ module.exports = {
           '/zh/guides/': [
             {
               text: '挖矿指南',
-              children: ['/zh/guides/README.md'],
+              children: [
+                {
+                  text: 'POS质押挖矿',
+                  children:[{
+                    text: '📗 新手入门',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pos/how-to-stake/cha-kan-shou-yi.md',
+                      '/zh/guides/pos/how-to-stake/cha-kan-yan-zheng-jie-dian.md',
+                      '/zh/guides/pos/how-to-stake/cha-kan-zhi-ya-jin-du.md',
+                      '/zh/guides/pos/how-to-stake/ru-he-jie-chu-zhi-ya.md',
+                      '/zh/guides/pos/how-to-stake/Stake.md',
+                      '/zh/guides/pos/how-to-stake/Staking.md',
+                      '/zh/guides/pos/how-to-stake/Supported networks.md',
+                    ]
+                  },{
+                    text: '🪙 ETH质押教程',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pos/eth/whale.md',
+                      '/zh/guides/pos/eth/micro.md',
+                    ]
+                  },
+                  {
+                    text: '❓ 常见问题',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pos/faq/eth-deposit-cli.md',
+                    ]
+                  },]
+                },
+                {
+                  text: 'POW矿池挖矿',
+                  children:[{
+                    text: '📗 新手入门',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pow/how-to-mining/account.md',
+                      '/zh/guides/pow/how-to-mining/cha-kan-shou-yi-zhi-fu-zhuang-tai.md',
+                      '/zh/guides/pow/how-to-mining/cha-kan-suan-li-kuang-ji-qing-kuang.md',
+                      '/zh/guides/pow/how-to-mining/chuang-jian-xiu-gai-shan-chu-guan-cha-zhe-di-zhi.md',
+                      '/zh/guides/pow/how-to-mining/collection.md',
+                      '/zh/guides/pow/how-to-mining/Supported currency.md',
+                      '/zh/guides/pow/how-to-mining/warning.md',
+                      '/zh/guides/pow/how-to-mining/yao-qing-hao-you-huo-qu-jiang-li.md',
+                      '/zh/guides/pow/how-to-mining/zhang-hu-zhu-ce-ji-deng-lu.md',
+                    ]
+                  },{
+                    text: '🪜 矿梯使用教程',
+                    link: '/zh/guides/pow/ladder.md',
+                  },
+                  {
+                    text: '🔑 匿名挖矿教程',
+                    link: '/zh/guides/pow/anonymous.md',
+                  },
+                  {
+                    text: '📈 币种挖矿教程',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pow/mining/BTC.md',
+                      '/zh/guides/pow/mining/CKB.md',
+                      '/zh/guides/pow/mining/ETC.md',
+                      '/zh/guides/pow/mining/ETH.md',
+                      '/zh/guides/pow/mining/HNS.md',
+                      '/zh/guides/pow/mining/KDA.md',
+                      '/zh/guides/pow/mining/LTC.md',
+                      '/zh/guides/pow/mining/STC.md',
+                    ]
+                  },
+                  {
+                    text: '💰 其他挖矿工具教程',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.md',
+                      '/zh/guides/pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md',
+                      '/zh/guides/pow/bixin/stcbox-ka-shua-liu-cheng.md',
+                      '/zh/guides/pow/bixin/stcbox1.md',
+                    ]
+                  },
+                  {
+                    text: '❓ 常见问题',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pow/faq/dns-shi-shi-mo-ru-he-xuan-ze-yi-ge-wen-ding-de-dns.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-ge-ge-bi-zhong-fei-shuai-shi-duo-shao.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-shi-mo-shi-jian-jie-suan-da-bi.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-shi-yong-na-zhong-shou-yi-mo-shi.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-ti-bi-di-zhi-ke-yi-yong-jiao-yi-suo-di-zhi-ma.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-ti-bi-qi-fueshi-duo-shao.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-ti-bi-shou-xu-fei-shi-duo-shao.md',
+                      '/zh/guides/pow/faq/ke-le-kuang-chi-zai-hai-wai-you-mei-you-wa-kuang-di-zhi.md',
+                      '/zh/guides/pow/faq/kuang-ti-lian-jie-bu-shang-shi-shi-mo-yuan-yin.md',
+                      '/zh/guides/pow/faq/lian-jie-shang-kuang-chi-hou-duo-jiu-ke-yi-kan-dao-suan-li.md',
+                      '/zh/guides/pow/faq/mei-dao-qi-fueke-yi-ti-bi-ma.md',
+                      '/zh/guides/pow/faq/ru-he-pei-zhi-qi-fuedu.md',
+                      '/zh/guides/pow/faq/vpn-he-kuang-ti-you-shi-mo-qu-bie.md',
+                      '/zh/guides/pow/faq/wei-shi-mo-ke-le-kuang-chi-wang-zhan-da-bu-kai.md',
+                      '/zh/guides/pow/faq/wei-shi-mo-wo-wa-de-bi-mei-you-zhi-fu.md',
+                    ]
+                  }
+                  ]
+                },
+              ],
             },
           ],
           '/zh/announcements/': [
@@ -207,6 +309,9 @@ module.exports = {
             useLinkSyntax: false
           }
         })
+    },
+    plugins: {
+      '@centerforopenscience/markdown-it-video': {}
     }
   },
   plugins: [

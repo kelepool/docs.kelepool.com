@@ -138,10 +138,10 @@ description: 本指南针对通过注册矿池账户进行挖矿的用户，如�
 
 2、前往可乐矿池的总览页面查看活跃矿机数量和算力是否正常，预估收益可能出现偏差，以第二天实际结算的收益为准。
 
-![](<../../.gitbook/assets/image (34).png>)
+![](<../../.gitbook/assets/image(34).png>)
 
 ## 6.检查收款信息
 
 登录后，选择挖矿子账户，点击“账户配置”，选择ETH，点击“收款设置”设置收款地址。需为EHH公链地址。[查看教程](../how-to-mining/collection.md)
 
-![](<../../.gitbook/assets/image (97).png>)
+![](<../../.gitbook/assets/image(97).png>)

@@ -2,7 +2,7 @@
 
 检测失败，可能存在以下原因：
 
-![检测示例](<../../.gitbook/assets/image (218).png>)
+![检测示例](<../../.gitbook/assets/image(218).png>)
 
 **使用流量卡用户：**
 

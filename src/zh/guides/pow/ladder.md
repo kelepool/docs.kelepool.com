@@ -38,13 +38,13 @@ description: 本教程适合各个币种
 
 **矿梯下载地址：**[**https://pay.minladder.com/#/visitorsPage?redirect=%2Faccount**](https://pay.minladder.com/#/visitorsPage?redirect=%2Faccount)
 
-![下载矿梯，选择第一个](<../.gitbook/assets/image (282).png>)
+![下载矿梯，选择第一个](<../.gitbook/assets/image(282).png>)
 
 1.官网下载后解压，点击exe文件运行矿梯
 
-![](<../.gitbook/assets/image (95).png>)
+![](<../.gitbook/assets/image(95).png>)
 
-![](<../.gitbook/assets/image (67).png>)
+![](<../.gitbook/assets/image(67).png>)
 
 ### b.矿梯设置
 
@@ -54,15 +54,15 @@ description: 本教程适合各个币种
 
 ![设置基本参数](../.gitbook/assets/1.png)
 
-![代理状态](<../.gitbook/assets/2 (1).png>)
+![代理状态](<../.gitbook/assets/2(1).png>)
 
-3.使用矿梯过程中，如果矿机与矿池通信延时过高 <mark style="color:orange;">或</mark> 观察者地址上矿机拒绝率过高，可以尝试切换其他线路。
+3.使用矿梯过程中，如果矿机与矿池通信延时过高或观察者地址上矿机拒绝率过高，可以尝试切换其他线路。
 
 ![切换线路](../.gitbook/assets/3.png)
 
-4.使用矿梯连接挖矿软件，同时配置多种币种挖矿时，需用<mark style="color:orange;">矿梯本地IP+本地端口</mark>代替直连时矿机配置中要求的矿池地址，因此需要注意端口数值的不同（以用户自己设备上的矿梯数值为准）
+4.使用矿梯连接挖矿软件，同时配置多种币种挖矿时，需用矿梯本地IP+本地端口代替直连时矿机配置中要求的矿池地址，因此需要注意端口数值的不同（以用户自己设备上的矿梯数值为准）
 
-![配置多币种](<../.gitbook/assets/image (40).png>)
+![配置多币种](<../.gitbook/assets/image(40).png>)
 
 ### c.软件设置
 
@@ -79,9 +79,9 @@ description: 本教程适合各个币种
 5. Worker填写模式为：可乐矿池里的子账号/用户名.编号，子账户/用户名即“矿池挖矿-切换账户”中显示的挖矿账户名，编号是区分矿机的编号，可按照自己需要自由编写，如有多台矿机，可以子账户名XXX为开头按XXX.01，XXX.02这个规律给机器编号方便管理。 然后点击应用就设置完毕了。(补图
 6. 如果是匿名挖矿/钱包地址挖矿，则子账户/用户名部分替换为所使用的链上地址即可，但需要注意不是所有矿机都支持使用地址。
 
-![蚂蚁矿机上对应的选项](<../.gitbook/assets/image (70).png>)
+![蚂蚁矿机上对应的选项](<../.gitbook/assets/image(70).png>)
 
-![挖矿软件要求的矿池URL填写本地IP+本地端口](<../.gitbook/assets/image (4).png>)
+![挖矿软件要求的矿池URL填写本地IP+本地端口](<../.gitbook/assets/image(4).png>)
 
 #### **ETH矿机设置**
 
@@ -90,15 +90,15 @@ description: 本教程适合各个币种
 1. 打开软件，选择主币为**ETH**，内核按照实际安装在矿机里的**内核软件**选择，主矿池选择**矿梯**，如选项中没有矿梯可以自己添加，**填好钱包**（如是邮箱注册用户这里填子账户名，匿名挖矿/钱包地址挖矿用户填写链上地址），**填好矿机名，**点击“尚未开始”就可以等待连接挖矿了。 其他类似软件大同小异，都是在矿梯设置好矿池币种开启代理的前提下，在软件中输入矿梯地址等信息连接挖矿
 2. 需注意的是，和很多worker/矿工名需要填写“**矿池账户.矿机编号**”模式的软件不一样，开源矿工将两者分开，**钱包即矿池账号/用户名**，**矿机名则是矿机编号**。
 
-![](<../.gitbook/assets/image (93).png>)
+![](<../.gitbook/assets/image(93).png>)
 
 3.如需手动添加矿梯地址，则选择**主矿池**，点击**添加**，填写矿池名称为**矿梯，矿池地址为stratum+tcp://矿梯首页的本地IP+本地端口的模式，由于个人情况不一样，请以自己设备上显示的参数为准，图示仅供参考。**
 
-![](<../.gitbook/assets/image (242).png>)
+![](<../.gitbook/assets/image(242).png>)
 
-![](<../.gitbook/assets/image (267).png>)
+![](<../.gitbook/assets/image(267).png>)
 
-![](<../.gitbook/assets/image (257).png>)
+![](<../.gitbook/assets/image(257).png>)
 
 ### d.查看算力及收益
 

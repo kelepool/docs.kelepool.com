@@ -1,6 +1,6 @@
 # 轻松矿工使用教程
 
-![轻松矿工首页](<../../.gitbook/assets/image (113).png>)
+![轻松矿工首页](<../../.gitbook/assets/image(113).png>)
 
 矿工名：名称自定义即可，没什么特殊要求。（例如：bixinxq116.001）
 

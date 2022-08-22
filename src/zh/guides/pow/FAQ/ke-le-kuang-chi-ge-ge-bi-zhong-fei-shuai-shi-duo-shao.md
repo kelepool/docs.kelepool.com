@@ -2,4 +2,4 @@
 
 每个币种费率不同，您可前往“首页-支持的币种”查看
 
-![](<../../.gitbook/assets/image (86).png>)
+![](<../../.gitbook/assets/image(86).png>)

@@ -26,8 +26,8 @@ CKB是Nervos的链上代币，挖矿算法为Eaglesong，支持Toddminer Combo�
 2. 通过矿机IP查找软件（如路由器管理软件或IP Report等）获取矿机IP，
 3. 在电脑浏览器中输入矿机IP进行设置，或使用各类挖矿软件完成设置，具体流程参照各矿机官方给出的教程。
 
-* 蚂蚁矿机教程地址：[<mark style="background-color:yellow;">`https://service.bitmain.com.cn/support/downloa`</mark>`d`](https://service.bitmain.com.cn/support/download)``
-* 金贝矿机教程地址：[<mark style="background-color:blue;"><mark style="background-color:yellow;">https://www.goldshell.com/tutorial-profrssional-edition/<mark style="background-color:yellow;"></mark>](https://www.goldshell.com/tutorial-profrssional-edition/)<mark style="background-color:blue;"><mark style="background-color:yellow;"><mark style="background-color:yellow;"></mark>
+* 蚂蚁矿机教程地址：[https://service.bitmain.com.cn/support/download](https://service.bitmain.com.cn/support/download)``
+* 金贝矿机教程地址：[https://www.goldshell.com/tutorial-profrssional-edition/](https://www.goldshell.com/tutorial-profrssional-edition/)
 
 ### b. 填写挖矿地址
 
@@ -77,4 +77,4 @@ CKB是Nervos的链上代币，挖矿算法为Eaglesong，支持Toddminer Combo�
 
 2、前往可乐矿池的总览页面查看活跃矿机数量和算力是否正常，预估收益可能出现偏差，以第二天实际结算的收益为准。
 
-![](<../../.gitbook/assets/image (10).png>)
+![](<../../.gitbook/assets/image(10).png>)

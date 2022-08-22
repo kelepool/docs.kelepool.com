@@ -24,19 +24,19 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 1. 进入首页点击“质押挖矿”或通过导航"质押挖矿"选择ETH
 
-![](<../../.gitbook/assets/image (89).png>)
+![](<../../.gitbook/assets/image(89).png>)
 
 2\. 进入质押主页，选择**ETH**
 
-![下拉选择ETH](<../../.gitbook/assets/image (265).png>)
+![下拉选择ETH](<../../.gitbook/assets/image(265).png>)
 
 3\. 点击“连接钱包”，使用浏览器工具栏中的图标打开MetaMask面板，单击顶部工具栏中的网络下拉菜单，选择**以太坊主网**。
 
-![连接钱包](<../../.gitbook/assets/image (230).png>)
+![连接钱包](<../../.gitbook/assets/image(230).png>)
 
-![](<../../.gitbook/assets/image (222).png>)
+![](<../../.gitbook/assets/image(222).png>)
 
-****![](<../../.gitbook/assets/image (286).png>)****
+****![](<../../.gitbook/assets/image(286).png>)****
 
 ## **2.立即质押**
 
@@ -49,7 +49,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
    * 服务费：每生成1个验证节点收取0.05ETH服务费。
    * 预估年利率：Ethereum主网年利率，该数据为预估值，与质押率成反比。具体是实际收益率为准。
 
-![输入质押数量，确认质押信息](<../../.gitbook/assets/image (37).png>)
+![输入质押数量，确认质押信息](<../../.gitbook/assets/image(37).png>)
 
 ## **3.上传提款凭证**
 
@@ -64,15 +64,15 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 1. 点击上传提款凭证，该凭证中包含与提款凭证相关的公钥信息，不包含任何私钥，可以放心上传。
 2. 点击下一步，进入审查协议页面。
 
-![点击此处上传提款凭证](<../../.gitbook/assets/image (220).png>)
+![点击此处上传提款凭证](<../../.gitbook/assets/image(220).png>)
 
-![上传成功，点击下一步](<../../.gitbook/assets/image (20).png>)
+![上传成功，点击下一步](<../../.gitbook/assets/image(20).png>)
 
-![签署协议](<../../.gitbook/assets/image (1).png>)
+![签署协议](<../../.gitbook/assets/image(1).png>)
 
-![完成签名](<../../.gitbook/assets/image (254).png>)
+![完成签名](<../../.gitbook/assets/image(254).png>)
 
-![确认质押信息](<../../.gitbook/assets/image (280).png>)
+![确认质押信息](<../../.gitbook/assets/image(280).png>)
 
 **方法二：使用Ledger钱包**
 
@@ -86,17 +86,17 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 2\. 点击“获取ETH2提款凭证”，通过Ledger钱包完成确认操作，生成提款凭证用于后续提款。
 
-![获取ETH2提款凭证](<../../.gitbook/assets/image (271).png>)
+![获取ETH2提款凭证](<../../.gitbook/assets/image(271).png>)
 
-![ 按提示在Ledger钱包确认](<../../.gitbook/assets/image (289).png>)
+![ 按提示在Ledger钱包确认](<../../.gitbook/assets/image(289).png>)
 
 3\. 点击“验证信息”通过Ledger钱包完成信息验证，该流程为验证您Ledger钱包中显示的ETH2提款公钥及ETH2提款凭证信息是否与平台显示的信息一致。
 
-![点击验证信息](<../../.gitbook/assets/image (235).png>)
+![点击验证信息](<../../.gitbook/assets/image(235).png>)
 
-![通过钱包验证](<../../.gitbook/assets/image (276).png>)
+![通过钱包验证](<../../.gitbook/assets/image(276).png>)
 
-![验证成功，点击下一步](<../../.gitbook/assets/image (278).png>)
+![验证成功，点击下一步](<../../.gitbook/assets/image(278).png>)
 
 4.点击下一步，进入审查协议页面。
 
@@ -106,7 +106,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 审查协议信息，确认信息无误，通过MetaMask签名。
 
-![签署协议](<../../.gitbook/assets/image (48).png>)
+![签署协议](<../../.gitbook/assets/image(48).png>)
 
 ****
 
@@ -123,7 +123,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 * ETH1存款地址：您在质押时使用的钱包地址。
 * ETH2提款凭证：您通过官方CLI工具生成或Ledger钱包上传的提款凭证，确认该信息与上传信息一致。
 
-![](<../../.gitbook/assets/image (196).png>)
+![](<../../.gitbook/assets/image(196).png>)
 
 确认以上信息无误，点击“确认质押并签名”，通过MetaMask完成签名。该交易上传，等待矿工打包，受交易排队影响，该过程需要几分钟到几小时不等；您可使用钱包地址在[Etherscan](https://etherscan.io/)查看您当前交易进度。
 
@@ -131,7 +131,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 交易成功后，可点击查看数据进入总览页面查看数据，或使用交易ID在[Etherscan](https://etherscan.io/)查询交易信息。
 
-![](<../../.gitbook/assets/image (55).png>)
+![](<../../.gitbook/assets/image(55).png>)
 
 ## **7.查看质押进度**
 
