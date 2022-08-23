@@ -310,9 +310,6 @@ module.exports = {
           }
         })
     },
-    plugins: {
-      '@centerforopenscience/markdown-it-video': {}
-    }
   },
   plugins: [
     registerComponentsPlugin({
