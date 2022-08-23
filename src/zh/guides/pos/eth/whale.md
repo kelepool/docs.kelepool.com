@@ -5,22 +5,20 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 # 🔑 ETH大额质押教程
 
 ## **使用deposit文件上传提款凭证质押流程**
-
-{% embed url="https://www.loom.com/share/5122713ae470482aa924915996a957a0" %}
+<center>
+<iframe width="560" height="315" src="https://youtu.be/eeqLyvS-mzk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 使用deposit文件上传提款凭证质押流程
-{% endembed %}
 
 ## **使用Ledger钱包上传提款凭证质押流程**
-
-{% embed url="https://www.loom.com/share/74154a737a8e48bf96225c5f4e26f427" %}
+<center>
+<iframe width="560" height="315" src="https://youtu.be/1l22pi0MPkc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 使用Ledger钱包传款凭证质押流程
-{% endembed %}
 
 ## **1.选择币种连接钱包**
 
-{% hint style="info" %}
 确认质押前请先安装MetaMask钱包，通过[MetaMask](https://metamask.io/faqs/)官网查看安装教程
-{% endhint %}
 
 1. 进入首页点击“质押挖矿”或通过导航"质押挖矿"选择ETH
 
@@ -57,9 +55,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 **方法一：使用官方工具上传**
 
-{% hint style="info" %}
-使用ETH2.0官方工具CLI生成deposit\*.json文件，生成方法[查看教程](https://hackmd.io/urta4YBdTrqSaNqiHgP7Cw)。
-{% endhint %}
+使用ETH2.0官方工具CLI生成deposit\*.json文件，生成方法[查看教程](https://docs.kelepool.com/zh/guides/pos/FAQ/eth-deposit-cli.html)。
 
 1. 点击上传提款凭证，该凭证中包含与提款凭证相关的公钥信息，不包含任何私钥，可以放心上传。
 2. 点击下一步，进入审查协议页面。
@@ -76,11 +72,9 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 **方法二：使用Ledger钱包**
 
-{% hint style="info" %}
 您的Ledger固件需更新至最新版本，Nano X更新至1.2.4-5或以上版本。Nano S更新至2.0.0或以上版本。Ethereum App要求1.6.1或以上版本。
-{% endhint %}
 
-1. 通过USB连接Ledger钱包，并打开Ethereum App应用程序**.**
+1. 通过USB连接Ledger钱包，并打开Ethereum App应用程序
 
 ****
 
@@ -135,28 +129,22 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 ## **7.查看质押进度**
 
-{% hint style="info" %}
 存款交易完成后**，**受交易排队影响，不会立即生效，以实际生效时间为准。
-{% endhint %}
 
-1. 通过查看“总览-资金”或“总览-操作历史”页面中的待生效、已生效查看进度，待生效表示这部分资金尚未产生收益，已生效表示这部分资金开始产生收益。(补图)
+1. 通过查看“总览-资金”或“总览-操作历史”页面中的待生效、已生效查看进度，待生效表示这部分资金尚未产生收益，已生效表示这部分资金开始产生收益。
 
 ## **8.查看收益明细**
 
-{% hint style="info" %}
 存款交易完成后不会立即产生收益，待质押资金生效后即可产生收益，可通过“总览-收益”查看收益数据，或菜单“收益”查看收益明细
-{% endhint %}
 
-1. “总览-收益”为总收益数据，可查看累计收益、年利率、质押时长。也可按小时或天查看收益趋势。(补图)
+1. “总览-收益”为总收益数据，可查看累计收益、年利率、质押时长。也可按小时或天查看收益趋势。
    * 累计收益：首次质押生效至昨天的收益金额
    * 年利率：您获得收益的年利率
    * 质押时长：首次质押生效至当前的质押时长
-2. 可通过菜单“收益”查看每日收益，收益结算周期为00:00-24:00 (UTC+0)，国内用户次日早8点后可查看上一日收益。(补图)
+2. 可通过菜单“收益”查看每日收益，收益结算周期为00:00-24:00 (UTC+0)，国内用户次日早8点后可查看上一日收益。
 
 ## **9.查看验证节点**
 
-{% hint style="info" %}
 存款交易成功后节点不会立即生效，需等待一段时间，具体生效时间受交易排队影响，以实际生效时间为准。
-{% endhint %}
 
-可通过菜单“验证节点”查看节点信息，或通过验证节点公钥在[信标链](https://mainnet.beaconcha.in/)查询。(补图)
+可通过菜单“验证节点”查看节点信息，或通过验证节点公钥在[信标链](https://mainnet.beaconcha.in/)查询。
