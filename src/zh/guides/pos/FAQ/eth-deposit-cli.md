@@ -3,13 +3,11 @@
 ### 官方工具下载地址：[https://github.com/ethereum/staking-deposit-cli](https://github.com/ethereum/staking-deposit-cli)
 
 
+**创建新的助记词及提款凭证**
 
-{% embed url="https://www.loom.com/share/f0904e4f1fe041b68d7211aad852fe28" %}
-创建新的助记词及提款凭证
-{% endembed %}
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F35l1XgrooM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-{% embed url="https://www.loom.com/share/5a9369de486e4c0aac3f67f9fa19a08c" %}
-使用已有助记词创建提款凭证
-{% endembed %}
+**使用已有助记词创建提款凭证**
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w8mgB7O4sfU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
