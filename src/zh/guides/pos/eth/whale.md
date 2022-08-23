@@ -5,11 +5,11 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 # 🔑 ETH大额质押教程
 
 ## **使用deposit文件上传提款凭证质押流程**
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=KHWuTBmT1oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eeqLyvS-mzk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 使用deposit文件上传提款凭证质押流程
 
 ## **使用Ledger钱包上传提款凭证质押流程**
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=KHWuTBmT1oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1l22pi0MPkc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 使用Ledger钱包传款凭证质押流程
 
 ## **1.选择币种连接钱包**
