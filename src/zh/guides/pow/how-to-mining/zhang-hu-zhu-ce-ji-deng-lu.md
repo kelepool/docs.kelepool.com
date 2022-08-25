@@ -1,8 +1,6 @@
 # 账户注册及登录
 
-{% hint style="info" %}
-**网站地址(需VPN代理，请开全局模式)：**[**https://www.kelepool.com**](https://www.kelepool.com/)****
-{% endhint %}
+**网站地址(需VPN代理，请开全局模式)：**[**https://www.kelepool.com**](https://www.kelepool.com/)
 
 #### **注册**
 
