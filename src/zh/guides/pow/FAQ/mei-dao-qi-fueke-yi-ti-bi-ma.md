@@ -6,4 +6,4 @@
 
 （注意：提款金额不足gas费时无法提现；金额未到平台起付额时，用户需要自行承担手续费）
 
-{% embed url="https://youtu.be/Bn8y40Iq-yk" %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Bn8y40Iq-yk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
