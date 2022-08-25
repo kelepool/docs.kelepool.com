@@ -1,10 +1,10 @@
 ---
 description: >-
-  This guide is a beginner's guide on how to use the mining features of Kele
+  This guide is a beginner's guide on how to use the staking features of Kele
   Pool.
 ---
 
-# Beginner Guide
+# Beginner guide
 
 **Official Telegram Group:** [**https://t.me/kelepoolcom**](https://t.me/kelepoolcom)
 
