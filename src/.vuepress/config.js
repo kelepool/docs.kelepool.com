@@ -77,7 +77,33 @@ module.exports = {
           '/en/guides/': [
             {
               text: 'Guides',
-              children: ['/en/guides/README.md'],
+              children: [
+              {
+                    text: '💰Staking',
+                    collapsible: true,
+                    children:[
+                      '/en/guides/staking/beginner-guide/stake-amount-32-eth.md',
+                      '/en/guides/staking/beginner-guide/stake-amount-32-eth-1.md',
+                    ]
+                  }, {
+                    text: '⛏Mining',
+                    collapsible: true,
+                    children:[
+                      '/en/guides/pow/beginner-guide/1account-registration-and-login.md',
+                      '/en/guides/pow/beginner-guide/2add-and-change-sub-accounts.md',
+                      '/en/guides/pow/beginner-guide/3check-earnings-and-payment-status.md',
+                      '/en/guides/pow/beginner-guide/4check-hashrate-and-worker-status.md',
+                      '/en/guides/pow/beginner-guide/5create-edit-and-delete-observer-addresses.md',
+                      '/en/guides/pow/beginner-guide/7set-hashrate-alert.md',
+                      '/en/guides/pow/beginner-guide/8set-payment-address.md',
+                      '/en/guides/pow/beginner-guide/9supported-currencies-tokens.md',
+                      '/en/guides/pow/beginner-guide/6invite-friends-to-get-rewards.md',
+                    ]
+                  },{
+                    text: '🔐Anonymous Mining',
+                    link: '/en/guides/anonymous-mining.md',
+                  },
+              ],
             },
           ],
           '/en/announcements/': [
