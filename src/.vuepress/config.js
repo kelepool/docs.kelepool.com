@@ -109,7 +109,9 @@ module.exports = {
           '/en/announcements/': [
             {
               text: 'Announcements',
-              children: ['/en/announcements/README.md'],
+              children: ['/en/announcements/README.md',
+                         '/en/announcements/20220831.md'
+                        ],
             },
           ],
           '/en/wiki/': [
@@ -284,7 +286,9 @@ module.exports = {
           '/zh/announcements/': [
             {
               text: '公告',
-              children: ['/zh/announcements/README.md'],
+              children: ['/zh/announcements/README.md',
+                         '/zh/announcements/20220831.md'
+                        ],
             },
           ],
           '/zh/wiki/': [
