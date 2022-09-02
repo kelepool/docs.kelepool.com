@@ -128,7 +128,7 @@ module.exports = {
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
                 '/en/developers/ethereum/api/README.md',
-                '/en/developers/ethereum/api/OneKey.md',
+                '/en/developers/ethereum/api/Hardware.md',
               ]
             },
             {
@@ -305,7 +305,7 @@ module.exports = {
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
-                '/zh/developers/ethereum/api/OneKey.md',
+                '/zh/developers/ethereum/api/Hardware.md',
               ]
             },
             {

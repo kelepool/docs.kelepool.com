@@ -1,19 +1,21 @@
-# Take OneKey as an example to integrate interface
+# How to use hardware wallet to integrate kelepool?
 
-First of all, OneKey needs to help users to judge, or let users choose the following two pledge methods. If OneKey decides to let users choose the pledge method, it needs to provide two pledge entries (large amount and small amount) and inform the user of the difference.
+First of all, Hardware wallet needs to help users to judge, or let users choose the following two pledge methods. If Hardware wallet decides to let users choose the pledge method, it needs to provide two pledge entries (large amount and small amount) and inform the user of the difference.
 
-If OneKey wants to automatically help users choose the pledge method, it can also judge whether the pledge amount is greater than 32 when the user pledges.
+If Hardware wallet wants to automatically help users choose the pledge method, it can also judge whether the pledge amount is greater than 32 when the user pledges.
 
 - Large amount pledge: The user manages the withdrawal certificate by himself, the minimum support is 32ETH, the maximum support is 3200ETH, and the pledge amount must be an integer multiple of 32.
 - Small amount pledge: Coke platform multi-signature management withdrawal certificate, the minimum support is 0.01ETH, and the maximum support is 100000000000ETH.
 
-Ropsten contract:[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
+Mainnet contract：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
+
+Ropsten contract：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
 
 ## Stake ≥ 32 ETH
 
 ### Step 1: Transfer ETH1 address to ETH2 withdrawal certificate
 
-OneKey needs to use the officially provided [ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149) method to convert the user's ETH1 deposit address into an ETH2 withdrawal certificate. The specific conversion method is as follows:
+Hardware wallet needs to use the officially provided [ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149) method to convert the user's ETH1 deposit address into an ETH2 withdrawal certificate. The specific conversion method is as follows:
 
 - ETH2 withdrawal voucher = `0x01 + 11 00 + ETH1 address with 0x removed`
 
@@ -39,8 +41,8 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
     "payee_addr":"0xA49F98416aa4B158c2e752FD8031Fb295D330B22", 
     // the pledged token (eth)
     "token":"eth",
-    // The data source is convenient for business cooperation statistics (eg: OneKey)
-    "source":"OneKey"
+    // The data source is convenient for business cooperation statistics (eg: Hardware wallet)
+    "source":"Hardware wallet"
 }
 ```
 
@@ -49,7 +51,7 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
 ##### [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
 This interface is used to generate parameters for large-amount pledge of the contract, and the converted ETH withdrawal certificate needs to be passed in. Since the large-amount pledge is that the user controls the withdrawal key, but the verification node needs the Kele Pool to operate, it is necessary to call this interface to generate some parameters required by the operation node. When the user pledges, the verification node parameters must be submitted to the ETH2.0 official deposit contract.
 
-There is a `count` in the requested parameter here, which is calculated by the user's pledge amount. There are calculation examples below. Here, `2` is passed in, so two pieces of verification node information are returned. You may find that their `withdrawal certificate` is the same. In the future, users can withdraw the pledge amount and income of all nodes through a withdrawal certificate. Since users may pass in 35, 100, and 89, which are not multiples of 32, when staking, Onekey needs to calculate the effective number of pledges, and only allows users to pledge multiples of 32.
+There is a `count` in the requested parameter here, which is calculated by the user's pledge amount. There are calculation examples below. Here, `2` is passed in, so two pieces of verification node information are returned. You may find that their `withdrawal certificate` is the same. In the future, users can withdraw the pledge amount and income of all nodes through a withdrawal certificate. Since users may pass in 35, 100, and 89, which are not multiples of 32, when staking, Hardware wallet needs to calculate the effective number of pledges, and only allows users to pledge multiples of 32.
 
  - Number of validating nodes = `(The amount of ETH pledged by users - (the amount of ETH pledged by users % 32)) / 32`
  - Effective pledge amount = `(user pledged ETH amount - (user pledged ETH amount % 32))`
@@ -179,8 +181,8 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
     "payee_addr":"0xA49F98416aa4B158c2e752FD8031Fb295D330B22", 
     // the pledged token (eth)
     "token":"eth",
-    // The data source is convenient for business cooperation statistics (eg: OneKey)
-    "source":"OneKey"
+    // The data source is convenient for business cooperation statistics (eg: Hardware wallet)
+    "source":"Hardware wallet"
 }
 ```
 

@@ -1,19 +1,21 @@
-# 以OneKey为例集成质押接口
+# 硬件钱包或APP如何集成质押接口？
 
-首先OneKey需要帮助用户判断、或者让用户选择下边两种质押方式。如果OneKey决定让用户选择质押方式，就需要提供两个质押入口（大额、小额），并告知用户区别。
+首先钱包APP需要帮助用户判断、或者让用户选择下边两种质押方式。如果钱包APP决定让用户选择质押方式，就需要提供两个质押入口（大额、小额），并告知用户区别。
 
-如果OneKey希望自动帮助用户选择质押方式，也可以在用户质押时候判断质押数量是否大于32，如果大于32则走大额质押流程，反之则走小额质押流程。
+如果钱包APP希望自动帮助用户选择质押方式，也可以在用户质押时候判断质押数量是否大于32，如果大于32则走大额质押流程，反之则走小额质押流程。
 
 - 大额质押：用户自己管理提款凭证，最低支持32ETH，最大支持3200ETH，质押量须是32的整数倍。
 - 小额质押：可乐平台多签管理提款凭证，最低支持0.01ETH，最大支持100000000000ETH。
 
-Ropsten测试网代理合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
+Mainnet主网合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
+
+Ropsten测试网合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
 
 ## 大额质押
 
 ### 第一步：ETH1地址转ETH2提款凭证
 
-OneKey需要使用官方提供的[ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将用户ETH1存款地址转换成ETH2的提款凭证，注意转换后的提款凭证都是小写字母，具体转换方式如下：
+钱包APP需要使用官方提供的[ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将用户ETH1存款地址转换成ETH2的提款凭证，注意转换后的提款凭证都是小写字母，具体转换方式如下：
 
 - ETH2提款凭证 =  `0x01 + 11个00 + 去掉0x的ETH1地址`
 
@@ -38,8 +40,8 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
     "payee_addr":"0xA49F98416aa4B158c2e752FD8031Fb295D330B22", 
     // 质押代币（eth）
     "token":"eth",
-    // 数据来源便于商务合作统计（例如：OneKey）
-    "source":"OneKey"
+    // 数据来源便于商务合作统计（例如：钱包APP）
+    "source":"钱包APP"
 }
 ```
 
@@ -49,7 +51,7 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
 
 此接口用于合约大额质押的参数生成，需要传入上面的转换好的ETH提款凭证。由于大额质押是用户自己控制提款密钥，但验证节点需要可乐矿池运营，因此需要调用此接口生成运营节点需要的一些参数，用户质押时需将验证节点参数一起提交至ETH2.0官方存款合约。
 
-这里请求的参数里有个`count`，是通过用户质押量计算出来的，下边有计算例子。这里传入了`2`因此返回了两条验证节点信息，你可能会发现他们的`提款凭证`都是一样的，未来用户可以通过一个提款凭证对所有节点质押数量和收益提款。由于用户可能在质押时传入了35、100、89这种并非32的倍数数量，因此Onekey需要计算一下有效质押数量，只允许用户质押32的倍数数量。
+这里请求的参数里有个`count`，是通过用户质押量计算出来的，下边有计算例子。这里传入了`2`因此返回了两条验证节点信息，你可能会发现他们的`提款凭证`都是一样的，未来用户可以通过一个提款凭证对所有节点质押数量和收益提款。由于用户可能在质押时传入了35、100、89这种并非32的倍数数量，因此钱包APP需要计算一下有效质押数量，只允许用户质押32的倍数数量。
 
  - 验证节点数量 =`（用户质押ETH数量 - （用户质押ETH数量 % 32））/ 32`
  - 有效质押数量 = `（用户质押ETH数量 - （用户质押ETH数量 % 32））`
@@ -177,8 +179,8 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
     "payee_addr":"0xA49F98416aa4B158c2e752FD8031Fb295D330B22", 
     // 质押代币（eth）
     "token":"eth",
-    // 数据来源便于商务合作统计（例如：OneKey）
-    "source":"OneKey"
+    // 数据来源便于商务合作统计（例如：钱包APP）
+    "source":"钱包APP"
 }
 ```
 
