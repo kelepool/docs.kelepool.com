@@ -294,7 +294,13 @@ module.exports = {
           '/zh/wiki/': [
             {
               text: '百科',
-              children: ['/zh/wiki/platform.md','/zh/wiki/pos/staking-intro.md','/zh/wiki/pos/staking-guide.md','/zh/wiki/pos/staking-difference.md'],
+              children: [
+                '/zh/wiki/platform.md',
+                '/zh/wiki/pos/staking-intro.md',
+                '/zh/wiki/pos/staking-guide.md',
+                '/zh/wiki/pos/staking-difference.md',
+                '/zh/wiki/pos/knowledge.md'
+              ],
             },
           ],
           '/zh/developers/': [
@@ -305,7 +311,7 @@ module.exports = {
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
-                '/zh/developers/ethereum/api/Hardware.md',
+                '/zh/developers/ethereum/api/Hardware.md'
               ]
             },
             {
