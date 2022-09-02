@@ -7,7 +7,7 @@
 硬件钱包要实现ETH2.0质押主要有两种方式：
 
 - 钱包内集成[EIP2334:BLS12-381](https://eips.ethereum.org/EIPS/eip-2334#eth2-specific-parameters)算法，从钱包内生成ETH2.0提款凭证（复杂）
-- 使用官方提供的[ETH1_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将ETH1转换为ETH2提款凭证（简单）
+- 使用官方提供的[ETH1_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将ETH1地址转换为ETH2提款凭证（简单）
 
 经过我们深入调研发现，目前市面上所有支持生成ETH地址的硬件钱包，基本都支持第二种方式。受限于硬件性能等其他方面的缘故，可能只有Ledger硬件钱包支持第一种方式。为了更大的兼容性，我们接下就看看如何使用第二种简单的方式让钱包支持ETH质押。
 
