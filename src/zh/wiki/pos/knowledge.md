@@ -23,6 +23,8 @@
 
 可乐矿池作为一站式质押管理平台，拥有完善安全处理机制，健全的渠道质押分红的方案。同时也为开发人员提供了丰富的数据统计API，大幅度降低了接入ETH质押的难度。智能合约经过慢雾安全人员审计，无需担心资金安全。同时还有便捷的技术支持。
 
+目前可乐矿池已经集成了（OneKey、Ledger、ETH Staking CLI、Metamask）等方式进行ETH2.0质押。
+
 可乐矿池官方网站：[官方网站](https://kelepool.com/pos/eth/mining)
 
 可乐矿池开发文档：[开发文档](https://docs.kelepool.com/zh/)
