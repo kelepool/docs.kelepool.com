@@ -52,7 +52,7 @@ Ropsten质押合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://ether
 
 #### 第一步：ETH1地址转ETH2提款凭证
 
-钱包APP需要使用官方提供的[ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将用户ETH1存款地址转换成ETH2的提款凭证，注意转换后的提款凭证都是小写字母，具体转换方式如下：
+钱包APP需要使用官方提供的[ETH1_ADDRESS_WITHDRAWAL_PREFIX](https://github.com/ethereum/consensus-specs/pull/2149)方式，将用户ETH1存款地址转换成ETH2的提款凭证，注意转换后的提款凭证都是小写字母，待ETH2.0提款功能上线后，用户将使用此地址的签名进行提款，请务必确保转换正确，具体转换方式如下：
 
 - ETH2提款凭证 =  `0x01 + 11个00 + 去掉0x的ETH1地址`
 
@@ -64,8 +64,6 @@ ETH2提款凭证：0x0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219b
 #### 第二步：请求可乐矿池API
 
 ##### （1）用户地址注册
-
-######  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
 此接口主要用于统计第三方各个用户的质押数量等，只需在用户第一次质押的时候调用，当然你也可以在每次用户质押时候调用。
 
@@ -83,8 +81,6 @@ POST https://test-api.kelepool.com/user/v2/anonymouslogin
 ```
 
 ##### （2）生成合约大额质押需要的参数
-
-###### [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
 
 此接口用于合约大额质押的参数生成，需要传入上面的转换好的ETH提款凭证。由于大额质押是用户自己控制提款密钥，但验证节点需要可乐矿池运营，因此需要调用此接口生成运营节点需要的一些参数，用户质押时需将验证节点参数一起提交至ETH2.0官方存款合约。
 
@@ -203,8 +199,6 @@ console.log(`大额质押交易哈希: ${tx.hash}`);
 ### 如何集成小额质押？
 
 #### 第一步：用户地址注册
-
-#####  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
 此接口主要用于统计第三方各个用户的质押数量等，只需在第一次使用可乐矿池API时调用，当然你也可以多次调用。
 
