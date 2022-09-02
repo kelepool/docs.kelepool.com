@@ -27,6 +27,8 @@
 
 可乐矿池开发文档：[开发文档](https://docs.kelepool.com/zh/)
 
+可乐矿池技术支持：[Telegram技术支持](https://t.me/kelepoolcom)
+
 Mainnet质押合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
 Ropsten质押合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
