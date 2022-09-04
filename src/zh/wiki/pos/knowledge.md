@@ -183,13 +183,11 @@ docker run -it \
 
 ```
 
-这里要注意将验证者密钥存放在/root/validator_keys中，docker会自动导入你的密钥。你还可以使用以下命令来查看docker运行的是否正常：
-
-查看日志：docker logs 容器ID
-
-查看容器：docker ps 
+这里要注意将验证者密钥存放在/root/validator_keys中，docker会自动导入你的密钥。
 
 最终我们就可以在官方的验证者节点浏览器上查询节点状态：
+
+[https://beaconcha.in/validator/验证者节点公钥](https://beaconcha.in/validator/800003d8af8aa481646da46d0d00ed2659a5bb303e0d88edf468abc1259a1f23ccf12eaeaa3f80511cfeaf256904a72a)
 
 ## 归纳总结
 
