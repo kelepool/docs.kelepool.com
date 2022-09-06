@@ -117,7 +117,13 @@ module.exports = {
           '/en/wiki/': [
             {
               text: 'Wiki',
-              children: ['/en/wiki/pos/staking-intro.md','/en/wiki/pos/staking-guide.md','/en/wiki/pos/staking-difference.md'],
+              children: ['/en/wiki/pos/staking-intro.md',
+                         '/en/wiki/pos/staking-guide.md',
+                         '/en/wiki/pos/staking-difference.md',
+                         '/en/wiki/pos/kelepool.md',
+                         '/en/wiki/pos/merge.md',
+                         '/en/wiki/pos/fork.md'
+                        ],
             },
           ],
           '/en/developers/': [
@@ -299,7 +305,11 @@ module.exports = {
                 '/zh/wiki/pos/staking-intro.md',
                 '/zh/wiki/pos/staking-guide.md',
                 '/zh/wiki/pos/staking-difference.md',
-                '/zh/wiki/pos/knowledge.md'
+                '/zh/wiki/pos/knowledge.md',
+                '/zh/wiki/pos/kelepool.md',
+                '/zh/wiki/pos/merge.md',
+                '/zh/wiki/pos/fork.md',
+                '/zh/wiki/pos/aleo.md'
               ],
             },
           ],
