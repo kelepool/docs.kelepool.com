@@ -24,10 +24,6 @@ description: 本指南针对通过注册矿池账户进行挖矿的用户，如�
 
 ## **3. 配置挖矿设备(不使用矿梯)**
 
-{% hint style="info" %}
-**GPU(NVIDIA或AMD)**
-{% endhint %}
-
 ### **a. 常用软件**
 
 **常用ETH挖矿软件：**
