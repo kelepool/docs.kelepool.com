@@ -24,6 +24,7 @@
   * [🪙 STC挖矿教程](pow/Mining/STC.md)
   * [🪙 ETC挖矿教程](pow/Mining/ETC.md)
 * [💰 其他挖矿工具教程](pow/bixin/README.md)
+  * [hiveOS挖矿教程](pow/bixin/hiveos-wa-kuang-jiao-cheng.md)
   * [一文读懂STC-BOX挖矿教程](pow/bixin/stcbox1.md)
   * [STC-BOX 卡刷流程](pow/bixin/stcbox-ka-shua-liu-cheng.md)
   * [MinerOS挖矿教程](pow/bixin/mineros-wa-kuang-jiao-cheng.md)
