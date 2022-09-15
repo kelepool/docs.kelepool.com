@@ -12,6 +12,10 @@
   </component>
   <component name="ProjectId" id="2EkejqWXn5gRF4cPDxCpOnCgCAJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
