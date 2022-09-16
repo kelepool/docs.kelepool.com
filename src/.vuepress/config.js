@@ -251,12 +251,14 @@ module.exports = {
                       '/zh/guides/pow/mining/KDA.md',
                       '/zh/guides/pow/mining/LTC.md',
                       '/zh/guides/pow/mining/STC.md',
+                      '/zh/guides/pow/mining/RVN.md',
                     ]
                   },
                   {
                     text: '💰 其他挖矿工具教程',
                     collapsible: true,
                     children:[
+                      '/zh/guides/pow/bixin/hiveos-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md',
                       '/zh/guides/pow/bixin/stcbox-ka-shua-liu-cheng.md',
