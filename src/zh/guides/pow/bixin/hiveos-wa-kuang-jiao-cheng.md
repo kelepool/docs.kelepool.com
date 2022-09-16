@@ -31,7 +31,7 @@
 ![](<../../.gitbook/assets/image(299).png>)
 ![](<../../.gitbook/assets/image(300).png>)
 
-3.选择新增的ETC挖矿飞行表，点击应用
+3.选择新增的ETC挖矿飞行表，点击**应用**
 ![](<../../.gitbook/assets/image(301).png>)
 
 4.设置完成

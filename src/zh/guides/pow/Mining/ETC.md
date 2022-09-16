@@ -2,7 +2,7 @@
 
 ### 挖矿地址
 
-**URL1：**stratum+tcp://etc.kelepool.com:80
+**URL1：** stratum+tcp://etc.kelepool.com:80
 
 ### 支付计划
 
@@ -48,19 +48,19 @@
 
 通过上述途径获取内核挖矿软件，选择“将文件解压缩到当前文件夹”，找到或新建一个批处理文件。 右键点击此批处理文件，选择“编辑”，各项参数设置如下：
 
-> **PhoenixMiner：**PhoenixMiner.exe -epool etc.kelepool.com:80 -ewal username -worker worker\_name -pass x
+> **PhoenixMiner：** PhoenixMiner.exe -epool etc.kelepool.com:80 -ewal username -worker worker\_name -pass x
 >
-> **Bminer：**bminer -uri ethstratum://username.worker\_name@etc.kelepool.com:80
+> **Bminer：** bminer -uri ethstratum://username.worker\_name@etc.kelepool.com:80
 >
-> **NBminer：**nbminer -a etchash -o stratum+tcp://etc.kelepool.com:80 -u username.worker\_name
+> **NBminer：** nbminer -a etchash -o stratum+tcp://etc.kelepool.com:80 -u username.worker\_name
 >
-> **Gminer：**miner.exe --algo etchash --server etc.kelepool.com:80 --user username.worker\_name
+> **Gminer：** miner.exe --algo etchash --server etc.kelepool.com:80 --user username.worker\_name
 
-其中“**etc.kelepool.com:80”**为可乐矿池地址，其他可选ETH挖矿地址为
+其中“**etc.kelepool.com:80”** 为可乐矿池地址，其他可选ETH挖矿地址为
 
-**“username”**要替换成你的矿池注册用户名（若是匿名挖矿则为链上地址）；
+**“username”** 要替换成你的矿池注册用户名（若是匿名挖矿则为链上地址）；
 
-**“worker\_name”**为矿机编号，自定义即可如编号或字母组合（不能有汉字或特殊字符）；
+**“worker\_name”** 为矿机编号，自定义即可如编号或字母组合（不能有汉字或特殊字符）；
 
 修改时只把对应的字符修改掉，空格、标点均不要增减。
 
