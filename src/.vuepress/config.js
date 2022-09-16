@@ -288,6 +288,20 @@ module.exports = {
                   }
                   ]
                 },
+                {
+                  text: '条款',
+                  children:[{
+                    text: '📗 服务条款',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/terms/terms-of-service.md',
+                    ]
+                  },{
+                    text: '🪜 ETH安全审计',
+                    link: '/zh/guides/terms/eth-an-quan-shen-ji.md',
+                  },
+                  ]
+                },
               ],
             },
           ],
