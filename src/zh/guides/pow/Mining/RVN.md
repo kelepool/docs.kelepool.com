@@ -1,12 +1,16 @@
-# 🪙 ETC挖矿教程
+
+*本指南针对通过注册矿池账户进行挖矿的用户，如需使用链上地址进行挖矿，请参考* [匿名挖矿教程](../anonymous.md)。
+
+
+# 🪙 RVN挖矿教程
 
 ### 挖矿地址
 
-**URL1：** stratum+tcp://etc.kelepool.com:80
+**URL1：** stratum+tcp://rvn.kelepool.com:80
 
 ### 支付计划
 
-结算方式：PPS+       费率：2.00%      起付额：0.1ETC
+结算方式：PPLNS       费率：1.00%      起付额：10.00RVN  
 
 收益账单于次日早8点生成，**如果余额达到支付门槛，链上支付**将在次日完成。
 
@@ -26,37 +30,36 @@
 
 ### **a. 常用软件**
 
-**常用ETH挖矿软件：**
+**常用RVN挖矿软件：**
 
 * AceMiner：[**`https://www.aceminer.io/`**](https://www.aceminer.io/)**``**
 * Hiveon：[**`https://hiveon.com/`**](https://hiveon.com/)**``**
 * 开源矿工：[**`http://dl.ntminer.top/`**](http://dl.ntminer.top/)**``**
 * MinerOS：[**`https://mineros.info/`**](https://mineros.info/)**``**
 
-**常用ETH挖矿原创内核：**
+**常用RVN挖矿原创内核：**
 
 * PhoenixMiner：[**`https://phoenixminer.org/download/`**](https://phoenixminer.org/download/)**``**
 * Bminer：[**`https://www.bminer.me/zh/releases/`**](https://www.bminer.me/zh/releases/)**``**
 * NBminer：[**`https://github.com/NebuTech/NBMiner/releases`**](https://github.com/NebuTech/NBMiner/releases)**``**
-* Gminer：[**`https://github.com/develsoftware/GMinerRelease/releases`**](https://github.com/develsoftware/GMinerRelease/releases)**``**
+* DamoMiner：[**`http://www.damominer.com/`**](http://www.damominer.com/)**``**
 
-### **b. 常用ETC挖矿软件设置**
+### **b. 常用RVN挖矿软件设置**
 
-可以根据各软件官方教程进行设置，如MinerOS需建立ETH挖矿模板，自定义矿池设为可乐矿池，填写用户的矿池子账户/用户名，应用到矿机即可。
+可以根据各软件官方教程进行设置，如HiveOS需建立RVN币种 的飞行表，自定义矿池设为可乐矿池，填写用户的矿池子账户/用户名，应用到矿机即可。
 
 ### **c. 常用原创内核挖矿设置**
 
 通过上述途径获取内核挖矿软件，选择“将文件解压缩到当前文件夹”，找到或新建一个批处理文件。 右键点击此批处理文件，选择“编辑”，各项参数设置如下：
 
-> **PhoenixMiner：** PhoenixMiner.exe -epool etc.kelepool.com:80 -ewal username -worker worker\_name -pass x
->
-> **Bminer：** bminer -uri ethstratum://username.worker\_name@etc.kelepool.com:80
->
-> **NBminer：** nbminer -a etchash -o stratum+tcp://etc.kelepool.com:80 -u username.worker\_name
->
-> **Gminer：** miner.exe --algo etchash --server etc.kelepool.com:80 --user username.worker\_name
 
-其中“**etc.kelepool.com:80”** 为可乐矿池地址，其他可选ETH挖矿地址为
+> **Bminer：** bminer -uri raven://username.worker_name@rvn.kelepool.com:80
+>
+> **NBminer：** nbminer -a kawpow -o stratum+tcp://rvn.kelepool.com:80 -u username.worker\_name
+>
+> **Gminer：** miner.exe --algo kawpow --server rvn.kelepool.com:80 --user username.worker\_name
+
+其中“**rvn.kelepool.com:80”** 为可乐矿池地址，其他可选RVN挖矿地址为
 
 **“username”** 要替换成你的矿池注册用户名（若是匿名挖矿则为链上地址）；
 
@@ -74,11 +77,11 @@
 
 ### b. 填写挖矿地址
 
-**挖矿地址即对应矿池的矿池地址**，可前往**可乐矿池-矿池挖矿-总览右下角（左上角切换币种）**查看最新地址，需注意的是可能因为杀毒软件/防火墙等原因会导致地址无法显示，关闭杀毒软件/防火墙即可，可乐矿池目前**RVN地址如下**（不同币种地址不一样）：
+**挖矿地址即对应矿池的矿池地址**，可前往**可乐矿池-矿池挖矿-总览右下角（左上角切换币种）**查看最新地址，需注意的是可能因为杀毒软件/防火墙等原因会导致地址无法显示，关闭杀毒软件/防火墙即可，可乐矿池目前**ETC地址如下**（不同币种地址不一样）：
 
 **通用挖矿地址：**
 
-* **URL1：stratum+tcp://etc.kelepool.com:80**
+* **URL1：stratum+tcp://rvn.kelepool.com:80**
 
 ### c. **填写**矿工名
 
@@ -103,7 +106,7 @@
 
 **2) 交易所钱包**
 
-[币安](https://www.binance.com/cn)、[OKEx](https://www.okex.com/)等。大部分交易所都支持RVN充值和交易，注册交易所并找到RVN充值即可获取钱包地址。
+[币安](https://www.binance.com/cn)、[OKEx](https://www.okex.com/)等。大部分交易所都支持ETC充值和交易，注册交易所并找到ETC充值即可获取钱包地址。
 
 **3) App钱包：**
 
@@ -119,4 +122,4 @@
 
 2、前往可乐矿池的总览页面查看活跃矿机数量和算力是否正常，预估收益可能出现偏差，以第二天实际结算的收益为准。
 
-![](<../../.gitbook/assets/image(66).png>)
+![](<../../.gitbook/assets/image(303).png>)

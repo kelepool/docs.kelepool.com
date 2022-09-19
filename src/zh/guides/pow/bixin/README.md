@@ -5,3 +5,4 @@
 * STC-BOX
 * MinerOS
 * 轻松矿工
+* hiveOS
