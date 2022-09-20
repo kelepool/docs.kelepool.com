@@ -246,7 +246,6 @@ module.exports = {
                       '/zh/guides/pow/mining/BTC.md',
                       '/zh/guides/pow/mining/CKB.md',
                       '/zh/guides/pow/mining/ETC.md',
-                      '/zh/guides/pow/mining/ETH.md',
                       '/zh/guides/pow/mining/HNS.md',
                       '/zh/guides/pow/mining/KDA.md',
                       '/zh/guides/pow/mining/LTC.md',
