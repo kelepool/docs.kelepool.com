@@ -395,3 +395,143 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair
     ]
 }
 ```
+
+
+
+## 合作商质押总览
+#### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
+
+> 请求参数：
+> - 无
+
+```bash
+https://test-api.kelepool.com/eth2/v2/partner/dashboard
+```
+
+> 请求返回值：
+> - `total_amount` ：质押总数量（ETH）
+> - `staked_amount` ：已生效数量（ETH）
+> - `staking_amount` ：待生效数量（ETH）
+> - `ongoing_amount` ：待提款数量（ETH）
+> - `total_reward` ：总收益（ETH）
+> - `total_validaters` ：总验证节点数量
+> - `unactived_validater` ：待生效节点数量
+> - `actived_validater` ：已生效节点数量
+> - `closed_validater` ：已关闭节点数量
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "staking":{
+            "total_amount":173.3,
+            "staked_amount":173.23,
+            "staking_amount":0.07,
+            "ongoing_amount":0,
+            "total_reward":0.82885946,
+        },
+        "validater":{
+            "total_validaters":8,
+            "unactived_validater":1,
+            "actived_validater":7,
+            "closed_validater":0
+        }
+    }
+}
+```
+
+
+## 合作商收益历史列表
+#### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
+
+> 请求参数：
+> - 无
+
+```bash
+https://test-api.kelepool.com/eth2/v2/partner/income
+```
+
+> 请求返回值：
+> - `date` ：分红日期
+> - `reward` ：当代产生的收益
+> - `balance` ：当日账户总余额
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":[
+        {
+            "date":"2022-07-09 00:00:00",
+            "reward":0.0172946,
+            "deposit":173.3,
+            "balance":174.12885933
+        },
+        {
+            "date":"2022-07-08 00:00:00",
+            "reward":0.03071118,
+            "deposit":173.3,
+            "balance":174.11156473
+        }
+    ]
+}
+```
+
+
+
+## 合作商验证节点列表
+#### GET [/eth2/v2/partner/validator](https://test-api.kelepool.com/eth2/v2/partner/validator)
+
+> 请求参数：
+> - 无
+
+```bash
+https://test-api.kelepool.com/eth2/v2/partner/validator
+```
+
+> 请求返回值：
+> - `identifer` ：验证节点编号（验证节点生效后才有）
+> - `public_key` ：验证节点公钥
+> - `amount` ：质押数量
+> - `status` ：节点状态 1：未生效，2：已生效，5：已退出
+> - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
+> - `address` ETH1存款地址
+> - `deposit_credentials` ：ETH2提款凭证
+> - `type` ：质押账户类型 0：小额质押，1：大额质押
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":[
+        {
+            "identifer":0,
+            "public_key":"852bf5000e370c1baa849defefc30a99c76ac1b41d2991b39e3f631bac3d11f9cbb961d3b17d5c4255137dc902dbbb6f",
+            "amount":0.07,
+            "status":1,
+            "effective_time":null,
+            "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
+            "deposit_credentials":"",
+            "type":0
+        },
+        {
+            "identifer":118838,
+            "public_key":"8333ce3b794a6a4fd5045f2853884aef34f1a9a3aaf4dcf09af474e67d01865ae5e7e23f77dac7e41313d665afbe5a12",
+            "amount":32,
+            "status":2,
+            "effective_time":"2022-06-10 13:06:59",
+            "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
+            "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
+            "type":1
+        },
+        {
+            "identifer":119856,
+            "public_key":"b7701b5a7dd2ceccd7f51daef59dbc74fb2273f2682df98feedb89464b4ff07f857707378f16677e5b80ef1b6257c582",
+            "amount":32,
+            "status":2,
+            "effective_time":"2022-06-10 13:06:59",
+            "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
+            "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
+            "type":1
+        }
+    ]
+}
+```
