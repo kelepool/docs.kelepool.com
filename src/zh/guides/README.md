@@ -28,6 +28,7 @@
   * [STC-BOX 卡刷流程](pow/bixin/stcbox-ka-shua-liu-cheng.md)
   * [MinerOS挖矿教程](pow/bixin/mineros-wa-kuang-jiao-cheng.md)
   * [轻松矿工使用教程](pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md)
+  * [hiveOS挖矿教程](pow/bixin/hiveos-wa-kuang-jiao-cheng.md)
 * [❓ 常见问题](pow/FAQ/README.md)
   * [VPN和矿梯有什么区别？](pow/FAQ/vpn-he-kuang-ti-you-shi-mo-qu-bie.md)
   * [矿梯连接不上是什么原因？](pow/FAQ/kuang-ti-lian-jie-bu-shang-shi-shi-mo-yuan-yin.md)
