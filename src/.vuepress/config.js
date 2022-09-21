@@ -257,6 +257,7 @@ module.exports = {
                     text: '💰 其他挖矿工具教程',
                     collapsible: true,
                     children:[
+                      '/zh/guides/pow/bixin/aceminer-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/hiveos-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md',
