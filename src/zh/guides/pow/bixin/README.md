@@ -4,6 +4,7 @@
 
 * AceMiner
 * hiveOS
+* 开源矿工
 * STC-BOX
 * MinerOS
 * 轻松矿工
