@@ -24,11 +24,17 @@
   * [🪙 ETC挖矿教程](pow/Mining/ETC.md)
   * [🪙 RVN挖矿教程](pow/Mining/RVN.md)
 * [💰 其他挖矿工具教程](pow/bixin/README.md)
-  * [一文读懂STC-BOX挖矿教程](pow/bixin/stcbox1.md)
-  * [STC-BOX 卡刷流程](pow/bixin/stcbox-ka-shua-liu-cheng.md)
-  * [MinerOS挖矿教程](pow/bixin/mineros-wa-kuang-jiao-cheng.md)
-  * [轻松矿工使用教程](pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md)
+  * [AceMiner挖矿教程](pow/bixin/aceminer-wa-kuang-jiao-cheng.md)
   * [hiveOS挖矿教程](pow/bixin/hiveos-wa-kuang-jiao-cheng.md)
+  * [MinerOS挖矿教程](pow/bixin/mineros-wa-kuang-jiao-cheng.md)
+  * [开源矿工挖矿教程](pow/bixin/kai-yuan-kuang-gong-wa-kuang-jiao-cheng.md)
+  * [轻松矿工使用教程](pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md)
+  * [STC-BOX 卡刷流程](pow/bixin/stcbox-ka-shua-liu-cheng.md)
+  * [一文读懂STC-BOX挖矿教程](pow/bixin/stcbox1.md)
+
+
+
+
 * [❓ 常见问题](pow/FAQ/README.md)
   * [VPN和矿梯有什么区别？](pow/FAQ/vpn-he-kuang-ti-you-shi-mo-qu-bie.md)
   * [矿梯连接不上是什么原因？](pow/FAQ/kuang-ti-lian-jie-bu-shang-shi-shi-mo-yuan-yin.md)

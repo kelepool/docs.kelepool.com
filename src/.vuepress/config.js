@@ -260,6 +260,7 @@ module.exports = {
                       '/zh/guides/pow/bixin/aceminer-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/hiveos-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.md',
+                      '/zh/guides/pow/bixin/kai-yuan-kuang-gong-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md',
                       '/zh/guides/pow/bixin/stcbox-ka-shua-liu-cheng.md',
                       '/zh/guides/pow/bixin/stcbox1.md',
