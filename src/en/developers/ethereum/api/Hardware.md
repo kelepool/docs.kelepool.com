@@ -9,7 +9,7 @@ If Hardware wallet wants to automatically help users choose the pledge method, i
 
 Mainnet contract：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-Ropsten contract：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
+Goerli contract：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
 
 ## Stake ≥ 32 ETH
 
@@ -92,14 +92,14 @@ Response Result:
             //  Merkle tree root
             "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
             // ETH network name
-            "network_name":"ropsten"
+            "network_name":"Goerli"
         },
         {
             "pubkey":"83909737754d15dd3ad1281a3f0e62baa64d3c0abb3ed218c3baf7ff250058a24fe1143a5243c3b015e3f93ed6af1e18",
             "withdrawal_credentials":"0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606",
             "signature":"b95af475d67e8438e49cfaad12dacd789c705938fd6a8fee93a1a170ef6322c2cf37c643d1d010b23734c04e9028b58d034435dd6c9f19610090bfdefb7522c69e99b0a7830f6d967f1d07e3ff30128c8b516d40232e5595ac91d746420da993",
             "deposit_data_root":"f08ca526395300d60ccc6db28d931ba129944f44d4bb92c773424e120dde222b",
-            "network_name":"ropsten"
+            "network_name":"Goerli"
         }
     ]
 }

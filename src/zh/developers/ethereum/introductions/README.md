@@ -6,7 +6,7 @@ ETH2.0是ETH从PoW机制过渡到PoS机制的重要阶段，PoS阶段可为用�
 
 [可乐矿池ETH2.0质押平台 - Mainnet主网](https://kelepool.com/pos/eth/mining)
 
-[可乐矿池ETH2.0质押平台 - Ropsten测试网](https://test-www.kelepool.com/pos/eth/mining)
+[可乐矿池ETH2.0质押平台 - Goerli测试网](https://test-www.kelepool.com/pos/eth/mining)
 
 ## 大额质押
 

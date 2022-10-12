@@ -108,7 +108,7 @@ ETH2.0提款凭证：0x0100000000000000000000005dd3bd08cbc8498c8640abc26d1948021
     // 默克尔树根
     "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
     // ETH网络
-    "network_name":"ropsten"
+    "network_name":"Goerli"
 }
 ```
 
@@ -151,7 +151,7 @@ let data = {
     // 默克尔树根
     "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
     // ETH网络（主网要用mainnet）
-    "network_name":"ropsten"
+    "network_name":"Goerli"
 } 
 
 // 生成质押合约参数

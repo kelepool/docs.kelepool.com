@@ -6,7 +6,7 @@
 
 Mainnet主网代理合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-Ropsten测试网代理合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
+Goerli测试网代理合约：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
 
 合约开源代码：[https://github.com/kelepool/ethstaking](https://github.com/kelepool/ethstaking)
 
@@ -94,7 +94,7 @@ console.log(`小额质押交易哈希: ${tx.hash}`);
         "deposit_message_root":"b771a2be82e825dd7a3df7732e72ab0f4a89d85e62c802651f01d12c08f98a9e",
         "deposit_data_root":"e43a0337b5e485a7bb4ad50969c54c88fc5756a1b6502b6499d16fcd2f30b061",
         "fork_version":"80000069",
-        "network_name":"ropsten",
+        "network_name":"Goerli",
         "deposit_cli_version":"2.2.0"
     }
 ]
@@ -107,7 +107,7 @@ console.log(`小额质押交易哈希: ${tx.hash}`);
 
 [Mainnet主网API：https://api.kelepool.com](https://api.kelepool.com)
 
-[Ropsten测试网API：https://test-api.kelepool.com](https://test-api.kelepool.com)
+[Goerli测试网API：https://test-api.kelepool.com](https://test-api.kelepool.com)
 
 #### POST [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
 
@@ -143,14 +143,14 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair
             "withdrawal_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
             "signature":"a61e5ed96b5b22ec9da92cf3f09c24cf9230ec1db99918e9dedfc9440de473f64b7520b5fb40558d0bc9f009dd20731917c3dbf6b3cfd98b48377a190d9e2959df3d2fa2dcec9c09e8be420accc9daa25301d4a2ce1636a5413ac066e7a4628f",
             "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
-            "network_name":"ropsten"
+            "network_name":"Goerli"
         },
         {
             "pubkey":"83909737754d15dd3ad1281a3f0e62baa64d3c0abb3ed218c3baf7ff250058a24fe1143a5243c3b015e3f93ed6af1e18",
             "withdrawal_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
             "signature":"b95af475d67e8438e49cfaad12dacd789c705938fd6a8fee93a1a170ef6322c2cf37c643d1d010b23734c04e9028b58d034435dd6c9f19610090bfdefb7522c69e99b0a7830f6d967f1d07e3ff30128c8b516d40232e5595ac91d746420da993",
             "deposit_data_root":"f08ca526395300d60ccc6db28d931ba129944f44d4bb92c773424e120dde222b",
-            "network_name":"ropsten"
+            "network_name":"Goerli"
         }
     ]
 }

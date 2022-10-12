@@ -6,7 +6,7 @@ ETH2.0 is an important stage in the transition of ETH from PoW mechanism to PoS 
 
 [Kele Pool - Mainnet](https://kelepool.com/pos/eth/mining)
 
-[Kele Pool - Ropsten](https://test-www.kelepool.com/pos/eth/mining)
+[Kele Pool - Goerli](https://test-www.kelepool.com/pos/eth/mining)
 
 ## Stake ≥ 32 ETH
 
