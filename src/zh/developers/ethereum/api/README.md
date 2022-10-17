@@ -303,6 +303,7 @@ https://test-api.kelepool.com/eth2/v2/global
         "whale_min_amount":32,
         "retail_min_amount":0.01,
         "retail_deposit_far":27.6,
+        "withdraw_predicted_hour":216,
         "validator_alive_predicted_hour":24
     }
 }
