@@ -284,6 +284,7 @@ https://test-api.kelepool.com/eth2/v2/global
 > - `whale_min_amount` ：大额最低质押数量（ETH）
 > - `retail_min_amount` ：小额最低质押数量（ETH）
 > - `retail_deposit_far` ：小额质押还差多少ETH创建验证节点
+> - `withdraw_predicted_hour` : ETH2.0正式上线可提现时，提款后多少小时后能到账
 > - `validator_alive_predicted_hour` ：现在质押创建验证节点后，多少小时后验证节点生效
 ```json
 {

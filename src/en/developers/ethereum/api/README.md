@@ -283,6 +283,7 @@ https://test-api.kelepool.com/eth2/v2/global
 > - `whale_min_amount` : Minimum stake amount for large amount (ETH)
 > - `retail_min_amount` : Small minimum stake amount (ETH)
 > - `retail_deposit_far` : How much ETH is left for the small pledge to create a validator
+> - `withdraw_predicted_hour` : How long will the withdrawal take to the account
 > - `validator_alive_predicted_hour` : how many hours after the validator is created by the pledge now, the validator will take effect
 ```json
 {
