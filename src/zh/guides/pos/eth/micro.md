@@ -7,7 +7,7 @@ description: >-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PnwwcOCrV1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## 1**.选择币种连接钱包**
+## 1 **.选择币种连接钱包**
 
 确认质押前请先安装MetaMask钱包，通过[MetaMask](https://metamask.io)官网查看安装教程
 

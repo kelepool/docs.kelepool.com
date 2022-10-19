@@ -208,6 +208,13 @@ module.exports = {
                     ]
                   },
                   {
+                    text: '🪙 MINA委托教程',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pos/mina/ledger-install-mina-app.md',
+                    ]
+                  },
+                  {
                     text: '❓ 常见问题',
                     collapsible: true,
                     children:[
@@ -224,6 +231,7 @@ module.exports = {
                       '/zh/guides/pow/how-to-mining/account.md',
                       '/zh/guides/pow/how-to-mining/cha-kan-shou-yi-zhi-fu-zhuang-tai.md',
                       '/zh/guides/pow/how-to-mining/cha-kan-suan-li-kuang-ji-qing-kuang.md',
+                      '/zh/guides/pow/how-to-mining/zi-zhu-ti-bi.md',
                       '/zh/guides/pow/how-to-mining/chuang-jian-xiu-gai-shan-chu-guan-cha-zhe-di-zhi.md',
                       '/zh/guides/pow/how-to-mining/collection.md',
                       '/zh/guides/pow/how-to-mining/Supported currency.md',
