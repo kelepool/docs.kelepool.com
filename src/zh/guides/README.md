@@ -10,6 +10,7 @@
   * [支持的币种](<pow/how-to-mining/Supported currency.md>)
   * [查看算力、矿机情况](pow/how-to-mining/cha-kan-suan-li-kuang-ji-qing-kuang.md)
   * [查看收益、支付状态](pow/how-to-mining/cha-kan-shou-yi-zhi-fu-zhuang-tai.md)
+  * [自助提币](pow/how-to-mining/zi-zhu-ti-bi.md)
   * [创建、修改、删除观察者地址](pow/how-to-mining/chuang-jian-xiu-gai-shan-chu-guan-cha-zhe-di-zhi.md)
   * [邀请好友获取奖励](pow/how-to-mining/yao-qing-hao-you-huo-qu-jiang-li.md)
 * [🪜 矿梯使用教程](pow/ladder.md)
@@ -65,6 +66,8 @@
 * [🪙 ETH质押教程](pos/eth/README.md)
   * [🔑 ETH大额质押教程](pos/eth/whale.md)
   * [🔑 ETH小额质押教程](pos/eth/micro.md)
+* [🪙 MINA委托教程](pos/mina/README.md)
+  * [🔑 安装MINA应用教程](pos/mina/ledger-install-mina-app.md)
 * [❓ 常见问题](pos/FAQ/README.md)
   * [如何生成Ethereum2.0公钥](pos/FAQ/eth-deposit-cli.md)
 

@@ -9,9 +9,9 @@
 * 网络状态：该币种全网算力、难度及收益估值。
 * 点击“矿机”菜单，查看每个矿机的数据情况，可查看矿机实时算力、日算力、拒绝率。
 
-![](<../../.gitbook/assets/image(75).png>)
+![](<../../.gitbook/assets/new/zksl1.png>)
 
-![](<../../.gitbook/assets/image(57).png>)
+![](<../../.gitbook/assets/new/zksl2.png>)
 
 ### 匿名/钱包挖矿
 
@@ -22,6 +22,7 @@
 3. 网络状态：该币种全网算力、难度及收益估值。
 4. 点击“矿机”菜单，查看每个矿机的数据情况，可查看矿机实时算力、日算力、拒绝率。
 
-![总览](<../../.gitbook/assets/image(217).png>)
+![总览](<../../.gitbook/assets/new/cksl3.png>)
 
-![矿机](<../../.gitbook/assets/image(72).png>)
+
+![矿机](<../../.gitbook/assets/new/nm.png>)

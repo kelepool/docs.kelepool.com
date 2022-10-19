@@ -31,23 +31,27 @@ Hashrate:13.9Kh/s
 
 ## 二、矿池设置步骤 <a href="#nlrbm" id="nlrbm"></a>
 
-#### 2.1 安装币信钱包并注册 <a href="#wkba4" id="wkba4"></a>
+#### 2.1 注册可乐矿池账号 <a href="#wkba4" id="wkba4"></a>
 
-下载地址：[https://www.bixin.im](https://www.bixin.im) (需要梯子访问)
+官网地址：[https://www.kelepool.com](https://www.kelepool.com) (需要梯子访问)
 
-![](<../../.gitbook/assets/image(184).png>)
+![](<../../.gitbook/assets/new/zc.png>)
+![](<../../.gitbook/assets/new/zc2.png>)
 
-#### 2.2 进入 KelePool <a href="#ycq0o" id="ycq0o"></a>
 
-![](<../../.gitbook/assets/image(164).png>)
+#### 2.1 创建子账户 <a href="#khq5m" id="khq5m"></a>
 
-#### 2.3 创建子账户 <a href="#khq5m" id="khq5m"></a>
+![](<../../.gitbook/assets/new/ac2.png>)
+![](<../../.gitbook/assets/new/ac3.png>)
+![](<../../.gitbook/assets/new/ac4.png>)
 
-![](<../../.gitbook/assets/image(158).png>)
+#### 2.3 设置收款地址 <a href="#rrftn" id="rrftn"></a>
 
-#### 2.4 设置收款地址 <a href="#rrftn" id="rrftn"></a>
+选择币种后，设置收款地址
+![](<../../.gitbook/assets/new/sksz1.png>)
+![](<../../.gitbook/assets/new/sksz2.png>)
+![](<../../.gitbook/assets/new/sksz3.png>)
 
-收款地址默认是币信钱包地址，不支持修改，收益会自动转到币信钱包。
 
 ## 三、STC-BOX 设置步骤 <a href="#m5856" id="m5856"></a>
 
@@ -130,31 +134,25 @@ URL（支持 TLS/SSL）：
 
 可以查看当天预估收益和昨日收益。
 
-![](<../../.gitbook/assets/image(162).png>)
+![](<../../.gitbook/assets/new/stc.png>)
 
 #### 4.2 设置算力报警 <a href="#i0gdd" id="i0gdd"></a>
 
 建议设置“算力报警”，STC-BOX 离线时可以获得及时提醒。
 
-![](<../../.gitbook/assets/image(135).png>)
+![](<../../.gitbook/assets/new/slbj1.png>)
+![](<../../.gitbook/assets/new/slbj2.png>)
 
 #### 4.3 提现或转账 <a href="#r1xao" id="r1xao"></a>
 
-币信钱包支持 address（以 0x 开头）和 收款地址（以 stc 开头）。
+可乐矿池支持手动提币，未达到起付额度可手动提币。达到起付额度系统自动支付到您配置的收款地址中。
+提币操作查看[自助提币教程](../how-to-mining/zi-zhu-ti-bi.md)
 
-![](<../../.gitbook/assets/image(175).png>)
 
-## 五、严选交易 <a href="#qbtql" id="qbtql"></a>
 
-您可以在币信钱包中购买或卖出 STC。
+## 五、常见问题 <a href="#fkdlq" id="fkdlq"></a>
 
-除了 STC，严选交易也支持主流币种的交易。
-
-![](<../../.gitbook/assets/image(153).png>)
-
-## 六、常见问题 <a href="#fkdlq" id="fkdlq"></a>
-
-#### 6.1 矿机固件升级 <a href="#jwtw5" id="jwtw5"></a>
+#### 5.1 矿机固件升级 <a href="#jwtw5" id="jwtw5"></a>
 
 当前最新固件版本（2021年11月20日更新）：2.1.6
 
@@ -180,7 +178,7 @@ URL（支持 TLS/SSL）：
 
 ![](<../../.gitbook/assets/image(134).png>)
 
-#### 6.2 矿机恢复出厂设置(不推荐) <a href="#oduji" id="oduji"></a>
+#### 5.2 矿机恢复出厂设置(不推荐) <a href="#oduji" id="oduji"></a>
 
 本文作者做了多次重置，发现重置会引发其他问题。
 

@@ -77,4 +77,4 @@ CKB是Nervos的链上代币，挖矿算法为Eaglesong，支持Toddminer Combo�
 
 2、前往可乐矿池的总览页面查看活跃矿机数量和算力是否正常，预估收益可能出现偏差，以第二天实际结算的收益为准。
 
-![](<../../.gitbook/assets/image(10).png>)
+![](<../../.gitbook/assets/new/ckb.png>)
