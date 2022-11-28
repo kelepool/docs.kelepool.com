@@ -21,9 +21,6 @@ description: 本指南针对通过使用匿名链上地址进行挖矿的用户�
 ![](<../.gitbook/assets/new/nmwk2.png>)
 
 
-
-
-
 ### b.选择币种
 
 点击左边币种进行选择
