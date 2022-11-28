@@ -3,7 +3,7 @@
 * 使用邮箱登录网站，点击左上角加号，填写子账户名称及备注(选填)，点击“确定”添加完成。
 * 点击左上角下拉框选择需要切换的子账户。
 
-![](<../../.gitbook/assets/new/ac1.png>)
+![](<../../.gitbook/assets/1128/ksdl_yx.png>)
 
 ![](<../../.gitbook/assets/new/ac2.png>)
 
