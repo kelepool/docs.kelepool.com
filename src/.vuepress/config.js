@@ -121,6 +121,7 @@ module.exports = {
                          '/en/wiki/pos/staking-guide.md',
                          '/en/wiki/pos/staking-difference.md',
                          '/en/wiki/pos/kelepool.md',
+                         '/en/wiki/pos/knowledge.md',
                          '/en/wiki/pos/merge.md',
                          '/en/wiki/pos/fork.md'
                         ],
@@ -134,6 +135,7 @@ module.exports = {
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
                 '/en/developers/ethereum/api/README.md',
+                '/en/developers/ethereum/api/knowledge.md',
                 '/en/developers/ethereum/api/Hardware.md',
               ]
             },
@@ -346,7 +348,8 @@ module.exports = {
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
-                '/zh/developers/ethereum/api/Hardware.md'
+                '/zh/developers/ethereum/api/knowledge.md',
+                '/zh/developers/ethereum/api/Hardware.md',
               ]
             },
             {
