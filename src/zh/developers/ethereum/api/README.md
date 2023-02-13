@@ -17,8 +17,10 @@
 第三方开发人员需要联系可乐矿池，申请一个长时间有效的签名 `authority_key` 以及 `token`，第三方可以用这两个key进行签名以及数据来源的确认。
 
 ### 1.授权步骤
-- 联系可乐矿池申请`authority_key` 以及 `token`
-- 如果用户是第一次调用可乐矿池API，则需提前调用`/user/v2/anonymouslogin` 进行[用户地址注册](#用户地址注册)
+- 准备一个eth地址，作为合作商mev手续费收款地址(地址建议收款专用，资金流水更清晰)
+- 选择一个`graffiti`标识，作为节点在网络上的名字,如BXKelePool
+- 联系可乐矿池申请`authority_key` 以及 `token`/`source`
+- 如果用户是第一次调用可乐矿池API，则需提前调用`/user/v2/anonymouslogin` 进行[用户地址注册](#用户地址注册),并传递约定的source参数值(合作商来源标识)
 - 调用可乐矿池每个接口时使用 `authority_key` 以及 `token` 签名并放入Header中验证
 
 ### 2.使用方式
@@ -311,6 +313,8 @@ https://test-api.kelepool.com/eth2/v2/global
 
 
 ## 收益历史列表
+
+### 共识收益
 #### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > 请求参数：
@@ -343,6 +347,58 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
             "balance":174.11156473
         }
     ]
+}
+```
+### MEV收益
+
+- 来自合作商的大额质押节点，将按私池模式独立部署，节点获得的mev收益独立结算
+- mev收益记入质押地址
+- mev手续费记入合作商专用地址,手续费比例可配置
+- 来自合作商的小额质押，统一作为可乐的散户整体结算
+
+#### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
+
+> 请求参数：
+> - `page_number`/`page_size` ：页码，页尺寸
+> - `address` ：用户质押钱包地址/合作商mev手续费地址
+
+```bash
+https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689
+```
+
+> 请求返回值：
+> - `amount` ：单笔收益金额
+> - `balance` ：账户余额
+> - `total_reward` ：历史累计收益
+> - `staked_amt` ：质押金额
+> - `record_type` ：记录类型(reward:奖励记录 withdrawal:提现记录)
+> - `height` mev奖励块高
+> - `mev_addr` ：节点mev收款地址
+> - `trx_id` ：交易id(mev奖励/提现)
+> - `time` ：结算时间utc8
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":1428,
+        "page_size":1,
+        "page_number":1,
+        "data":[
+            {
+                "amount":"0.03249061",
+                "balance":"40.32607236",
+                "total_reward":"40.32607236",
+                "staked_amt":"96.00000000",
+                "record_type":"reward",
+                "height":16612641,
+                "mev_addr":"0x4675c7e5baafbffbca748158becba61ef3b0a263",
+                "trx_id":"0x3de7acf868ee76a82a9e70c8d8d6c30f57b1a13d2967b1dfb365d5d1dc1870c3",
+                "time":"2023-02-12 20:24:33"
+            }
+        ]
+    }
 }
 ```
 
@@ -637,5 +693,74 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "type":1
         }
     ]
+}
+```
+
+## 节点奖励记录
+#### GET [/eth2/v2/validator_reward](https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
+
+> 请求参数：
+> - `pubkey` ：验证节点公钥
+> - `timezone` ：时区
+> - `unit` ：统计单位(day/hour)
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
+```
+
+> 请求返回值：
+> - [记录时段,节点累计总奖励,质押金额,节点总余额]
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":3,
+        "page_size":5,
+        "page_number":1,
+        "data":[
+            [
+                "2023-02-08",
+                "0.00639918",
+                "32.00",
+                "32.00639918"
+            ]
+        ]
+    }
+}
+```
+
+## 节点罚款记录
+#### GET [/eth2/v2/slashes/history](https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=2&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
+
+> 请求参数：
+> - `pubkey` ：验证节点公钥
+
+```bash
+https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
+```
+
+> 请求返回值：
+> - `epoch` ：节点周期
+> - `slash_amount` ：罚款金额
+> - `snap_time` ：周期时间
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":0,
+        "page_size":1,
+        "page_number":2,
+        "data":[
+            {
+                "epoch":27551,
+                "slash_amount":"0.00240799",
+                "snap_time":"2023-02-09 11:40:16"
+            }
+        ]
+    }
 }
 ```
