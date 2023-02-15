@@ -6,7 +6,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 ## **1.选择币种连接钱包**
 >确认质押前请先安装OneKey，TokenPocket，MetaMask任意钱包。
-- [OneKey插件钱包安装教程](https://onekey.so/zh_CN/download?client=browserExtension)
+- [OneKey插件钱包安装](https://onekey.so/zh_CN/download?client=browserExtension)
 - [TokenPocket插件钱包安装](https://extension.tokenpocket.pro/#/)
 - [MetaMask插件钱包安装](https://metamask.io/download/)
 
@@ -25,7 +25,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 ## **2.立即质押**
 
 点击大额质押中的“立即质押”按钮，进入质押页面，请确保您的账户中至少有32ETH。
-
+![点击立即质押](<../../.gitbook/assets/0213/3.png>)
 1.设置质押数量，需为32整数倍
 
 2.信息确认
@@ -75,7 +75,7 @@ description: 您可质押32ETH或其整数倍，每质押32ETH生成一个验证
 
 3\. 点击“验证信息”通过Ledger钱包完成信息验证，该流程为验证您Ledger钱包中显示的ETH2提款公钥及ETH2提款凭证信息是否与平台显示的信息一致。
 
-![点击验证信息](<../../.gitbook/assets/0213/5-5.png>)
+![点击验证信息](<../../.gitbook/assets/0213/11.png>)
 
 4.点击下一步，进入审查协议页面。
 

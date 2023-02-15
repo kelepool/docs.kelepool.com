@@ -7,7 +7,7 @@ description: >-
 
 ## 1 **.选择币种连接钱包**
 >确认质押前请先安装OneKey，TokenPocket，MetaMask任意钱包。
-- [OneKey插件钱包安装教程](https://onekey.so/zh_CN/download?client=browserExtension)
+- [OneKey插件钱包安装](https://onekey.so/zh_CN/download?client=browserExtension)
 - [TokenPocket插件钱包安装](https://extension.tokenpocket.pro/#/)
 - [MetaMask插件钱包安装](https://metamask.io/download/)
 
@@ -82,11 +82,9 @@ Gas费：当前交易支付给矿工的手续费，该费用为预估数据，�
 
 2.可通过菜单“收益”查看每日收益，收益结算周期为00:00-24:00 (UTC+0)，国内用户次日早8点后可查看上一日收益。
 
-3.可通过菜单“收益”查看每日收益，收益结算周期为00:00-24:00 (UTC+0)，国内用户次日早8点后可查看上一日收益。
-
-![总览页面](<../../.gitbook/assets/image(226).png>)
-
-![收益明细](<../../.gitbook/assets/image(264).png>)
+![总览页面](<../../.gitbook/assets/0213/3-2.png>)
+收益明细
+![收益明细](<../../.gitbook/assets/0213/1101.png>)
 
 ## **8.查看验证节点**
 
