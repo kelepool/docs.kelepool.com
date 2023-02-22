@@ -132,11 +132,11 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/en/developers/ethereum/api/Hardware.md',
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
                 '/en/developers/ethereum/api/README.md',
                 '/en/developers/ethereum/api/knowledge.md',
-                '/en/developers/ethereum/api/Hardware.md',
               ]
             },
             {
@@ -345,11 +345,11 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/zh/developers/ethereum/api/Hardware.md',
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
                 '/zh/developers/ethereum/api/knowledge.md',
-                '/zh/developers/ethereum/api/Hardware.md',
               ]
             },
             {
