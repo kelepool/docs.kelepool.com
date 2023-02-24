@@ -9,7 +9,7 @@
 
 Mainnet主网合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-Goerli测试网合约：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
+Goerli测试网合约：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://goerli.etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
 
 ## 大额质押
 
@@ -30,7 +30,7 @@ ETH2提款凭证：0x0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219b
 
 #####  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
-此接口主要用于统计第三方各个用户的质押数量等，只需在用户第一次质押的时候调用，当然你也可以在每次用户质押时候调用。
+此接口主要用于统计第三方各个用户的质押数量等，只需在用户**第一次质押**的时候调用，当然你也可以在每次用户质押时候调用，需要注意的是此接口**必须在用户质押前**调用。
 
 ```bash
 POST https://test-api.kelepool.com/user/v2/anonymouslogin
@@ -154,11 +154,27 @@ let deposit_data_root = stakingRoot
 
 // 执行合约大额质押方法，最低质押32ETH，这里我们质押64ETH，由于每个节点需要0.05ETH手续费，因此2个节点需要质押64.1ETH
 let amount = ethers.utils.parseUnits('64.1', 'ether')
+
+// 以下是V1版本（已经弃用），无法传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 使用V1版本必须在用户质押前先请求：用户地址注册接口（/user/v2/anonymouslogin）建立用户地址与source渠道的关联，我们才能区分渠道质押金额。
 const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
     gasLimit: 10000000 // 最大Gas限制
 })
+
+// 以下是V2版本（推荐使用），可以传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 如果你之前接入了V1版本也没关系，更新成V2版本后，用户质押完成会优先写入从合约传递过来的source。
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("渠道标识（如：onekey/tokenpocket/openblock）"))
+const tx = await contract.createValidatorV2(1, source, pubkey, withdrawal_credentials, signature, deposit_data_root, {
+    from: userAddress, // 调用者账号
+    value: amount,// 质押金额
+    gasLimit: 10000000 // 最大Gas限制
+})
+
+
 console.log(`大额质押交易哈希: ${tx.hash}`);
 ```
 
@@ -211,11 +227,26 @@ const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
 
 // 执行合约小额质押方法，最低质押0.01 ETH，这里我们质押125.0172ETH
 let amount = ethers.utils.parseUnits("125.0172", 'ether')
+
+// 以下是V1版本（已经弃用），无法传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 使用V1版本必须在用户质押前先请求：用户地址注册接口（/user/v2/anonymouslogin）建立用户地址与source渠道的关联，我们才能区分渠道质押金额。
 const tx = await contract.deposit({
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
     gasLimit: 10000000 // 最大Gas限制
 });
+
+// 以下是V2版本（推荐使用），可以传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 如果你之前接入了V1版本也没关系，更新成V2版本后，用户质押完成会优先写入从合约传递过来的source。
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("渠道标识（如：onekey/tokenpocket/openblock）"))
+const tx = await contract.depositV2(source,{
+    from: userAddress, // 调用者账号
+    value: amount,// 质押金额
+    gasLimit: 10000000 // 最大Gas限制
+});
+
 console.log(`小额质押交易哈希: ${tx.hash}`);
 
 

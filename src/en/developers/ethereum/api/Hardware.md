@@ -9,7 +9,7 @@ If Hardware wallet wants to automatically help users choose the pledge method, i
 
 Mainnet contract：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-Goerli contract：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
+Goerli contract：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://goerli.etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
 
 ## Stake ≥ 32 ETH
 
@@ -152,13 +152,29 @@ let pubkey = ethers.utils.arrayify(prefix + stakingPublicKey)
 let withdrawal_credentials = ethers.utils.arrayify(prefix + stakingCredentials)
 let signature = ethers.utils.arrayify(prefix + stakingSignature)
 let deposit_data_root = stakingRoot
+
 // execure large staking, at least 32ETH,we staking 64ETH here, it needs 0.05ETH fee for every validator,so we have to add more 0.ETH for kelepool fee.
 let amount = ethers.utils.parseUnits('64.1', 'ether')
+
+// The following is the V1 version (deprecated), and the source channel parameter cannot be passed.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the pledged amount during dividend statistics.
+// To use the V1 version, you must request before the user pledges: the user address registration interface (/user/v2/anonymouslogin) establishes the association between the user address and the source channel, so that we can distinguish the channel pledge amount.
 const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // user wallet address
     value: amount,// staking amount
     gasLimit: 10000000 // max gas limit
 })
+
+// The following is the V2 version (recommended), which can pass source channel parameters.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the pledged amount during dividend statistics.
+// It doesn't matter if you have connected to the V1 version before. After updating to the V2 version, the user's pledge will be written to the source passed from the contract first.
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("source（example: onekey/tokenpocket/openblock）"))
+const tx = await contract.createValidatorV2(1, source, pubkey, withdrawal_credentials, signature, deposit_data_root, {
+    from: userAddress, // user wallet address
+    value: amount,// staking amount
+    gasLimit: 10000000 // max gas limit
+})
+
 console.log(`transaction id: ${tx.hash}`);
 
 
@@ -213,11 +229,26 @@ const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
 
 // execute small staking, at least 0.01ETH, we staking 125.0172ETH
 let amount = ethers.utils.parseUnits("125.0172", 'ether')
+
+// The following is the V1 version (deprecated), and the source channel parameter cannot be passed.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the pledged amount during dividend statistics.
+// To use the V1 version, you must request before the user pledges: the user address registration interface (/user/v2/anonymouslogin) establishes the association between the user address and the source channel, so that we can distinguish the channel pledge amount.
 const tx = await contract.deposit({
     from: userAddress, // user wallet address
     value: amount,// staking amount
     gasLimit: 10000000 // max gas limit
 });
+
+// The following is the V2 version (recommended), which can pass source channel parameters.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the pledged amount during dividend statistics.
+// It doesn't matter if you have connected to the V1 version before. After updating to the V2 version, the user's pledge will be written to the source passed from the contract first.
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("source（example: onekey/tokenpocket/openblock）"))
+const tx = await contract.depositV2(source,{
+    from: userAddress, // user wallet address
+    value: amount,// staking amount
+    gasLimit: 10000000 // max gas limit
+});
+
 console.log(`transition hash: ${tx.hash}`);
 
 
