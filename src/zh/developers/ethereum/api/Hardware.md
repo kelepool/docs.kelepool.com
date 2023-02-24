@@ -185,7 +185,7 @@ console.log(`大额质押交易哈希: ${tx.hash}`);
 
 ####  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
-此接口主要用于统计第三方各个用户的质押数量等，只需在第一次使用可乐矿池API时调用，当然你也可以多次调用。
+此接口只需在用户**第一次质押**的时候调用，当然你也可以在用户每次质押时调用，注意此接口**必须在用户质押前**调用。
 
 ```bash
 POST https://test-api.kelepool.com/user/v2/anonymouslogin
