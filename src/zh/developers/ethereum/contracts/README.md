@@ -5,7 +5,7 @@
 合约的两个主要功能是大额质押、小额质押。开发人员可通过javascript来调用可乐矿池的合约进行质押，合约采用了开源项目[Openzeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts)的可升级方案，因此`一定要调用代理合约来质押`，逻辑合约在ETH2.0上线或功能变更时会被更新替换。
   
 
-<font color=red>
+```
 注意：
 
 1.为了提高渠道质押金额的统计准确率，质押合约V2版本支持传递source渠道参数。
@@ -18,7 +18,7 @@
 
 5.若使用V2版本需同时更新ABI及调用方法，合约地址不变，具体请参考下边调用合约的代码。
 
-</font>
+```
 
   
 Mainnet主网代理合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
