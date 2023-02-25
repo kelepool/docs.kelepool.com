@@ -1,6 +1,6 @@
 # 如何查询用户质押信息？
 
-可乐矿池开放了全部ETH2.0的收益查询接口，开发人员可以使用钱包地址查询用户的质押量、总收益、年华、曲线（小时、天）、节点状态、操作历史、历史收益等数据。
+可乐矿池开放了全部ETH2.0的收益查询接口，开发人员可以使用钱包地址查询用户的质押量、总收益、年化、曲线（小时、天）、节点状态、操作历史、历史收益等数据。
 
 ## API查询节点
 
@@ -222,6 +222,9 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `ongoing_amount` ：待提款数量（ETH）
 > - `total_reward` ：总收益（ETH）
 > - `staked_days` ：总质押天数
+> - `apr` ：总年化收益率
+> - `apr_detail`.`basic` ：共识年化收益率
+> - `apr_detail`.`mev` ：mev年化收益率
 > - `total_validaters` ：总验证节点数量
 > - `unactived_validater` ：待生效节点数量
 > - `actived_validater` ：已生效节点数量
@@ -241,7 +244,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
         },
         "income":{
             "total_reward":0.82885946,
-            "staked_days":34
+            "staked_days":34,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         },
         "validater":{
             "total_validaters":8,
@@ -282,7 +290,9 @@ https://test-api.kelepool.com/eth2/v2/global
 > - `staking_ratio` ：ETH全网质押比例（%）
 > - `staking_total` ：平台总质押数量（ETH）
 > - `validator_total` ：平台总验证节点数量
-> - `predicted_reward` ：质押年华收益（%）
+> - `predicted_reward` ：总年化收益率
+> - `apr_detail`.`basic` ：共识年化收益率
+> - `apr_detail`.`mev` ：mev年化收益率
 > - `whale_min_amount` ：大额最低质押数量（ETH）
 > - `retail_min_amount` ：小额最低质押数量（ETH）
 > - `retail_deposit_far` ：小额质押还差多少ETH创建验证节点
@@ -301,12 +311,16 @@ https://test-api.kelepool.com/eth2/v2/global
         "staking_ratio":0.13682066,
         "staking_total":486.03,
         "validator_total":15,
-        "predicted_reward":0.04189544090093631,
+        "predicted_reward":0.0487,
         "whale_min_amount":32,
         "retail_min_amount":0.01,
         "retail_deposit_far":27.6,
         "withdraw_predicted_hour":216,
-        "validator_alive_predicted_hour":24
+        "validator_alive_predicted_hour":24,
+        "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+        }
     }
 }
 ```
