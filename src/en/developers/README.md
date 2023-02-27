@@ -4,7 +4,7 @@
 
 # Why use the Kele Pool API?
 
-- As a one-stop pledge management platform, it provides developers with a wealth of APIs to avoid developers reinventing the wheel.
+- As a one-stop staking management platform, it provides developers with a wealth of APIs to avoid developers reinventing the wheel.
 - Smart contracts and APIs have been audited by security personnel, so there is no need to worry about the safety of funds.
 - Simple and easy-to-use interface improves development efficiency several times.
 - Convenient technical support
