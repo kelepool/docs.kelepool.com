@@ -168,7 +168,7 @@ const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, sig
 // The following is the V2 version (recommended), which can pass source channel parameters.
 // The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the staked amount during dividend statistics.
 // It doesn't matter if you have connected to the V1 version before. After updating to the V2 version, the user's staking will be written to the source passed from the contract first.
-let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("source（example: onekey/tokenpocket/openblock）"))
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("ThirdParty"))
 const tx = await contract.createValidatorV2(1, source, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // user wallet address
     value: amount,// staking amount
@@ -242,7 +242,7 @@ const tx = await contract.deposit({
 // The following is the V2 version (recommended), which can pass source channel parameters.
 // The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the staked amount during dividend statistics.
 // It doesn't matter if you have connected to the V1 version before. After updating to the V2 version, the user's staking will be written to the source passed from the contract first.
-let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("source（example: onekey/tokenpocket/openblock）"))
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("ThirdParty"))
 const tx = await contract.depositV2(source,{
     from: userAddress, // user wallet address
     value: amount,// staking amount

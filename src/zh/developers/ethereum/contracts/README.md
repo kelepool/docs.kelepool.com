@@ -89,7 +89,7 @@ const tx = await contract.deposit({
 // 以下是V2版本（推荐使用），可以传递source渠道参数。
 // source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
 // 如果你之前接入了V1版本也没关系，更新成V2版本后，用户质押完成会优先写入从合约传递过来的source。
-let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("渠道标识（如：onekey/tokenpocket/openblock）"))
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("ThirdParty"))
 const tx = await contract.depositV2(source,{
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
@@ -254,7 +254,7 @@ const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, sig
 // 以下是V2版本（推荐使用），可以传递source渠道参数。
 // source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
 // 如果你之前接入了V1版本也没关系，更新成V2版本后，用户质押完成会优先写入从合约传递过来的source。
-let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("渠道标识（如：onekey/tokenpocket/openblock）"))
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("ThirdParty"))
 const tx = await contract.createValidatorV2(1, source, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
