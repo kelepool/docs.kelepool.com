@@ -627,9 +627,9 @@ https://test-api.kelepool.com/eth2/v2/partner/income
 
 > 请求返回值：
 > - `date` ：分红日期
-> - `reward` ：当代产生的收益
-> - `deposit` ：账户总质押
-> - `balance` ：当日账户总余额（账户总质押+账户总收益）
+> - `reward` ：截止当天累计收益
+> - `deposit` ：截止当天累计充值本金
+> - `balance` ：截止当天账户总余额（截止当天累计充值本金+截止当天累计收益）
 ```json
 {
     "code":0,
