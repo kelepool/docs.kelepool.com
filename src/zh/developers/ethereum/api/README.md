@@ -341,7 +341,7 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 > 请求返回值：
 > - `date` ：分红日期
 > - `reward` ：当代产生的收益
-> - `deposit` ：未使用此字段
+> - `deposit` ：总质押金额
 > - `balance` ：当日账户总余额
 ```json
 {
