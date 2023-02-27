@@ -1,6 +1,6 @@
 # How to query user staking information?
 
-Cola Mining Pool has opened all ETH2.0 revenue query interfaces. Developers can use wallet addresses to query users' staking amount, total revenue, age, curve (hours, days), node status, operation history, historical revenue and other data.
+Cola Mining Pool has opened all ETH2.0 revenue query interfaces. Developers can use wallet addresses to query users' staking amount, total revenue, APR, curve (hours, days), node status, operation history, historical revenue and other data.
 
 ## API Node
 
@@ -221,6 +221,9 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `ongoing_amount` : Amount to withdraw (ETH)
 > - `total_reward` : total reward (ETH)
 > - `staked_days` : total number of days staked
+> - `apr` ：estimate total APR
+> - `apr_detail`.`basic` ：estimate consensus APR
+> - `apr_detail`.`mev` ：estimate mev APR
 > - `total_validaters` : total number of validators
 > - `unactived_validater` : the number of nodes to be valid
 > - `actived_validater` : Number of active nodes
@@ -240,7 +243,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
         },
         "income":{
             "total_reward":0.82885946,
-            "staked_days":34
+            "staked_days":34,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         },
         "validater":{
             "total_validaters":8,
@@ -281,7 +289,9 @@ https://test-api.kelepool.com/eth2/v2/global
 > - `staking_ratio` : ETH network staking ratio (%)
 > - `staking_total` : The total amount of staking on the platform (ETH)
 > - `validator_total` : The total number of validator nodes on the platform
-> - `predicted_reward` : staking income (%)
+> - `predicted_reward` : estimate total APR
+> - `apr_detail`.`basic` ：estimate consensus APR
+> - `apr_detail`.`mev` ：estimate mev APR
 > - `whale_min_amount` : Minimum stake amount for large amount (ETH)
 > - `retail_min_amount` : Small minimum stake amount (ETH)
 > - `retail_deposit_far` : How much ETH is left for the small staking to create a validator
@@ -300,12 +310,16 @@ https://test-api.kelepool.com/eth2/v2/global
         "staking_ratio":0.13682066,
         "staking_total":486.03,
         "validator_total":15,
-        "predicted_reward":0.04189544090093631,
+        "predicted_reward":0.0487,
         "whale_min_amount":32,
         "retail_min_amount":0.01,
         "retail_deposit_far":27.6,
         "withdraw_predicted_hour":216,
-        "validator_alive_predicted_hour":24
+        "validator_alive_predicted_hour":24,
+        "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+        }
     }
 }
 ```
