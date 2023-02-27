@@ -222,9 +222,9 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `ongoing_amount` ：待提款数量（ETH）
 > - `total_reward` ：总收益（ETH）
 > - `staked_days` ：总质押天数
-> - `apr` ：总年化收益率
-> - `apr_detail`.`basic` ：共识年化收益率
-> - `apr_detail`.`mev` ：mev年化收益率
+> - `apr` ：预估总年化收益率
+> - `apr_detail`.`basic` ：预估共识年化收益率
+> - `apr_detail`.`mev` ：预估mev年化收益率
 > - `total_validaters` ：总验证节点数量
 > - `unactived_validater` ：待生效节点数量
 > - `actived_validater` ：已生效节点数量
@@ -290,9 +290,9 @@ https://test-api.kelepool.com/eth2/v2/global
 > - `staking_ratio` ：ETH全网质押比例（%）
 > - `staking_total` ：平台总质押数量（ETH）
 > - `validator_total` ：平台总验证节点数量
-> - `predicted_reward` ：总年化收益率
-> - `apr_detail`.`basic` ：共识年化收益率
-> - `apr_detail`.`mev` ：mev年化收益率
+> - `predicted_reward` ：预估总年化收益率
+> - `apr_detail`.`basic` ：预估共识年化收益率
+> - `apr_detail`.`mev` ：预估mev年化收益率
 > - `whale_min_amount` ：大额最低质押数量（ETH）
 > - `retail_min_amount` ：小额最低质押数量（ETH）
 > - `retail_deposit_far` ：小额质押还差多少ETH创建验证节点
