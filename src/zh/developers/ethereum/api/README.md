@@ -711,7 +711,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 }
 ```
 
-## 节点奖励记录
+## 节点奖励记录曲线图
 #### GET [/eth2/v2/validator_reward](https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
 
 > 请求参数：

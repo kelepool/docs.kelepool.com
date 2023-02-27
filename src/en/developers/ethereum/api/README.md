@@ -596,7 +596,7 @@ https://test-api.kelepool.com/eth2/v2/partner/dashboard
 ```
 
 
-## Partner revenue history list
+## Partner reward history list
 #### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
 
 > Request parameters:
@@ -692,7 +692,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 ```
 
 
-## Node reward record
+## Node reward line chart
 #### GET [/eth2/v2/validator_reward](https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
 
 > Request parameters:
