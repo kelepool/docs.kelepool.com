@@ -17,9 +17,11 @@ Cola Mining Pool has opened all ETH2.0 revenue query interfaces. Developers can 
 Third-party developers need to contact Kele Pool to apply for a long-term valid signature `authority_key` and `token`, the third party can use these two keys for signature and data source confirmation.
 
 ### 1. Authorization step
-- Contact Kele Pool to apply for `authority_key` and `token`
-- If the user is calling the Kele Pool API for the first time, he needs to call `/user/v2/anonymouslogin` in advance to [register the user address](#User Address Registration)
-- Use `authority_key` and `token` to sign each interface of Kele Pool and put it in the Header for verification
+- Prepare an eth address as the receiving address of the partner's mev fee (the address is recommended for collection, and the flow of funds is clearer)
+- Choose a `graffiti` logo as the name of the node on the network, such as BXKelePool
+- Contact Cola Pool to apply for `authority_key` and `token`/`source`
+- If the user is calling the Coke Pool API for the first time, he needs to call `/user/v2/anonymouslogin` in advance to [user address registration] (#user address registration), and pass the agreed source parameter value (partner source identification )
+- Use `authority_key` and `token` to sign each interface of the Coke mining pool and put it in the Header for verification
 
 ### 2. How to use
 
