@@ -177,7 +177,7 @@ This interface only needs to be called when the user stakings for the first time
 
 > Request parameters:
 > - `payee_addr` : User staking wallet address
-> - `token` : the stakingd token (eth)
+> - `token` : the staked token (eth)
 > - `source` : The data source is convenient for business cooperation statistics (eg: ThirdParty)
 
 ```bash
@@ -348,7 +348,7 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 
 ### MEV Earnings
 
-- Large stakingd nodes from partners will be independently deployed according to the private pool model, and the mev income obtained by the nodes will be settled independently
+- Large staked nodes from partners will be independently deployed according to the private pool model, and the mev income obtained by the nodes will be settled independently
 - mev revenue is credited to the staking address
 - The mev handling fee is credited to the partner's dedicated address, and the handling fee ratio is configurable
 - Small stakings from partners, unified as the overall settlement of Coke's retail investors
@@ -646,7 +646,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 > Request return value:
 > - `identifer`: validator ID (only after the validator takes effect)
 > - `public_key` : validator public key
-> - `amount` : the stakingd amount
+> - `amount` : the staked amount
 > - `status` : node status 1: inactive, 2: active, 5: exited
 > - `effective_time`: effective time, format: %Y-%m-%d %H:%M:%S, null if not effective
 > - `address` ETH1 deposit address

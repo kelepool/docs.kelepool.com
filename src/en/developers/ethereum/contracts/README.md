@@ -51,7 +51,7 @@ Users can staking a minimum of 0.01ETH and a maximum amount of ETH. When the tot
 
 - Small staking is as simple as depositing tokens into the Kele Pool smart contract
 - Suppose we intend to staking `125.0172ETH`, after the staking, Kele Pool will immediately create `3 validating nodes` (32ETH each)
-- The remaining `29.0172ETH` in the contract will be stakingd, and a verification node will be created after other users staking enough `32ETH`
+- The remaining `29.0172ETH` in the contract will be staked, and a verification node will be created after other users staking enough `32ETH`
 
 ``` javascript
 
@@ -75,7 +75,7 @@ const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
 let amount = ethers.utils.parseUnits("125.0172", 'ether')
 
 // The following is the V1 version (deprecated), and the source channel parameter cannot be passed.
-// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the stakingd amount during dividend statistics.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the staked amount during dividend statistics.
 // To use the V1 version, you must request before the user stakings: the user address registration interface (/user/v2/anonymouslogin) establishes the association between the user address and the source channel, so that we can distinguish the channel staking amount.
 const tx = await contract.deposit({
     from: userAddress, // user wallet address
@@ -84,7 +84,7 @@ const tx = await contract.deposit({
 });
 
 // The following is the V2 version (recommended), which can pass source channel parameters.
-// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the stakingd amount during dividend statistics.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the staked amount during dividend statistics.
 // It doesn't matter if you have connected to the V1 version before. After updating to the V2 version, the user's staking will be written to the source passed from the contract first.
 let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("source（example: onekey/tokenpocket/openblock）"))
 const tx = await contract.depositV2(source,{
@@ -99,7 +99,7 @@ console.log(`transition hash: ${tx.hash}`);
 ```
 
 ## 5.Stake ≥ 32 ETH
-The user needs to staking at least 32ETH, and the maximum can be stakingd 3200ETH (depending on the gas situation). The amount of each staking must be an integer multiple of 32+fee. The fee is currently 0.05ETH, and the cola mining pool will charge the fee as the node operation fee.
+The user needs to staking at least 32ETH, and the maximum can be staked 3200ETH (depending on the gas situation). The amount of each staking must be an integer multiple of 32+fee. The fee is currently 0.05ETH, and the cola mining pool will charge the fee as the node operation fee.
 
 Large-amount staking is mainly divided into three steps:
 
@@ -237,7 +237,7 @@ let deposit_data_root = stakingRoot
 let amount = ethers.utils.parseUnits('96.15', 'ether')
 
 // The following is the V1 version (deprecated), and the source channel parameter cannot be passed.
-// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the stakingd amount during dividend statistics.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the staked amount during dividend statistics.
 // To use the V1 version, you must request before the user stakings: the user address registration interface (/user/v2/anonymouslogin) establishes the association between the user address and the source channel, so that we can distinguish the channel staking amount.
 const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // user wallet address
@@ -246,7 +246,7 @@ const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, sig
 })
 
 // The following is the V2 version (recommended), which can pass source channel parameters.
-// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the stakingd amount during dividend statistics.
+// The source channel parameter is the identifier assigned to the third-party channel by Coke Mining Pool, which is used to distinguish which channel received the staked amount during dividend statistics.
 // It doesn't matter if you have connected to the V1 version before. After updating to the V2 version, the user's staking will be written to the source passed from the contract first.
 let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("source（example: onekey/tokenpocket/openblock）"))
 const tx = await contract.createValidatorV2(1, source, pubkey, withdrawal_credentials, signature, deposit_data_root, {

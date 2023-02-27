@@ -12,7 +12,7 @@ ETH2.0 is an important stage in the transition of ETH from PoW mechanism to PoS 
 
 - If the user wants to manage the withdrawal key by himself and owns more than 32ETH of tokens at the same time, he can staking the tokens through a large amount of staking. Users need to generate a withdrawal key and corresponding withdrawal certificate through a hardware wallet (Ledger) or [Ethereum official CLI tool](https://github.com/ethereum/staking-deposit-cli), and send the withdrawal certificate to staking for the cola mining pool.
 
-- After this method is stakingd, the user controls the withdrawal key by himself. After the ETH2.0 withdrawal function is officially launched, the user can withdraw the income and staking the principal. Cola Mining Pool will charge some service fees as node operation fees, the amount of staking needs to be an integer multiple of 32+fee, and the fee of each verification node is temporarily 0.05ETH.
+- After this method is staked, the user controls the withdrawal key by himself. After the ETH2.0 withdrawal function is officially launched, the user can withdraw the income and staking the principal. Cola Mining Pool will charge some service fees as node operation fees, the amount of staking needs to be an integer multiple of 32+fee, and the fee of each verification node is temporarily 0.05ETH.
 
 ## Stake ＜ 32 ETH
 

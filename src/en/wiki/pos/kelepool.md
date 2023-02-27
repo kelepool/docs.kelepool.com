@@ -48,7 +48,7 @@ It is very simple to participate in this staking mode. You only need to deposit 
 
 **Large amount staking**
 
-Under this mode, you need to stake a minimum of 32ETH, and a maximum of 3200ETH can be stakingd at a single time (depending on the gas situation). Each stake must be an integer multiple of 32 + service fee. This part of the process is a little complicated and involves some professional descriptions. You can also watch the following video to preview the operation process:
+Under this mode, you need to stake a minimum of 32ETH, and a maximum of 3200ETH can be staked at a single time (depending on the gas situation). Each stake must be an integer multiple of 32 + service fee. This part of the process is a little complicated and involves some professional descriptions. You can also watch the following video to preview the operation process:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SjnBYNFEv5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
