@@ -340,9 +340,9 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 
 > 请求返回值：
 > - `date` ：分红日期
-> - `reward` ：当代产生的收益
-> - `deposit` ：总质押金额
-> - `balance` ：当日账户总余额
+> - `reward` ：截止当天累计收益
+> - `deposit` ：截止当天累计充值本金
+> - `balance` ：截止当天账户总余额（截止当天累计充值本金+截止当天累计收益）
 ```json
 {
     "code":0,
