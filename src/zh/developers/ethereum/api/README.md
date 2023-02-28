@@ -430,7 +430,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `identifer` ：验证节点编号（验证节点生效后才有）
 > - `public_key` ：验证节点公钥
 > - `amount` ：质押数量
-> - `status` ：节点状态 1：未生效，2：已生效，5：已退出
+> - `status` ：节点状态 0:待处理 1：质押中，2：已生效，3:退出中，4:提款中，5：已退出
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
@@ -572,6 +572,55 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair
 
 
 
+## 查询验证者公钥
+#### GET [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb&is_used=0)
+
+> 请求参数：
+> - `deposit_credentials` ：用户提款凭证
+> - `is_used` ：使用状态（0=未使用，1=已使用）
+
+```bash
+
+https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb&is_used=0
+
+```
+
+> 请求返回值：
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `pubkey` ：验证者公钥
+> - `withdrawal_credentials` ：提款凭证
+> - `signature` ：验证者签名
+> - `deposit_data_root` ：默克尔树根
+> - `network_name` ：ETH网络名称
+> - `create_time` ：创建时间
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":[
+        {
+            "pubkey":"86ee4eecf1c83725020cf8667c555b286b54445691da44aa7a671b6d18abf118452e60876216f9adec5e64ff09c3e231",
+            "withdrawal_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
+            "signature":"a61e5ed96b5b22ec9da92cf3f09c24cf9230ec1db99918e9dedfc9440de473f64b7520b5fb40558d0bc9f009dd20731917c3dbf6b3cfd98b48377a190d9e2959df3d2fa2dcec9c09e8be420accc9daa25301d4a2ce1636a5413ac066e7a4628f",
+            "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
+            "network_name":"Goerli",
+            "create_time":"2022-06-02 17:52:50"
+        },
+        {
+            "pubkey":"83909737754d15dd3ad1281a3f0e62baa64d3c0abb3ed218c3baf7ff250058a24fe1143a5243c3b015e3f93ed6af1e18",
+            "withdrawal_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
+            "signature":"b95af475d67e8438e49cfaad12dacd789c705938fd6a8fee93a1a170ef6322c2cf37c643d1d010b23734c04e9028b58d034435dd6c9f19610090bfdefb7522c69e99b0a7830f6d967f1d07e3ff30128c8b516d40232e5595ac91d746420da993",
+            "deposit_data_root":"f08ca526395300d60ccc6db28d931ba129944f44d4bb92c773424e120dde222b",
+            "network_name":"Goerli",
+            "create_time":"2022-06-02 17:52:50"
+        }
+    ]
+}
+```
+
+
+
 ## 合作商质押总览
 #### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
 
@@ -667,7 +716,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 > - `identifer` ：验证节点编号（验证节点生效后才有）
 > - `public_key` ：验证节点公钥
 > - `amount` ：质押数量
-> - `status` ：节点状态 1：未生效，2：已生效，5：已退出
+> - `status` ：节点状态 0:待处理 1：质押中，2：已生效，3:退出中，4:提款中，5：已退出
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
