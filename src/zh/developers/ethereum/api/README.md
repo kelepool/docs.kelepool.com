@@ -435,6 +435,10 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押
+> - `apr` ：预估总年化收益率
+> - `apr_detail`.`basic` ：预估共识年化收益率
+> - `apr_detail`.`mev` ：预估mev年化收益率
+
 ```json
 {
     "code":0,
@@ -448,7 +452,12 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "effective_time":null,
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"",
-            "type":0
+            "type":0,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         },
         {
             "identifer":118838,
@@ -458,7 +467,12 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "effective_time":"2022-06-10 13:06:59",
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
-            "type":1
+            "type":1,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         },
         {
             "identifer":119856,
@@ -468,7 +482,12 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "effective_time":"2022-06-10 13:06:59",
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
-            "type":1
+            "type":1,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         }
     ]
 }
@@ -721,6 +740,9 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押
+> - `apr` ：预估总年化收益率
+> - `apr_detail`.`basic` ：预估共识年化收益率
+> - `apr_detail`.`mev` ：预估mev年化收益率
 ```json
 {
     "code":0,
@@ -734,7 +756,12 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "effective_time":null,
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"",
-            "type":0
+            "type":0,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         },
         {
             "identifer":118838,
@@ -744,7 +771,12 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "effective_time":"2022-06-10 13:06:59",
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
-            "type":1
+            "type":1,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         },
         {
             "identifer":119856,
@@ -754,7 +786,12 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "effective_time":"2022-06-10 13:06:59",
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
-            "type":1
+            "type":1,
+            "apr":0.0487,
+            "apr_detail":{
+                "basic":0.0367,
+                "mev":0.012
+            }
         }
     ]
 }
