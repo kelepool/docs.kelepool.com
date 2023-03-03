@@ -434,6 +434,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `address` ETH1 deposit address
 > - `deposit_credentials` : ETH2 withdrawal credentials
 > - `type` : staking account type 0: small staking, 1: large staking
+> - `reward` :node consensus benefits
 > - `apr` :estimate total APR
 > - `apr_detail`.`basic` :estimate consensus APR
 > - `apr_detail`.`mev` :estimate mev APR
@@ -451,6 +452,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"",
             "type":0,
+            "reward": 0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
@@ -466,6 +468,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
             "type":1,
+            "reward": 0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
@@ -481,6 +484,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
             "type":1,
+            "reward": 0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
@@ -736,6 +740,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 > - `address` ETH1 deposit address
 > - `deposit_credentials`: ETH2 withdrawal credentials
 > - `type`: staking account type 0: small staking, 1: large staking
+> - `reward` :node consensus benefits
 > - `apr` : estimate total APR
 > - `apr_detail`.`basic`:estimate consensus APR
 > - `apr_detail`.`mev`:estimate mev APR
@@ -754,6 +759,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"",
             "type":0,
+            "reward": 0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
@@ -769,6 +775,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
             "type":1,
+            "reward": 0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
@@ -784,6 +791,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
             "type":1,
+            "reward": 0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
