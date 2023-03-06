@@ -220,7 +220,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `staked_amount` ：已生效数量（ETH）
 > - `staking_amount` ：待生效数量（ETH）
 > - `ongoing_amount` ：待提款数量（ETH）
-> - `total_reward` ：总收益（ETH）
+> - `total_reward` ：共识总收益（ETH）
+> - `mev_total_reward` ：mev总收益（ETH）
 > - `staked_days` ：总质押天数
 > - `apr` ：预估总年化收益率
 > - `apr_detail`.`basic` ：预估共识年化收益率
@@ -229,7 +230,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `unactived_validater` ：待生效节点数量
 > - `actived_validater` ：已生效节点数量
 > - `closed_validater` ：已关闭节点数量
-> - `reward` ：曲线图上的收益（ETH）
+> - `reward` ：曲线图上的共识收益（ETH）
+> - `mev_reward` ：曲线图上的mev收益（ETH） (需要注意mev收益是小时级结算，共识收益是天级结算，两者结算进度不同)
 > - `snap_time` ：曲线图上的时间
 ```json
 {
@@ -244,6 +246,7 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
         },
         "income":{
             "total_reward":0.82885946,
+            "mev_total_reward": 0.006513841990230327,
             "staked_days":34,
             "apr":0.0487,
             "apr_detail":{
@@ -260,11 +263,13 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
         "income_curve":[
             {
                 "reward":"0.02563727",
-                "snap_time":"2022-06-13 00:00:00"
+                "snap_time":"2022-06-13 00:00:00",
+                "mev_reward": "0.000145631351140014"
             },
             {
                 "reward":"0.02423282",
-                "snap_time":"2022-06-14 00:00:00"
+                "snap_time":"2022-06-14 00:00:00",
+                "mev_reward": "0.000145631351140014"
             }
         ]
     }
