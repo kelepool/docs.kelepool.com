@@ -217,7 +217,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `staked_amount` : Amount taken (ETH)
 > - `staking_amount` : Amount to take effect (ETH)
 > - `ongoing_amount` : Amount to withdraw (ETH)
-> - `total_reward` : total reward (ETH)
+> - `total_reward` : consensus total reward (ETH)
+> - `mev_total_reward` : mev total reward (ETH)
 > - `staked_days` : total number of days staked
 > - `apr` ：estimate total APR
 > - `apr_detail`.`basic` ：estimate consensus APR
@@ -226,7 +227,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `unactived_validater` : the number of nodes to be valid
 > - `actived_validater` : Number of active nodes
 > - `closed_validater` : number of closed nodes
-> - `reward` : the reward (ETH) on the graph
+> - `reward` : the consensus reward (ETH) on the graph
+> - `mev_reward` : the mev reward (ETH) on the graph (It should be noted that mev revenue is settled immediately and consensus revenue is settled daily. The settlement progress of the two is different)
 > - `snap_time` : time on the graph
 ```json
 {
@@ -241,6 +243,7 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
         },
         "income":{
             "total_reward":0.82885946,
+            "mev_total_reward": 0.006513841990230327,
             "staked_days":34,
             "apr":0.0487,
             "apr_detail":{
@@ -257,10 +260,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
         "income_curve":[
             {
                 "reward":"0.02563727",
+                "mev_reward": "0.000145631351140014",
                 "snap_time":"2022-06-13 00:00:00"
             },
             {
                 "reward":"0.02423282",
+                "mev_reward": "0.000145631351140014",
                 "snap_time":"2022-06-14 00:00:00"
             }
         ]
