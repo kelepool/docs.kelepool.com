@@ -528,13 +528,15 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 > Request parameters:
 > - `deposit_credentials` : User withdrawal credentials
 > - `count` : Generate the number of validating nodes. When staking in batches, the number of `count` parameters can be obtained according to `staking quantity / 32`.
+> - `recreate` ：Whether to retrieve the previously generated unused keystore. (0=yes, 1=no)
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/validator/keypair
 
 {
     "deposit_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
-    "count":2
+    "count":2,
+    "recreate":0
 }
 ```
 

@@ -70,7 +70,9 @@ Request parameters:
     // The converted ETH2 withdrawal certificate above (remove 0x)
     "deposit_credentials":"0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606",
     // Number of validating nodes, calculation method = (number of ETH staked by users - (number of ETH staked by users % 32)) / 32
-    "count":2
+    "count":2,
+    // Whether to retrieve the previously generated unused keystore. (0=yes, 1=no)
+    "recreate":0
 }
 
 ```json

@@ -170,13 +170,16 @@ After getting the `withdrawal_credentials` attribute value in the `deposit_*.jso
 > Request parameters:
 > - `deposit_credentials` ：user withdrawal credentials
 > - `count` ：Generate the number of validating nodes. When staking in batches, the number of `count` parameters can be obtained according to `staking quantity / 32`.
+> - `recreate` ：Whether to retrieve the previously generated unused keystore. (0=yes, 1=no)
+    
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/validator/keypair
 
 {
     "deposit_credentials":"001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb",
-    "count":2
+    "count":2,
+    "recreate":0
 }
 ```
 
