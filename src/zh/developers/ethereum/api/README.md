@@ -441,6 +441,11 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押
 > - `reward` ：节点累计共识奖励
+> - `mev_reward` ：节点累计mev奖励(待上线)
+> - `settle`.`reward` ：扣除手续费后的累计共识收益(待上线)
+> - `settle`.`mev_reward` ：扣除手续费后的累计mev收益(待上线)
+> - `settle`.`7d_reward` ：扣除手续费后的7天共识收益(待上线)
+> - `settle`.`7d_mev_reward` ：扣除手续费后的7天mev收益(待上线)
 > - `apr` ：预估总年化收益率
 > - `apr_detail`.`basic` ：预估共识年化收益率
 > - `apr_detail`.`mev` ：预估mev年化收益率
@@ -460,10 +465,17 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "deposit_credentials":"",
             "type":0, 
             "reward": 0.5368926599999995,
+            "mev_reward":0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
                 "mev":0.012
+            },
+            "settle":{
+                "reward":"0.123",
+                "mev_reward":"0.123",
+                "7d_reward":"0.123",
+                "7d_mev_reward":"0.123",
             }
         },
         {
