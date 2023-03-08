@@ -878,3 +878,7 @@ https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20
     }
 }
 ```
+
+## Set partner fee and payment address
+
+Kele Pool currently charges 0.05ETH as a handling fee for large pledges. Partners can also contact us to set up additional handling fees and payment addresses. After the user's large pledge is completed, the contract will automatically transfer the partner's handling fee to the set receiving address.

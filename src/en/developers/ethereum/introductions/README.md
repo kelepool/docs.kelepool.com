@@ -21,3 +21,7 @@ ETH2.0 is an important stage in the transition of ETH from PoW mechanism to PoS 
 - Since the small staking is a multi-party accumulated amount, the withdrawal key of the verification node is managed and maintained by the cola mining pool cold wallet. After the ETH2.0 withdrawal function is officially launched, the cola mining pool will withdraw funds for users.
 
 - Small amount staking is not a literal small amount. This method supports a minimum staking of 0.01 ETH and a maximum of unlimited ETH. Cola Mining Pool will charge 10% of the total revenue of users' staking as a node operating fee.
+
+## Set partner fee and payment address
+
+Cola Mining Pool currently charges 0.05ETH as a handling fee for large pledges. Partners can also contact us to set up additional handling fees and payment addresses. After the user's large pledge is completed, the contract will automatically transfer the partner's handling fee to the set receiving address.

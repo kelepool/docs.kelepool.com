@@ -229,8 +229,13 @@ Finally, you can query the status on the official validator node browser:
 
 [https://beaconcha.in/validator/validator node public key](https://beaconcha.in/validator/800003d8af8aa481646da46d0d00ed2659a5bb303e0d88edf468abc1259a1f23ccf12eaeaa3f80511cfeaf256904a72a)
 
+## Set partner fee and payment address
+
+Kele Pool currently charges 0.05ETH as a handling fee for large pledges. Partners can also contact us to set up additional handling fees and payment addresses. After the user's large pledge is completed, the contract will automatically transfer the partner's handling fee to the set receiving address.
+
 ## In conclusion
 
 The above is the entire staking process of ETH2.0. If there is no accident during the process, your validator node will be activated in about (24 hours - 14 days), depending on the current staking queue situation. After the verifier is activated, every 6.4 minutes will see income entering the balance.
 
 At present, there are also some platforms that provide one-stop access services. The wallet side only needs to simply integrate to have all the above functions, such as [Coke Pool](https://docs.kelepool.com/zh/ developers/ethereum/api/Hardware.html), you can choose according to your own needs.
+
