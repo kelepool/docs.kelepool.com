@@ -71,7 +71,7 @@ POST https://test-api.kelepool.com/eth2/v2/validator/keypair
     "deposit_credentials":"0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606",
     // 验证节点数量，计算方式 =（用户质押ETH数量 - （用户质押ETH数量 % 32））/ 32
     "count":2,
-    // 是否取回之前生成的未使用keystore。（0=是，1=否）
+    // 是否重新生成新的keystore。（0=否，1=是）
     "recreate":0
 }
 

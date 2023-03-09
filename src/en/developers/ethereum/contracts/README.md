@@ -170,7 +170,7 @@ After getting the `withdrawal_credentials` attribute value in the `deposit_*.jso
 > Request parameters:
 > - `deposit_credentials` ：user withdrawal credentials
 > - `count` ：Generate the number of validating nodes. When staking in batches, the number of `count` parameters can be obtained according to `staking quantity / 32`.
-> - `recreate` ：Whether to retrieve the previously generated unused keystore. (0=yes, 1=no)
+> - `recreate` ：Whether to regenerate a new keystore. (0=no, 1=yes)
     
 
 ```bash

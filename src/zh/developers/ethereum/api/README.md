@@ -569,7 +569,7 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 > 请求参数：
 > - `deposit_credentials` ：用户提款凭证
 > - `count` ：生成验证节点数量，批量质押时可根据`质押数量 / 32` 得出`count`参数的数量。
-> - `recreate` ：是否取回之前生成的未使用keystore。（0=是，1=否）
+> - `recreate` ：是否重新生成新的keystore。（0=否，1=是）
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/validator/keypair
