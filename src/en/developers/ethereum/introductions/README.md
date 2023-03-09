@@ -24,4 +24,18 @@ ETH2.0 is an important stage in the transition of ETH from PoW mechanism to PoS 
 
 ## Set partner fee and payment address
 
-Cola Mining Pool currently charges 0.05ETH as a handling fee for large pledges. Partners can also contact us to set up additional handling fees and payment addresses. After the user's large pledge is completed, the contract will automatically transfer the partner's handling fee to the set receiving address.
+1. Partners can contact Coke Mining Pool to set up large pledge procedures, channel marks, payment address, fee type, etc. After the pledge is completed, the contract will automatically transfer the handling fee to the payment address set by the partner. Kele Pool currently charges 0.05ETH as a handling fee for 32ETH staking. 
+
+
+- If the source when the user pledges matches the partner channel flag set by the partner, the contract will require the user to pay the partner fee
+
+- Partners can query their own handling fee information through the contract's getPartnerInfo
+
+- The partner does not set the handling fee or the handling fee is set to 0. By default, each node charges 0.05 handling fee
+
+
+2. There are two ways to collect the handling fee (take the user as a pledge of 10 verification nodes at a time, and the partner sets a handling fee of 0.1ETH as an example)
+
+- Charged according to the number of nodes: the contract will charge 1.5ETH as a handling fee, of which 0.5ETH will be given to the Coke mining pool, and 1ETH will be automatically transferred to the partner
+
+- Charged per pledge: the contract will charge 0.6ETH as a handling fee, of which 0.5ETH will be given to the Coke mining pool, and 0.1ETH will be automatically transferred to the partner
