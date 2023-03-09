@@ -71,7 +71,7 @@ Request parameters:
     "deposit_credentials":"0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606",
     // Number of validating nodes, calculation method = (number of ETH staked by users - (number of ETH staked by users % 32)) / 32
     "count":2,
-    // Whether to retrieve the previously generated unused keystore. (0=yes, 1=no)
+    // Whether to regenerate a new keystore. (0=no, 1=yes)
     "recreate":0
 }
 
@@ -258,7 +258,7 @@ console.log(`transition hash: ${tx.hash}`);
 
 ## Set partner fee and payment address
 
-1. Partners can contact Coke Mining Pool to set up large pledge procedures, channel marks, payment address, fee type, etc. After the pledge is completed, the contract will automatically transfer the handling fee to the payment address set by the partner.
+1. Partners can contact Coke Mining Pool to set up large pledge procedures, channel marks, payment address, fee type, etc. After the pledge is completed, the contract will automatically transfer the handling fee to the payment address set by the partner. Kele Pool currently charges 0.05ETH as a handling fee for 32ETH staking. 
 
 - If the source when the user pledges matches the partner channel flag set by the partner, the contract will require the user to pay the partner fee
 
