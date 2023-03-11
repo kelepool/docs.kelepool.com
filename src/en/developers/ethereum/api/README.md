@@ -425,6 +425,8 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 
 > Request parameters:
 > - `address` User wallet address
+> - `page_size` Page Size (To be developed)
+> - `page_number` Page Number (To be developed)
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
@@ -447,6 +449,9 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 {
     "code":0,
     "message":"success",
+    "page_size":0,
+    "page_number":0,
+    "total_count":0,
     "data":[
         {
             "identifer":0,
@@ -732,7 +737,8 @@ https://test-api.kelepool.com/eth2/v2/partner/income
 #### GET [/eth2/v2/partner/validator](https://test-api.kelepool.com/eth2/v2/partner/validator)
 
 > Request parameters:
-> - None
+> - `page_size` Page Size (To be developed)
+> - `page_number` Page Number (To be developed)
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/partner/validator
@@ -756,6 +762,9 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 {
     "code":0,
     "message":"success",
+    "page_size":0,
+    "page_number":0,
+    "total_count":0,
     "data":[
         {
             "identifer":0,
