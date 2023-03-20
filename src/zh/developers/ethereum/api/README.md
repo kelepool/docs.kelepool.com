@@ -426,8 +426,8 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `page_size` 分页大小（待开发）
-> - `page_number` 分页页号（待开发）
+> - `page_size` 分页大小
+> - `page_number` 分页页号
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
@@ -443,11 +443,11 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押
 > - `reward` ：节点累计共识奖励
-> - `mev_reward` ：节点累计mev奖励(待上线)
-> - `settle`.`reward` ：扣除手续费后的累计共识收益(待上线)
-> - `settle`.`mev_reward` ：扣除手续费后的累计mev收益(待上线)
-> - `settle`.`7d_reward` ：扣除手续费后的7天共识收益(待上线)
-> - `settle`.`7d_mev_reward` ：扣除手续费后的7天mev收益(待上线)
+> - `mev_reward` ：节点累计mev奖励
+> - `settle`.`reward` ：扣除手续费后的累计共识收益
+> - `settle`.`mev_reward` ：扣除手续费后的累计mev收益
+> - `settle`.`7d_reward` ：扣除手续费后的7天共识收益
+> - `settle`.`7d_mev_reward` ：扣除手续费后的7天mev收益
 > - `apr` ：预估总年化收益率
 > - `apr_detail`.`basic` ：预估共识年化收益率
 > - `apr_detail`.`mev` ：预估mev年化收益率
@@ -753,8 +753,8 @@ https://test-api.kelepool.com/eth2/v2/partner/income
 #### GET [/eth2/v2/partner/validator](https://test-api.kelepool.com/eth2/v2/partner/validator)
 
 > 请求参数：
-> - `page_size` 分页大小（待开发）
-> - `page_number` 分页页号（待开发）
+> - `page_size` 分页大小
+> - `page_number` 分页页号
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/partner/validator
@@ -770,6 +770,11 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押
 > - `reward` ：节点累计共识奖励
+> - `mev_reward` ：节点累计mev奖励
+> - `settle`.`reward` ：扣除手续费后的累计共识收益
+> - `settle`.`mev_reward` ：扣除手续费后的累计mev收益
+> - `settle`.`7d_reward` ：扣除手续费后的7天共识收益
+> - `settle`.`7d_mev_reward` ：扣除手续费后的7天mev收益
 > - `apr` ：预估总年化收益率
 > - `apr_detail`.`basic` ：预估共识年化收益率
 > - `apr_detail`.`mev` ：预估mev年化收益率
@@ -791,10 +796,17 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "deposit_credentials":"",
             "type":0,
             "reward": 0.5368926599999995,
+            "mev_reward":0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
                 "mev":0.012
+            },
+            "settle":{
+                "reward":"0.123",
+                "mev_reward":"0.123",
+                "7d_reward":"0.123",
+                "7d_mev_reward":"0.123",
             }
         },
         {
@@ -807,10 +819,17 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
             "type":1,
             "reward": 0.5368926599999995,
+            "mev_reward":0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
                 "mev":0.012
+            },
+            "settle":{
+                "reward":"0.123",
+                "mev_reward":"0.123",
+                "7d_reward":"0.123",
+                "7d_mev_reward":"0.123",
             }
         },
         {
@@ -823,10 +842,17 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
             "deposit_credentials":"003283e7b0701bd85c8aea1fb70021571a4732ba965c0309d4ea54b4dc26707d",
             "type":1,
             "reward": 0.5368926599999995,
+            "mev_reward":0.5368926599999995,
             "apr":0.0487,
             "apr_detail":{
                 "basic":0.0367,
                 "mev":0.012
+            },
+            "settle":{
+                "reward":"0.123",
+                "mev_reward":"0.123",
+                "7d_reward":"0.123",
+                "7d_mev_reward":"0.123",
             }
         }
     ]
