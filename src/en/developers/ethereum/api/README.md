@@ -279,7 +279,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `total_amount` : total amount staked (ETH)
 > - `staked_amount` : Amount taken (ETH)
 > - `staking_amount` : Amount to take effect (ETH)
-> - `ongoing_amount` : Amount to withdraw (ETH)
+> - `ongoing_amount` ：withdrawable amount（recommended to use withdrawable）
+> - `withdrawable` ：withdrawable amount（ETH）
 > - `retail_staked` ：amount of retail staked（ETH）
 > - `retail_unstaking` ：amount of retail unstaking（ETH）
 > - `whale_staked` ：amount of whale staked（ETH）
@@ -307,6 +308,7 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
             "staked_amount":173.23,
             "staking_amount":0.07,
             "ongoing_amount":0,
+            "withdrawable":"0.123",
             "retail_staked":"0.123",
             "retail_unstaking":"0.123",
             "whale_staked":"0.123",

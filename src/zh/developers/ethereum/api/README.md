@@ -278,7 +278,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `total_amount` ：质押总数量（ETH）
 > - `staked_amount` ：已生效数量（ETH）
 > - `staking_amount` ：待生效数量（ETH）
-> - `ongoing_amount` ：待提款数量（ETH）
+> - `ongoing_amount` ：可提款金额（推荐使用withdrawable字段）
+> - `withdrawable` ：可提款金额（ETH）
 > - `retail_staked` ：小额质押生效金额（ETH）
 > - `retail_unstaking` ：小额赎回中金额（ETH）
 > - `whale_staked` ：大额质押生效金额（ETH）
@@ -306,6 +307,7 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
             "staked_amount":173.23,
             "staking_amount":0.07,
             "ongoing_amount":0,
+            "withdrawable":"234",
             "retail_staked":"0.123",
             "retail_unstaking":"0.123",
             "whale_staked":"0.123",
