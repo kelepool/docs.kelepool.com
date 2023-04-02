@@ -172,6 +172,67 @@ execute();
 
 ```
 
+
+
+## ETH private key signature authorization
+
+### 1.How to use
+
+- Add Kele-Private-Sign=`Kele-Private-Sign` in the request header
+- Add "_pirv_sign_raw":"sign input data" to the request json body
+
+- _pirv_sign_raw Information (Input data signed as a private key after json stringfy)
+```json
+{
+    "sign_time":1651200959, // signature time
+    "token":"eth", // signature algorithm
+    "addr":"0x71c7aDBF701f5724291953561790c9c4e870b029",// signer
+    "url":"/eth2/v2/miner/unstake", // request api routing
+    "method":"post", // request api method
+    "api_param":{ // request api parameters
+        "source":"kelepool",
+        "type":"retail",
+        "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+        "unstake_amt":"123.3244"
+    }
+}
+```
+
+Sample api request body
+```json
+{
+    "_pirv_sign_raw":"{\"sign_time\":1651200959,\"token\":\"eth\",\"addr\":\"0x71c7aDBF701f5724291953561790c9c4e870b029\",\"url\":\"/eth2/v2/miner/unstake\",\"method\":\"post\",\"api_param\":{\"source\":\"kelepool\",\"type\":\"retail\",\"address\":\"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87\",\"unstake_amt\":\"123.3244\"}}"
+    "source":"kelepool",
+    "type":"retail",
+    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    "unstake_amt":"123.3244"
+}
+```
+
+
+### 2.Sample Python signature
+
+```python
+
+import web3
+from eth_account.messages import encode_defunct
+
+priv = '0x004a79ef53fc93c919201f4bfe00ee28cc701627899da0147dee6e4adf0ec52b'
+addr = '0xaF73D1072794A386F9505906299F3E2e963581ce'
+input = 'input msg 6a957501785f6c211e606c1fd945169a3f35691f3b9be11146146200e99a8bcd'
+# https://eips.ethereum.org/EIPS/eip-191
+sign_str = web3.eth.Account.sign_message(encode_defunct(input.encode()), priv).signature.hex()
+print("sign_str",sign_str) # 0x011bb13f789dcdbbb0e407e071751ae2d6b4726525cdc8791b9af96efd77f95262143b64faca866843c24031411ac95a1ad7fb69ed0ca502580b030b00e624fc1c
+
+# Signature verification
+signer = web3.eth.Account.recover_message(encode_defunct(input.encode()), signature=bytes.fromhex(sign_str[2:]))
+print(signer, addr) # 0xaF73D1072794A386F9505906299F3E2e963581ce 0xaF73D1072794A386F9505906299F3E2e963581ce
+```
+
+
+```
+
+
 ## User Address Registration
 #### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
@@ -218,7 +279,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `total_amount` : total amount staked (ETH)
 > - `staked_amount` : Amount taken (ETH)
 > - `staking_amount` : Amount to take effect (ETH)
-> - `ongoing_amount` : Amount to withdraw (ETH)
+> - `ongoing_amount` ：withdrawable amount（recommended to use withdrawable）
+> - `withdrawable` ：withdrawable amount（ETH）
+> - `retail_staked` ：amount of retail staked（ETH）
+> - `retail_unstaking` ：amount of retail unstaking（ETH）
+> - `whale_staked` ：amount of whale staked（ETH）
+> - `whale_unstaking` ：amount of whale unstaking（ETH）
 > - `total_reward` : consensus total reward (ETH)
 > - `mev_total_reward` : mev total reward (ETH)
 > - `staked_days` : total number of days staked
@@ -241,7 +307,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
             "total_amount":173.3,
             "staked_amount":173.23,
             "staking_amount":0.07,
-            "ongoing_amount":0
+            "ongoing_amount":0,
+            "withdrawable":"0.123",
+            "retail_staked":"0.123",
+            "retail_unstaking":"0.123",
+            "whale_staked":"0.123",
+            "whale_unstaking":"0.123"
         },
         "income":{
             "total_reward":0.82885946,
@@ -436,6 +507,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `identifer` : the verification node number (only after the verification node takes effect)
 > - `public_key` : validating node public key
 > - `amount` : amount to stake
+> - `staked_amount` ：current effective amount of staked (may have been partially unstaked)
 > - `status` : node status 1: not active, 2: active, 5: exited
 > - `effective_time`: effective time, format: %Y-%m-%d %H:%M:%S, null if not effective
 > - `address` ETH1 deposit address
@@ -462,6 +534,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "identifer":0,
             "public_key":"852bf5000e370c1baa849defefc30a99c76ac1b41d2991b39e3f631bac3d11f9cbb961d3b17d5c4255137dc902dbbb6f",
             "amount":0.07,
+            "staked_amount":"0.07",
             "status":1,
             "effective_time":null,
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
@@ -532,6 +605,39 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 ```
 
 ## User Operation History
+
+#### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
+
+> Request parameters:
+> - `address` User wallet address
+> - `op_type` ：query record typ，default:0,6; 0: deposit 1: stakeing 2: effective staked 3:wait unstake 4: unstakeing  5: unstaked  6: withdrawal(If the transaction hash is not empty, it has been withdrawn)
+
+```bash
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6
+```
+
+
+> Response Result:
+> - `transaction_id` : Transaction Hash
+> - `amount` : Amount(ETH)
+> - `op_type` : opertion type
+> - `history_time` operation time
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":[
+        {
+            "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
+            "amount":0.01,
+            "op_type":0,
+            "history_time":"2023-03-22 06:49:33"
+        }
+    ]
+}
+```
+
 #### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > Request parameters:
@@ -576,6 +682,139 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
             "active_amount":32
         }
     ]
+}
+```
+
+
+## User Unstake
+
+### Query the amount that can be unstake
+
+#### GET [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
+
+
+> Request parameters：
+> - `address` ：User wallet address
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
+```
+
+> Response Result:
+> - `code` : an integer number, equal to 0 for success, greater than 0 for failure
+> - `message` : the message to return after failure
+> - `retail_staked` ：amount of retail staked（ETH）
+> - `retail_unstaking` ：amount of retail unstaking（ETH）
+> - `whale_staked` ：amount of whale staked（ETH）
+> - `whale_unstaking` ：amount of whale unstaking（ETH）
+> - `estimate_use_sec` ：Estimated unstaking time, seconds
+> - `fast_fee_ratio` ：Quick unstak fee 5%
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "retail_staked":"0.123",
+        "retail_unstaking":"0.123",
+        "whale_staked":"0.123",
+        "whale_unstaking":"0.123",
+        "estimate_use_sec":1234,
+        "fast_fee_ratio":0.05,
+  }
+}
+```
+
+### User unstake (requires user private key signature, see User Signature section for details)
+#### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
+
+> - Request parameters
+> - `source` : third party name, allocation from kelepool
+> - `type` ：unstake type;  retail:retail staked; retail_fast:no need to wait,but has fee; whale:whale staked
+> - `address` ：User wallet address
+> - `unstake_amt` ：unstake amount
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/unstake
+
+{
+    "source":"thirdparty",
+    "type":"retail",
+    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    "unstake_amt":"123.3244"
+}
+```
+
+> Response Result:
+> - `code` : an integer number, equal to 0 for success, greater than 0 for failure
+> - `message` : the message to return after failure
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{}
+}
+```
+
+## User Withdrawal
+
+### Query the amount that can be withdrawal
+
+#### GET [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
+
+
+> Request parameters：
+> - `address` ：User wallet address
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
+```
+
+> Response Result:
+> - `code` : an integer number, equal to 0 for success, greater than 0 for failure
+> - `message` : the message to return after failure
+> - `balance` ：amount that can be withdrawn
+> - `user_fee` ：estimated on-chain tx fee
+> - `pay_addr` : user wallet address
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "balance":"123.248",
+        "user_fee":"0.12",
+        "pay_addr": "0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    }
+}
+```
+
+### user withdrawal
+
+#### POST [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal)
+
+> Request parameters：
+> - `address` ：User wallet address
+> - `amount` ：withdrawal amount
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/withdrawal
+
+{
+    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    "amount":"12.23",
+}
+```
+
+> Response Result:
+> - `code` : an integer number, equal to 0 for success, greater than 0 for failure
+> - `message` : the message to return after failure
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{}
 }
 ```
 

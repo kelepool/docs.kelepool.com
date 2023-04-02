@@ -173,6 +173,65 @@ execute();
 
 ```
 
+## ETH私钥签名认证
+
+### 1.使用方式
+
+- 在请求的 header 中添加 Kele-Private-Sign = `sign_hash`
+- 在请求的json body中添加签名原始信息字段"_pirv_sign_raw":"sign input data"
+
+- _pirv_sign_raw 内部信息约定 (json stringfy后作为私钥签名的input data)
+```json
+{
+    "sign_time":1651200959, // 签名时间
+    "token":"eth", // 签名币种
+    "addr":"0x71c7aDBF701f5724291953561790c9c4e870b029",// 签名钱包地址
+    "url":"/eth2/v2/miner/unstake", // 请求api路由
+    "method":"post", // 请求api方法
+    "api_param":{ // 请求api参数
+        "source":"kelepool",
+        "type":"retail",
+        "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+        "unstake_amt":"123.3244"
+    }
+}
+```
+
+api请求body样例
+```json
+{
+    "_pirv_sign_raw":"{\"sign_time\":1651200959,\"token\":\"eth\",\"addr\":\"0x71c7aDBF701f5724291953561790c9c4e870b029\",\"url\":\"/eth2/v2/miner/unstake\",\"method\":\"post\",\"api_param\":{\"source\":\"kelepool\",\"type\":\"retail\",\"address\":\"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87\",\"unstake_amt\":\"123.3244\"}}"
+    "source":"kelepool",
+    "type":"retail",
+    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    "unstake_amt":"123.3244"
+}
+```
+
+
+### 2.Python签名样例
+
+```python
+
+import web3
+from eth_account.messages import encode_defunct
+
+priv = '0x004a79ef53fc93c919201f4bfe00ee28cc701627899da0147dee6e4adf0ec52b'
+addr = '0xaF73D1072794A386F9505906299F3E2e963581ce'
+input = 'input msg 6a957501785f6c211e606c1fd945169a3f35691f3b9be11146146200e99a8bcd'
+# https://eips.ethereum.org/EIPS/eip-191
+sign_str = web3.eth.Account.sign_message(encode_defunct(input.encode()), priv).signature.hex()
+print("sign_str",sign_str) # 0x011bb13f789dcdbbb0e407e071751ae2d6b4726525cdc8791b9af96efd77f95262143b64faca866843c24031411ac95a1ad7fb69ed0ca502580b030b00e624fc1c
+
+# 签名校验
+signer = web3.eth.Account.recover_message(encode_defunct(input.encode()), signature=bytes.fromhex(sign_str[2:]))
+print(signer, addr) # 0xaF73D1072794A386F9505906299F3E2e963581ce 0xaF73D1072794A386F9505906299F3E2e963581ce
+```
+
+
+```
+
+
 ## 用户地址注册
 #### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
@@ -219,7 +278,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `total_amount` ：质押总数量（ETH）
 > - `staked_amount` ：已生效数量（ETH）
 > - `staking_amount` ：待生效数量（ETH）
-> - `ongoing_amount` ：待提款数量（ETH）
+> - `ongoing_amount` ：可提款金额（推荐使用withdrawable字段）
+> - `withdrawable` ：可提款金额（ETH）
+> - `retail_staked` ：小额质押生效金额（ETH）
+> - `retail_unstaking` ：小额赎回中金额（ETH）
+> - `whale_staked` ：大额质押生效金额（ETH）
+> - `whale_unstaking` ：大额赎回中金额（ETH）
 > - `total_reward` ：共识总收益（ETH）
 > - `mev_total_reward` ：mev总收益（ETH）
 > - `staked_days` ：总质押天数
@@ -242,7 +306,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
             "total_amount":173.3,
             "staked_amount":173.23,
             "staking_amount":0.07,
-            "ongoing_amount":0
+            "ongoing_amount":0,
+            "withdrawable":"234",
+            "retail_staked":"0.123",
+            "retail_unstaking":"0.123",
+            "whale_staked":"0.123",
+            "whale_unstaking":"0.123"
         },
         "income":{
             "total_reward":0.82885946,
@@ -436,8 +505,9 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > 请求返回值：
 > - `identifer` ：验证节点编号（验证节点生效后才有）
 > - `public_key` ：验证节点公钥
-> - `amount` ：质押数量
-> - `status` ：节点状态 0:待处理 1：质押中，2：已生效，3:退出中，4:提款中，5：已退出
+> - `amount` ：用户初始质押金额
+> - `staked_amount` ：当前质押生效金额，可能已部分赎回
+> - `status` ：节点状态 0:待质押 1：质押中，2：生效中，3:待赎回 4:赎回中，5：已退出
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
@@ -464,6 +534,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "identifer":0,
             "public_key":"852bf5000e370c1baa849defefc30a99c76ac1b41d2991b39e3f631bac3d11f9cbb961d3b17d5c4255137dc902dbbb6f",
             "amount":0.07,
+            "staked_amount":"0.07",
             "status":1,
             "effective_time":null,
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
@@ -520,6 +591,38 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 ```
 
 ## 用户操作历史
+
+#### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
+
+> 请求参数：
+> - `address` ：用户质押钱包地址
+> - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现(交易hash非空则已提现)
+
+```bash
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6
+```
+
+> 请求返回值：
+> - `transaction_id` ：交易Hash
+> - `amount` ：质押数量（ETH）
+> - `op_type` ：操作类型
+> - `history_time` 操作时间
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":[
+        {
+            "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
+            "amount":0.01,
+            "op_type":0,
+            "history_time":"2023-03-22 06:49:33"
+        }
+    ]
+}
+```
+
 #### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > 请求参数：
@@ -566,6 +669,135 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
     ]
 }
 ```
+
+
+## 用户赎回
+
+### 查询可赎回金额
+
+#### GET [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
+
+
+> 请求参数：
+> - `address` ：用户地址
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
+```
+
+> 请求返回值：
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `retail_staked` ：小额质押可赎回金额
+> - `retail_unstaking` ：小额质押赎回中金额
+> - `whale_staked` ：大额质押可赎回金额
+> - `whale_unstaking` ：大额质押赎回中金额
+> - `estimate_use_sec` ：预计赎回耗时,秒
+> - `fast_fee_ratio` ：快速赎回服务费率 5%
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "retail_staked":"0.123",
+        "retail_unstaking":"0.123",
+        "whale_staked":"0.123",
+        "whale_unstaking":"0.123",
+        "estimate_use_sec":1234,
+        "fast_fee_ratio":0.05,
+  }
+}
+```
+
+### 发起赎回(需要用户私钥签名，详见用户签名章节)
+#### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
+
+> 请求参数：
+> - `source` ：合作商名字，由可乐分配指定
+> - `type` ：赎回类型  retail:小额赎回， retail_fast:小额快速赎回, whale:大额质押赎回
+> - `address` ：用户地址
+> - `unstake_amt` ：赎回金额
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/unstake
+
+{
+    "source":"kelepool",
+    "type":"retail",
+    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    "unstake_amt":"123.3244"
+}
+```
+
+请求返回
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{}
+}
+```
+
+## 用户提现
+
+### 查询可提现信息
+
+#### GET [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
+
+
+> 请求参数：
+> - `address` ：用户地址
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
+```
+
+> 请求返回值：
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `balance` ：可提现金额
+> - `user_fee` ：预估链上手续费，目前仅支持向普通地址转账
+> - `pay_addr` : 目前固定返回请求中的用户地址，暂不支持向其他地址提现
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "balance":"123.248",
+        "user_fee":"0.12",
+        "pay_addr": "0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    }
+}
+```
+
+### 发起提现
+
+#### POST [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal)
+
+> 请求参数：
+> - `address` ：用户地址
+> - `amount` ：提现金额
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/withdrawal
+
+{
+    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+    "amount":"12.23",
+}
+```
+
+请求返回
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{}
+}
+```
+
 
 
 ## 生成验证者公钥
