@@ -230,9 +230,6 @@ print(signer, addr) # 0xaF73D1072794A386F9505906299F3E2e963581ce 0xaF73D1072794A
 ```
 
 
-```
-
-
 ## User Address Registration
 #### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
@@ -725,7 +722,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 }
 ```
 
-### User unstake (requires user private key signature, see User Signature section for details)
+### User unstake (requires user private key signature, see the eth private key signature section)
 #### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
 
 > - Request parameters

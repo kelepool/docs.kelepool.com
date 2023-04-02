@@ -229,9 +229,6 @@ print(signer, addr) # 0xaF73D1072794A386F9505906299F3E2e963581ce 0xaF73D1072794A
 ```
 
 
-```
-
-
 ## 用户地址注册
 #### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
@@ -710,7 +707,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 }
 ```
 
-### 发起赎回(需要用户私钥签名，详见用户签名章节)
+### 发起赎回(需要用户私钥签名，详见ETH私钥签名章节)
 #### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
 
 > 请求参数：
