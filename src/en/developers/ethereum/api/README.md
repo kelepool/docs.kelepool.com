@@ -230,6 +230,30 @@ print(signer, addr) # 0xaF73D1072794A386F9505906299F3E2e963581ce 0xaF73D1072794A
 ```
 
 
+### 3.Sample JS signature
+
+```js
+// npm install ethers
+
+import { ethers } from 'ethers'
+
+const privKey = '57973a896b37e2ed2228162e4d0d448795f3b2515c198bf4c19812c3f1ee94f0'
+
+const message = 'hello sign message'
+
+const signer = new ethers.Wallet(privKey)
+
+// Signing the message
+const sig = await signer.signMessage(message)
+console.log(sig)
+// 0x4c89155fd4068e96f3f58a39330f1e58a705bee289d0af1ccf4fd8299851fc1e4b372dce0b80c5c9d47729242ac56f8f2b72ba59ba8225765693f5e6fc2478081c
+
+const address = await signer.getAddress()
+
+console.log('Does it match the address', address == ethers.utils.verifyMessage(message, sig))
+// Does it match the address true
+```
+
 ## User Address Registration
 #### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
@@ -722,11 +746,14 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 }
 ```
 
-### User unstake (requires user private key signature, see the eth private key signature section)
+### User unstake 
+
+- Step 1: user private key signature, see the eth private key signature section
+- Step 2: sign the entire json body with an auth token
+
 #### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
 
 > - Request parameters
-> - `source` : third party name, allocation from kelepool
 > - `type` ：unstake type;  retail:retail staked; retail_fast:no need to wait,but has fee; whale:whale staked
 > - `address` ：User wallet address
 > - `unstake_amt` ：unstake amount
@@ -735,7 +762,6 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 https://test-api.kelepool.com/eth2/v2/miner/unstake
 
 {
-    "source":"thirdparty",
     "type":"retail",
     "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
     "unstake_amt":"123.3244"
