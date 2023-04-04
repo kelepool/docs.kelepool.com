@@ -799,6 +799,7 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb
 > - `message` : the message to return after failure
 > - `balance` ：amount that can be withdrawn
 > - `user_fee` ：estimated on-chain tx fee
+> - `fee_free_threshold` ：minimum withdrawal amount for exemption from tx fees
 > - `pay_addr` : user wallet address
 
 ```json
@@ -808,6 +809,7 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb
     "data":{
         "balance":"123.248",
         "user_fee":"0.12",
+        "fee_free_threshold": "0.1",
         "pay_addr": "0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
     }
 }
