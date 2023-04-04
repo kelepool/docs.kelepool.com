@@ -631,10 +631,10 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > Request parameters:
 > - `address` User wallet address
-> - `op_type` ：query record typ，default:0,6; 0: deposit 1: stakeing 2: effective staked 3:wait unstake 4: unstakeing  5: unstaked  6: withdrawal(If the transaction hash is not empty, it has been withdrawn)
+> - `op_type` ：query record typ，default:0,6; 0: deposit 1: stakeing 2: effective staked 3:wait unstake 4: unstakeing  5: unstaked  6: withdrawing 7:withdrawal done
 
 ```bash
-https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7
 ```
 
 

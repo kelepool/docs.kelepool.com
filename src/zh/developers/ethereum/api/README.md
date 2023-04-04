@@ -616,10 +616,10 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现(交易hash非空则已提现)
+> - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现中 7:已到账
 
 ```bash
-https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7
 ```
 
 > 请求返回值：
