@@ -781,7 +781,7 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb
 > - `message` ：失败后返回的消息
 > - `balance` ：可提现金额
 > - `user_fee` ：预估链上手续费，目前仅支持向普通地址转账
-> - `fee_free_threshold` ：提现金额门槛，达到免除链上手续费
+> - `fee_free_threshold` ：免除链上手续费的最小提现金额
 > - `pay_addr` : 目前固定返回请求中的用户地址，暂不支持向其他地址提现
 
 ```json
