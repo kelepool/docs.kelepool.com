@@ -771,12 +771,15 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake
 > Response Result:
 > - `code` : an integer number, equal to 0 for success, greater than 0 for failure
 > - `message` : the message to return after failure
+> - `withdrawable` : withdrawable amount
 
 ```json
 {
     "code":0,
     "message":"success",
-    "data":{}
+    "data":{
+        "withdrawable":"123.3244"
+    }
 }
 ```
 
