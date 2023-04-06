@@ -737,7 +737,6 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 #### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
 
 > 请求参数：
-> - `source` ：合作商名字，由可乐分配指定
 > - `type` ：赎回类型  retail:小额赎回， retail_fast:小额快速赎回, whale:大额质押赎回
 > - `address` ：用户地址
 > - `unstake_amt` ：赎回金额
@@ -746,19 +745,23 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 https://test-api.kelepool.com/eth2/v2/miner/unstake
 
 {
-    "source":"kelepool",
     "type":"retail",
     "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
     "unstake_amt":"123.3244"
 }
 ```
 
-请求返回
+> 请求返回值：
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `withdrawable` : 可提现金额
 ```json
 {
     "code":0,
     "message":"success",
-    "data":{}
+    "data":{
+        "withdrawable":"123.123"
+    }
 }
 ```
 
