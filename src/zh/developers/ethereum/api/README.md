@@ -252,8 +252,8 @@ console.log('Does it match the address', address == ethers.utils.verifyMessage(m
 // Does it match the address true
 ```
 
-## 用户地址注册
-#### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
+### 用户地址注册
+##### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
 此接口只需在用户**第一次质押**的时候调用，当然你也可以在用户每次质押时调用，注意此接口**必须在用户质押前**调用。
 
@@ -283,8 +283,10 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 }
 ```
 
-## 用户质押总览
-#### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
+## 用户API接口
+
+### 用户质押总览
+##### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -365,8 +367,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 }
 ```
 
-## 平台数据总览
-#### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
+### 平台数据总览
+##### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
 
 > 请求参数：
 > - 无
@@ -420,10 +422,10 @@ https://test-api.kelepool.com/eth2/v2/global
 ```
 
 
-## 收益历史列表
+### 收益历史列表
 
-### 共识收益
-#### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+#### 共识收益
+##### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -457,14 +459,14 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
     ]
 }
 ```
-### MEV收益
+#### MEV收益
 
 - 来自合作商的大额质押节点，将按私池模式独立部署，节点获得的mev收益独立结算
 - mev收益记入质押地址
 - mev手续费记入合作商专用地址,手续费比例可配置
 - 来自合作商的小额质押，统一作为可乐的散户整体结算
 
-#### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
+##### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
 
 > 请求参数：
 > - `page_number`/`page_size` ：页码，页尺寸
@@ -510,8 +512,8 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 }
 ```
 
-## 节点状态列表
-#### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+### 用户节点列表
+##### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -610,9 +612,9 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 }
 ```
 
-## 用户操作历史
+### 用户操作历史
 
-#### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
+##### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -648,7 +650,7 @@ https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c2
 }
 ```
 
-#### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+##### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -696,11 +698,11 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 ```
 
 
-## 用户赎回
+### 用户赎回
 
-### 查询可赎回金额
+#### 查询可赎回金额
 
-#### GET [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
+##### GET [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
 
 
 > 请求参数：
@@ -735,11 +737,11 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 }
 ```
 
-### 发起赎回
+#### 发起赎回
 
 - 先需要用户私钥签名，详见ETH私钥签名章节
 - 然后用auth token对整个json body签名
-#### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
+##### POST [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake)
 
 > 请求参数：
 > - `type` ：赎回类型  retail:小额赎回， retail_fast:小额快速赎回, whale:大额质押赎回
@@ -770,11 +772,11 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake
 }
 ```
 
-## 用户提现
+### 用户提现
 
-### 查询可提现信息
+#### 查询可提现信息
 
-#### GET [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
+##### GET [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
 
 
 > 请求参数：
@@ -805,9 +807,9 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb
 }
 ```
 
-### 发起提现
+#### 发起提现
 
-#### POST [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal)
+##### POST [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal)
 
 > 请求参数：
 > - `address` ：用户地址
@@ -832,9 +834,10 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal
 ```
 
 
+## 节点API接口
 
-## 生成验证者公钥
-#### POST [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
+### 生成验证者公钥
+##### POST [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair)
 
 > 请求参数：
 > - `deposit_credentials` ：用户提款凭证
@@ -884,8 +887,8 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair
 
 
 
-## 查询验证者公钥
-#### GET [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb&is_used=0)
+### 查询验证者公钥
+##### GET [/eth2/v2/validator/keypair](https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001ae74d19004b360d02d411795cee1451dc20679f13a13aafce7de2448b60cb&is_used=0)
 
 > 请求参数：
 > - `deposit_credentials` ：用户提款凭证
@@ -932,9 +935,82 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001a
 ```
 
 
+### 节点奖励记录曲线图
+##### GET [/eth2/v2/validator_reward](https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
 
-## 合作商质押总览
-#### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
+> 请求参数：
+> - `pubkey` ：验证节点公钥
+> - `timezone` ：时区
+> - `unit` ：统计单位(day/hour)
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
+```
+
+> 请求返回值：
+> - [记录时段,节点累计总奖励,质押金额,节点总余额]
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":3,
+        "page_size":5,
+        "page_number":1,
+        "data":[
+            [
+                "2023-02-08",
+                "0.00639918",
+                "32.00",
+                "32.00639918"
+            ]
+        ]
+    }
+}
+```
+
+### 节点罚款记录
+##### GET [/eth2/v2/slashes/history](https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=2&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
+
+> 请求参数：
+> - `pubkey` ：验证节点公钥
+
+```bash
+https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
+```
+
+> 请求返回值：
+> - `epoch` ：节点周期
+> - `slash_amount` ：罚款金额
+> - `snap_time` ：周期时间
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":0,
+        "page_size":1,
+        "page_number":2,
+        "data":[
+            {
+                "epoch":27551,
+                "slash_amount":"0.00240799",
+                "snap_time":"2023-02-09 11:40:16"
+            }
+        ]
+    }
+}
+```
+
+
+
+## 合作商API接口
+
+
+### 合作商下所有用户质押总览
+##### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
 
 > 请求参数：
 > - 无
@@ -976,8 +1052,8 @@ https://test-api.kelepool.com/eth2/v2/partner/dashboard
 ```
 
 
-## 合作商收益历史列表
-#### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
+### 合作商下所有用户收益历史列表
+##### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
 
 > 请求参数：
 > - 无
@@ -1014,8 +1090,8 @@ https://test-api.kelepool.com/eth2/v2/partner/income
 
 
 
-## 合作商验证节点列表
-#### GET [/eth2/v2/partner/validator](https://test-api.kelepool.com/eth2/v2/partner/validator)
+### 合作商下所有用户验证节点列表
+##### GET [/eth2/v2/partner/validator](https://test-api.kelepool.com/eth2/v2/partner/validator)
 
 > 请求参数：
 > - `page_size` 分页大小
@@ -1124,76 +1200,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 }
 ```
 
-## 节点奖励记录曲线图
-#### GET [/eth2/v2/validator_reward](https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
-
-> 请求参数：
-> - `pubkey` ：验证节点公钥
-> - `timezone` ：时区
-> - `unit` ：统计单位(day/hour)
-
-```bash
-https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
-```
-
-> 请求返回值：
-> - [记录时段,节点累计总奖励,质押金额,节点总余额]
-
-```json
-{
-    "code":0,
-    "message":"success",
-    "data":{
-        "total":3,
-        "page_size":5,
-        "page_number":1,
-        "data":[
-            [
-                "2023-02-08",
-                "0.00639918",
-                "32.00",
-                "32.00639918"
-            ]
-        ]
-    }
-}
-```
-
-## 节点罚款记录
-#### GET [/eth2/v2/slashes/history](https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=2&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
-
-> 请求参数：
-> - `pubkey` ：验证节点公钥
-
-```bash
-https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
-```
-
-> 请求返回值：
-> - `epoch` ：节点周期
-> - `slash_amount` ：罚款金额
-> - `snap_time` ：周期时间
-
-```json
-{
-    "code":0,
-    "message":"success",
-    "data":{
-        "total":0,
-        "page_size":1,
-        "page_number":2,
-        "data":[
-            {
-                "epoch":27551,
-                "slash_amount":"0.00240799",
-                "snap_time":"2023-02-09 11:40:16"
-            }
-        ]
-    }
-}
-```
-
-## 大额质押设置合作商手续费及收款地址
+#### 设置合作商手续费及收款地址
 
 1.合作商可以联系可乐矿池设置大额质押手续、渠道标记、收款地址、费用类型等，质押完成后合约自动将手续费转入合作商设置的收款地址，可乐矿池目前按每个验证节点收取0.05ETH手续费。
 
@@ -1209,3 +1216,4 @@ https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20
 - 按节点数量收取：合约将收取1.5ETH手续费，其中0.5ETH给可乐矿池，1ETH自动转给合作商
 
 - 按每次质押收取：合约将收取0.6ETH手续费，其中0.5ETH给可乐矿池，0.1ETH自动转给合作商
+
