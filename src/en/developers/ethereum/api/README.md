@@ -291,9 +291,10 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 > Request parameters:
 > - `address` : user's staking wallet address
 > - `interval` : returns yield curve type hour=hour, day=day
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day
+https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day&num2str=1
 ```
 
 > Response Result:
@@ -371,10 +372,10 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 #### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
 
 > Request parameters:
-> - None
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/global
+https://test-api.kelepool.com/eth2/v2/global&num2str=1
 ```
 
 > Response Result:
@@ -428,9 +429,10 @@ https://test-api.kelepool.com/eth2/v2/global
 
 > Request parameters:
 > - `address`: user staking wallet address
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
+https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
 ```
 
 > Request return value:
@@ -471,9 +473,10 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 > Request parameters:
 > - `page_number`/`page_size`: page number, page size
 > - `address`: user staking wallet address / partner mev fee address
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689
+https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
 ```
 
 > Request return value:
@@ -519,9 +522,10 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 > - `address` User wallet address
 > - `page_size` Page Size
 > - `page_number` Page Number
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
+https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
 ```
 
 > Response Result:
@@ -634,9 +638,10 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `op_type` ：query record typ，default:0,6; 0: deposit 1: stakeing 2: effective staked 3:wait unstake 4: unstakeing  5: unstaked  6: withdrawing 7:withdrawal done 8:on chain node automatic transfer
 > - `page_size` Page Size
 > - `page_number` Page Number
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8&num2str=1
 ```
 
 
@@ -668,9 +673,10 @@ https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c2
 
 > Request parameters:
 > - `address` User wallet address
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
+https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
 ```
 
 > Response Result:
@@ -721,9 +727,10 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 
 > Request parameters：
 > - `address` ：User wallet address
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
+https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&num2str=1
 ```
 
 > Response Result:
@@ -955,10 +962,10 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001a
 #### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
 
 > Request parameters:
-> - None
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/dashboard
+https://test-api.kelepool.com/eth2/v2/partner/dashboard?num2str=1
 ```
 
 > Request return value:
@@ -998,10 +1005,10 @@ https://test-api.kelepool.com/eth2/v2/partner/dashboard
 #### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
 
 > Request parameters:
-> - None
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/income
+https://test-api.kelepool.com/eth2/v2/partner/income?num2str=1
 ```
 
 > Request return value:
@@ -1037,9 +1044,10 @@ https://test-api.kelepool.com/eth2/v2/partner/income
 > Request parameters:
 > - `page_size` Page Size
 > - `page_number` Page Number
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/validator
+https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 ```
 
 > Request return value:
@@ -1150,9 +1158,10 @@ https://test-api.kelepool.com/eth2/v2/partner/validator
 > - `pubkey` : validator public key
 > - `timezone`: the time zone
 > - `unit`: statistical unit (day/hour)
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317aeec53903abb804acef4d8eed7ea
+https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317aeec53903abb804acef4d8eed7ea&num2str=1
 ```
 
 > Request return value:
@@ -1183,9 +1192,10 @@ https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=2
 
 > Request parameters:
 > - `pubkey` : validator public key
+> - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b879eabecdf
+https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b879eabecdf&num2str=1
 ```
 
 > Request return value:
