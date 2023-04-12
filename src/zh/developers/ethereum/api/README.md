@@ -291,10 +291,9 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 > 请求参数：
 > - `address` ：用户质押钱包地址
 > - `interval` ：返回收益曲线类型hour=小时、day=天
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day&num2str=0
+https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day
 ```
 
 > 请求返回值：
@@ -372,10 +371,10 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 ##### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
 
 > 请求参数：
-> - `num2str` ：是否将返回的全部字段转字符串类型
+> - 无
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/global?num2str=1
+https://test-api.kelepool.com/eth2/v2/global
 ```
 
 > 请求返回值：
@@ -430,10 +429,9 @@ https://test-api.kelepool.com/eth2/v2/global?num2str=1
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=0
+https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
 ```
 
 > 请求返回值：
@@ -473,10 +471,9 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 > 请求参数：
 > - `page_number`/`page_size` ：页码，页尺寸
 > - `address` ：用户质押钱包地址/合作商mev手续费地址
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
+https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689
 ```
 
 > 请求返回值：
@@ -522,10 +519,9 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 > - `address` ：用户质押钱包地址
 > - `page_size` 分页大小
 > - `page_number` 分页页号
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=0
+https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
 ```
 
 > 请求返回值：
@@ -625,10 +621,9 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现中 7:已到账 8:链上节点自动转账
 > - `page_size` 分页大小
 > - `page_number` 分页页号
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8&num2str=1
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8
 ```
 
 > 请求返回值：
@@ -659,10 +654,9 @@ https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c2
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
+https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
 ```
 
 > 请求返回值：
@@ -713,10 +707,9 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 
 > 请求参数：
 > - `address` ：用户地址
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&num2str=1
+https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
 ```
 
 > 请求返回值：
@@ -1020,10 +1013,10 @@ https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20
 ##### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
 
 > 请求参数：
-> - `num2str` ：是否将返回的全部字段转字符串类型
+> - 无
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/dashboard?num2str=1
+https://test-api.kelepool.com/eth2/v2/partner/dashboard
 ```
 
 > 请求返回值：
@@ -1063,10 +1056,10 @@ https://test-api.kelepool.com/eth2/v2/partner/dashboard?num2str=1
 ##### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
 
 > 请求参数：
-> - `num2str` ：是否将返回的全部字段转字符串类型
+> - 无
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/income?num2str=1
+https://test-api.kelepool.com/eth2/v2/partner/income
 ```
 
 > 请求返回值：
@@ -1103,10 +1096,9 @@ https://test-api.kelepool.com/eth2/v2/partner/income?num2str=1
 > 请求参数：
 > - `page_size` 分页大小
 > - `page_number` 分页页号
-> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
+https://test-api.kelepool.com/eth2/v2/partner/validator
 ```
 
 > 请求返回值：
@@ -1209,74 +1201,6 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 ```
 
 #### 设置合作商手续费及收款地址
-
-> 请求参数：
-> - `pubkey` ：验证节点公钥
-> - `timezone` ：时区
-> - `unit` ：统计单位(day/hour)
-
-```bash
-https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
-```
-
-> 请求返回值：
-> - [记录时段,节点累计总奖励,质押金额,节点总余额]
-
-```json
-{
-    "code":0,
-    "message":"success",
-    "data":{
-        "total":3,
-        "page_size":5,
-        "page_number":1,
-        "data":[
-            [
-                "2023-02-08",
-                "0.00639918",
-                "32.00",
-                "32.00639918"
-            ]
-        ]
-    }
-}
-```
-
-## 节点罚款记录
-#### GET [/eth2/v2/slashes/history](https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=2&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce)
-
-> 请求参数：
-> - `pubkey` ：验证节点公钥
-
-```bash
-https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
-```
-
-> 请求返回值：
-> - `epoch` ：节点周期
-> - `slash_amount` ：罚款金额
-> - `snap_time` ：周期时间
-
-```json
-{
-    "code":0,
-    "message":"success",
-    "data":{
-        "total":0,
-        "page_size":1,
-        "page_number":2,
-        "data":[
-            {
-                "epoch":27551,
-                "slash_amount":"0.00240799",
-                "snap_time":"2023-02-09 11:40:16"
-            }
-        ]
-    }
-}
-```
-
-## 大额质押设置合作商手续费及收款地址
 
 1.合作商可以联系可乐矿池设置大额质押手续、渠道标记、收款地址、费用类型等，质押完成后合约自动将手续费转入合作商设置的收款地址，可乐矿池目前按每个验证节点收取0.05ETH手续费。
 
