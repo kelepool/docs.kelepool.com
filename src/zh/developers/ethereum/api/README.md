@@ -291,9 +291,10 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 > 请求参数：
 > - `address` ：用户质押钱包地址
 > - `interval` ：返回收益曲线类型hour=小时、day=天
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day
+https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day&num2str=1
 ```
 
 > 请求返回值：
@@ -371,10 +372,10 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 ##### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
 
 > 请求参数：
-> - 无
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/global
+https://test-api.kelepool.com/eth2/v2/global?num2str=1
 ```
 
 > 请求返回值：
@@ -429,9 +430,10 @@ https://test-api.kelepool.com/eth2/v2/global
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
+https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
 ```
 
 > 请求返回值：
@@ -471,9 +473,10 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc84
 > 请求参数：
 > - `page_number`/`page_size` ：页码，页尺寸
 > - `address` ：用户质押钱包地址/合作商mev手续费地址
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689
+https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
 ```
 
 > 请求返回值：
@@ -519,9 +522,10 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 > - `address` ：用户质押钱包地址
 > - `page_size` 分页大小
 > - `page_number` 分页页号
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
+https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
 ```
 
 > 请求返回值：
@@ -621,9 +625,10 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现中 7:已到账 8:链上节点自动转账
 > - `page_size` 分页大小
 > - `page_number` 分页页号
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8
+https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8&num2str=1
 ```
 
 > 请求返回值：
@@ -654,9 +659,10 @@ https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c2
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606
+https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
 ```
 
 > 请求返回值：
@@ -707,9 +713,10 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 
 > 请求参数：
 > - `address` ：用户地址
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87
+https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&num2str=1
 ```
 
 > 请求返回值：
@@ -942,9 +949,10 @@ https://test-api.kelepool.com/eth2/v2/validator/keypair?deposit_credentials=001a
 > - `pubkey` ：验证节点公钥
 > - `timezone` ：时区
 > - `unit` ：统计单位(day/hour)
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
+https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=20&timezone=8&unit=day&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce&num2str=1
 ```
 
 > 请求返回值：
@@ -975,9 +983,10 @@ https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=2
 
 > 请求参数：
 > - `pubkey` ：验证节点公钥
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce
+https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20&pubkey=8d9f04df4879680625ce6f3b9df0536160bb706e4242abc317ae53903abb804a5f26390ee4b739eacaecf8776bd0d0ce&num2str=1
 ```
 
 > 请求返回值：
@@ -1013,10 +1022,10 @@ https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20
 ##### GET [/eth2/v2/partner/dashboard](https://test-api.kelepool.com/eth2/v2/partner/dashboard)
 
 > 请求参数：
-> - 无
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/dashboard
+https://test-api.kelepool.com/eth2/v2/partner/dashboard?num2str=1
 ```
 
 > 请求返回值：
@@ -1056,10 +1065,10 @@ https://test-api.kelepool.com/eth2/v2/partner/dashboard
 ##### GET [/eth2/v2/partner/income](https://test-api.kelepool.com/eth2/v2/partner/income)
 
 > 请求参数：
-> - 无
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/income
+https://test-api.kelepool.com/eth2/v2/partner/income?num2str=1
 ```
 
 > 请求返回值：
@@ -1096,9 +1105,10 @@ https://test-api.kelepool.com/eth2/v2/partner/income
 > 请求参数：
 > - `page_size` 分页大小
 > - `page_number` 分页页号
+> - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/partner/validator
+https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 ```
 
 > 请求返回值：
