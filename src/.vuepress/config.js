@@ -202,11 +202,14 @@ module.exports = {
                       '/zh/guides/pos/how-to-stake/Supported networks.md',
                     ]
                   },{
-                    text: '🪙 ETH质押教程',
+                    text: '🪙 ETH质押赎回教程',
                     collapsible: true,
                     children:[
                       '/zh/guides/pos/eth/whale.md',
                       '/zh/guides/pos/eth/micro.md',
+                      '/zh/guides/pos/eth/whale-unstake.md',
+                      '/zh/guides/pos/eth/micro-unstake.md',
+                      '/zh/guides/pos/eth/withdraw.md',
                     ]
                   },
                   {
