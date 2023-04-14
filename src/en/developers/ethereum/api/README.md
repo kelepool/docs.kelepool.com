@@ -424,7 +424,7 @@ https://test-api.kelepool.com/eth2/v2/global&num2str=1
 
 ## Earnings history list
 
-### Consensus Benefits
+### Income Bill (Consensus Benefit + MEV Earnings)
 #### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > Request parameters:
