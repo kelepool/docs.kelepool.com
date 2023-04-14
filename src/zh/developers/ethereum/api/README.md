@@ -201,10 +201,6 @@ api请求body样例
 ```json
 {
     "_pirv_sign_raw":"{\"sign_time\":1651200959,\"token\":\"eth\",\"addr\":\"0x71c7aDBF701f5724291953561790c9c4e870b029\",\"url\":\"/eth2/v2/miner/unstake\",\"method\":\"post\",\"api_param\":{\"source\":\"kelepool\",\"type\":\"retail\",\"address\":\"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87\",\"unstake_amt\":\"123.3244\"}}"
-    "source":"kelepool",
-    "type":"retail",
-    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
-    "unstake_amt":"123.3244"
 }
 ```
 
