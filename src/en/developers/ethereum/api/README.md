@@ -635,7 +635,6 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > Request parameters:
 > - `address` : User wallet address
-> - `op_type` : query record type，default:0,6; 0: deposit 1: stakeing 2: effective staked 3:wait unstake 4: unstakeing  5: unstaked  6: withdrawing 7:withdrawal done 8:on chain node automatic transfer
 > - `op_type` : query record type，default:1,2,3,4; 1: stake 2: unstake 3: withdrawal 4:on chain node automatic transfer
 > - `page_size` : Page Size
 > - `page_number` : Page Number
