@@ -614,7 +614,46 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 ### 用户操作历史
 
-##### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
+#### GET [/eth2/v4/op_history](https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=1,2,3,4)
+
+> 请求参数：
+> - `address` ：用户质押钱包地址
+> - `op_type` ：查询记录类型，默认值1,2,3,4; 1: 质押 2: 赎回 3: 平台提现 4: 链上提现
+> - `page_size` ：分页大小
+> - `page_number` ：分页页号
+> - `num2str` ：是否将返回的全部字段转字符串类型
+
+```bash
+https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=1,2,3,4&num2str=1
+```
+
+> 请求返回值：
+> - `transaction_id` ：交易Hash
+> - `amount` ：质押数量（ETH）
+> - `op_type` ：操作类型
+> - `history_time` ：操作时间
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data": {
+        "total":30,
+        "page_size":20,
+        "page_number":1,
+        "data":[
+            {
+                "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
+                "amount":0.01,
+                "op_type":0,
+                "history_time":"2023-03-22 06:49:33"
+            }
+        ]
+    }
+}
+```
+
+#### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -651,7 +690,7 @@ https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c2
 }
 ```
 
-##### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+#### GET [/eth2/v2/op_history](https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
