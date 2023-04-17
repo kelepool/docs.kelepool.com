@@ -208,6 +208,8 @@ api请求body样例
 ### 2.Python签名样例
 
 ```python
+
+
 import hashlib
 import hmac
 import json
@@ -216,25 +218,25 @@ import requests
 import web3
 from eth_account.messages import encode_defunct
 
-url = 'https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce'
+url = 'https://test-api.kelepool.com/eth2/v2/miner/unstake'
 
 authority_key='6b0a8e85c994cd11129f10e7e85e7c509fe359f9aa79f8f191810deb7cfb3a209d75702d306fa6cae81a32594740e58b7fdfdad36ade22819dfcf7e396dc9880'
 token="eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6InRva2VucG9ja2V0IiwidmVyc2lvbiI6IjAiLCJleHAiOjE4NTQ1MDY3NDF9.GuKpXkwGeJMdzcXwnsl_TkDgwfWotibJ7d1BXkx9mC4"
 
-priv = '0x004a79ef53fc93c919201f4bfe00ee28cc701627899da0147dee6e4adf0ec52b'
-addr = '0xaF73D1072794A386F9505906299F3E2e963581ce'
+priv = '0xf315a966afdd46823ffeee974b27e4042132511192908f13249470304bf45254'
+addr = '0x71743fe0B3474f7A3498E2c95b00a92C680e56FB'
 
 # 1. 用户私钥签名，用于证实用户身份(这里是这个API本身的参数)
 api_params = {
     "type": "retail",
-    "address": "0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
-    "unstake_amt": "1"
+    "address": addr,
+    "unstake_amt": "0.1"
 }
 
 sign_obj = {
-    "sign_time":1681709412, # 签名时间 下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
+    "sign_time":int(time.time()), # 签名时间 下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
     "token":"eth", # 签名币种
-    "addr":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",# 签名钱包地址
+    "addr": addr,# 签名钱包地址
     "url":"/eth2/v2/miner/unstake", # 请求api路由
     "method":"post", # 请求api方法
     "api_param" : api_params
@@ -244,7 +246,7 @@ sign_obj = {
 sign_obj_str = json.dumps(sign_obj)
 user_sign_str = web3.eth.Account.sign_message(encode_defunct(sign_obj_str.encode()), priv).signature.hex()
 print("user_sign_str: ", user_sign_str) 
-# user_sign_str:  0x6bc392bd466640f1bd3afacb2a80c860ad169633b14a3dbc4c9c46c73cdcf497770a9a5982dbdafc09ea61ab1df7a7ea87fe420971077ca62b814e83804fd0191b
+# user_sign_str:  0x8e18135eede34ac1204bf27bf2ad74938e614b866925d6b72386b12420d44e3867b2ccda74d3e4b71dcdc23a90cfbb63c3b2697a2d0f6b3e1bc09ad9f2d748261b
 
 params = {
     "_pirv_sign_raw":sign_obj_str
@@ -266,10 +268,10 @@ headers = {
 r_json = requests.post(url,params=None,json=params,headers=headers)
 
 print("sign_str: "+sign_str)
-# sign_str: _pirv_sign_raw={"sign_time": 1681709412, "token": "eth", "addr": "0x71c7aDBF701f5724291953561790c9c4e870b029", "url": "/eth2/v2/miner/unstake", "method": "post", "api_param": {"source": "kelepool", "type": "retail", "address": "0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87", "unstake_amt": "123.3244"}}
+# sign_str: _pirv_sign_raw={"sign_time":1681709412,"token":"eth","addr":"0x71743fe0B3474f7A3498E2c95b00a92C680e56FB","url":"/eth2/v2/miner/unstake","method":"post","api_param":{"type":"retail","address":"0xaF73D1072794A386F9505906299F3E2e963581ce","unstake_amt":"1"}}
 
 print("signature: "+sign)
-# signature: ac4f39d17a9d4696d9acbdec8bb0fc10ad022982fab565323fe6f5553b041387180c80eaa2ce9906147930ded5fa6f1fee1652466b5ecac4ed0913a6c9f17650
+# signature: e87c01fe87062bd03c61102b3e3f9a1d94c10a7bd4b757fce4759741e2ba09de93651b3fd1c95f886e71412154ca4e63ba2eee45a9d7d0f02d0e06bdbe127fd5
 
 print("response: "+r_json.text)
 
@@ -278,25 +280,122 @@ print("response: "+r_json.text)
 ### 3.JS签名样例
 
 ```js
+
 // npm install ethers
 
 import { ethers } from 'ethers'
+import sodiumUniversalMemory from 'sodium-universal/memory.js' 
+import sodiumUniversalCryptoGenerichash from 'sodium-universal/crypto_generichash.js'
+import request from 'request'
 
-const privKey = '57973a896b37e2ed2228162e4d0d448795f3b2515c198bf4c19812c3f1ee94f0'
+const { sodium_malloc, sodium_memzero } = sodiumUniversalMemory
 
-const message = 'hello sign message'
+const { crypto_generichash, crypto_generichash_batch } = sodiumUniversalCryptoGenerichash
+
+const authority_key = '6b0a8e85c994cd11129f10e7e85e7c509fe359f9aa79f8f191810deb7cfb3a209d75702d306fa6cae81a32594740e58b7fdfdad36ade22819dfcf7e396dc9880'
+
+const token = 'eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6InRva2VucG9ja2V0IiwidmVyc2lvbiI6IjAiLCJleHAiOjE4NTQ1MDY3NDF9.GuKpXkwGeJMdzcXwnsl_TkDgwfWotibJ7d1BXkx9mC4'
+
+const privKey = '0x004a79ef53fc93c919201f4bfe00ee28cc701627899da0147dee6e4adf0ec52b'
+
+const address = '0xaF73D1072794A386F9505906299F3E2e963581ce'
 
 const signer = new ethers.Wallet(privKey)
 
-// Signing the message
-const sig = await signer.signMessage(message)
-console.log(sig)
-// 0x4c89155fd4068e96f3f58a39330f1e58a705bee289d0af1ccf4fd8299851fc1e4b372dce0b80c5c9d47729242ac56f8f2b72ba59ba8225765693f5e6fc2478081c
+const url = `https://test-api.kelepool.com/eth2/v2/miner/unstake`
 
-const address = await signer.getAddress()
+//1. 用户私钥签名，用于证实用户身份(这里是这个API本身的参数)
+const api_params = {
+    'type': 'retail',
+    'address': address,
+    'unstake_amt': '1'
+}
 
-console.log('Does it match the address', address == ethers.utils.verifyMessage(message, sig))
-// Does it match the address true
+const sign_obj = {
+    'sign_time': 1681709412, // 签名时间 下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
+    'token': 'eth', // 签名币种
+    'addr': address,// 签名钱包地址
+    'url': '/eth2/v2/miner/unstake', // 请求api路由
+    'method': 'post', // 请求api方法
+    'api_param': api_params
+}
+
+// 计算消息签名
+function hmac(data, key) {
+  var mac = Buffer.alloc(64)
+  var scratch = sodium_malloc(128 * 3)
+  var hmacKey = scratch.subarray(128 * 0, 128 * 1)
+  var outerKeyPad = scratch.subarray(128 * 1, 128 * 2)
+  var innerKeyPad = scratch.subarray(128 * 2, 128 * 3)
+  if (key.byteLength > 128) {
+    crypto_generichash(hmacKey.subarray(0, 64), key)
+    sodium_memzero(hmacKey.subarray(64))
+  } else {
+    hmacKey.set(key)
+    sodium_memzero(hmacKey.subarray(key.byteLength))
+  }
+  for (var i = 0; i < hmacKey.byteLength; i++) {
+    outerKeyPad[i] = 0x5c ^ hmacKey[i]
+    innerKeyPad[i] = 0x36 ^ hmacKey[i]
+  }
+  sodium_memzero(hmacKey)
+  crypto_generichash_batch(mac, [innerKeyPad].concat(data))
+  sodium_memzero(innerKeyPad)
+  crypto_generichash_batch(mac, [outerKeyPad].concat(mac))
+  sodium_memzero(outerKeyPad)
+  return mac.toString('hex')
+}
+
+// 拼接请求参数
+function combines(data){
+  var builder = []
+  Object.entries(data).sort((a,b)=> (a[0].localeCompare(b[0]) || a[1].localeCompare(b[1]))).forEach((item,index)=>{
+    builder.push(item[0] +'=' + item[1])
+  })
+  return builder.join("&")
+}
+
+const sign_obj_str = JSON.stringify(sign_obj)
+
+console.log('sign_obj_str:', sign_obj_str)
+// sign_obj_str: {"sign_time":1681709412,"token":"eth","addr":"0xaF73D1072794A386F9505906299F3E2e963581ce","url":"/eth2/v2/miner/unstake","method":"post","api_param":{"type":"retail","address":"0xaF73D1072794A386F9505906299F3E2e963581ce","unstake_amt":"1"}}
+
+const user_sign_str = await signer.signMessage(sign_obj_str)
+
+console.log('user_sign_str:', user_sign_str)
+// user_sign_str: 0x8e18135eede34ac1204bf27bf2ad74938e614b866925d6b72386b12420d44e3867b2ccda74d3e4b71dcdc23a90cfbb63c3b2697a2d0f6b3e1bc09ad9f2d748261b
+
+const params = {
+  '_pirv_sign_raw': sign_obj_str
+}
+
+const parameters = combines(params)
+
+const key = Buffer.from(authority_key,'utf8')
+
+const data = Buffer.from(parameters,'utf8')
+
+const signature = hmac(data, key)
+
+console.log('signature:', signature)
+// signature: e87c01fe87062bd03c61102b3e3f9a1d94c10a7bd4b757fce4759741e2ba09de93651b3fd1c95f886e71412154ca4e63ba2eee45a9d7d0f02d0e06bdbe127fd5
+
+const headers = {
+  'Content-Type': 'application/json', 
+  'Accept':'application/json',
+  'Kele-ThirdParty-Authority': token,
+  'Kele-ThirdParty-Sign': signature,
+  'Kele-Private-Sign':user_sign_str
+}
+
+// 发起请求
+request({ url, headers },
+  (error, response, body) => {
+    const data = JSON.parse(body);
+    console.log(data);
+  })
+
+
 ```
 
 ### 用户地址注册
