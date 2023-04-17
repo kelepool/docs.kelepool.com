@@ -208,7 +208,6 @@ api请求body样例
 ### 2.Python签名样例
 
 ```python
-
 import hashlib
 import hmac
 import json
@@ -217,7 +216,7 @@ import requests
 import web3
 from eth_account.messages import encode_defunct
 
-url = 'http://127.0.0.1:30003/eth2/v1/subminer/withdraw_reward_v2'
+url = 'https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce&ok=3ijXtimSZT8L8jhTBzjHStGKLMxiaoQSFqs7ZBttaq2PYjx2yg5Eh19m8DvWTSQXuDr31yXVFEqSmpss9NjRUMHoPueNEV1CSf8cxZUnqE6wnC&lan=zh&isMobile=false'
 
 authority_key='6b0a8e85c994cd11129f10e7e85e7c509fe359f9aa79f8f191810deb7cfb3a209d75702d306fa6cae81a32594740e58b7fdfdad36ade22819dfcf7e396dc9880'
 token="eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6InRva2VucG9ja2V0IiwidmVyc2lvbiI6IjAiLCJleHAiOjE4NTQ1MDY3NDF9.GuKpXkwGeJMdzcXwnsl_TkDgwfWotibJ7d1BXkx9mC4"
@@ -225,23 +224,20 @@ token="eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6InRv
 priv = '0x004a79ef53fc93c919201f4bfe00ee28cc701627899da0147dee6e4adf0ec52b'
 addr = '0xaF73D1072794A386F9505906299F3E2e963581ce'
 
-# 1. 用户私钥签名，用于证实用户身份
+# 1. 用户私钥签名，用于证实用户身份(这里是这个API本身的参数)
 api_params = {
-        "source":"CHANNEL_1",
+        "source":"kelepool",
         "type":"retail",
-        "address":addr,
-        "unstake_amt":"123.3244",
-        "sub_uid":2,
-        "amount_gwei":12345678,
-        "order_id":"eacd4721811a4b64bbfd3d9d7a87a8bf"
+        "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
+        "unstake_amt":"123.3244"
     }
 
 sign_obj = {
-    "sign_time" : 1681709412, #int(time.time()),下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
-    "token" : "eth",
-    "addr" : addr,
-    "url" : "/eth2/v1/subminer/withdraw_reward_v2",
-    "method" : "post",
+    "sign_time":1681709412, # 签名时间 下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
+    "token":"eth", # 签名币种
+    "addr":"0x71c7aDBF701f5724291953561790c9c4e870b029",# 签名钱包地址
+    "url":"/eth2/v2/miner/unstake", # 请求api路由
+    "method":"post", # 请求api方法
     "api_param" : api_params
 }
 
@@ -249,7 +245,7 @@ sign_obj = {
 sign_obj_str = json.dumps(sign_obj)
 user_sign_str = web3.eth.Account.sign_message(encode_defunct(sign_obj_str.encode()), priv).signature.hex()
 print("user_sign_str: ", user_sign_str) 
-# user_sign_str:  0x3dd0366f8eaf6d56454553f79a56fa6a1c1edfb25f9399e5d9f606bd0f6dc8436e6a80bc8e33cc231be29a828877198350cd96a3936925c9c2bbbe7517adda1f1c
+# user_sign_str:  0x6bc392bd466640f1bd3afacb2a80c860ad169633b14a3dbc4c9c46c73cdcf497770a9a5982dbdafc09ea61ab1df7a7ea87fe420971077ca62b814e83804fd0191b
 
 params = {
     "_pirv_sign_raw":sign_obj_str
@@ -271,10 +267,10 @@ headers = {
 r_json = requests.post(url,params=None,json=params,headers=headers)
 
 print("sign_str: "+sign_str)
-# sign_str: _pirv_sign_raw={"sign_time": 1681709412, "token": "eth", "addr": "0xaF73D1072794A386F9505906299F3E2e963581ce", "url": "/eth2/v1/subminer/withdraw_reward_v2", "method": "post", "api_param": {"source": "CHANNEL_1", "type": "retail", "address": "0xaF73D1072794A386F9505906299F3E2e963581ce", "unstake_amt": "123.3244", "sub_uid": 2, "amount_gwei": 12345678, "order_id": "eacd4721811a4b64bbfd3d9d7a87a8bf"}}
+# sign_str: _pirv_sign_raw={"sign_time": 1681709412, "token": "eth", "addr": "0x71c7aDBF701f5724291953561790c9c4e870b029", "url": "/eth2/v2/miner/unstake", "method": "post", "api_param": {"source": "kelepool", "type": "retail", "address": "0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87", "unstake_amt": "123.3244"}}
 
 print("signature: "+sign)
-# signature: df2f0309aa875a72e4f30c47c7362dcc59a592af0dcebd375bc5a9f51eeaff0419721a6e61e83ea003e2a5f407b69f20f596144980cb6284a485dcc4ad410387
+# signature: ac4f39d17a9d4696d9acbdec8bb0fc10ad022982fab565323fe6f5553b041387180c80eaa2ce9906147930ded5fa6f1fee1652466b5ecac4ed0913a6c9f17650
 
 print("response: "+r_json.text)
 
