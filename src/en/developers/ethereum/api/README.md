@@ -518,6 +518,8 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 ## Validator Node Status
 #### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
+Only large staking node records can be queried, and small staking nodes will not be returned
+
 > Request parameters:
 > - `address` User wallet address
 > - `page_size` Page Size

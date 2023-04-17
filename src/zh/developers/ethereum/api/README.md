@@ -565,6 +565,8 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 ### 用户节点列表
 ##### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
+仅返回大额质押节点记录，小额质押节点不返回
+
 > 请求参数：
 > - `address` ：用户质押钱包地址
 > - `page_size` 分页大小
@@ -612,7 +614,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
             "effective_time":null,
             "address":"0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
             "deposit_credentials":"",
-            "type":0, 
+            "type":1, 
             "reward": 0.5368926599999995,
             "mev_reward":0.5368926599999995,
             "apr":0.0487,
