@@ -209,19 +209,75 @@ api请求body样例
 
 ```python
 
+import hashlib
+import hmac
+import json
+import time
+import requests
 import web3
 from eth_account.messages import encode_defunct
 
+url = 'http://127.0.0.1:30003/eth2/v1/subminer/withdraw_reward_v2'
+
+authority_key='6b0a8e85c994cd11129f10e7e85e7c509fe359f9aa79f8f191810deb7cfb3a209d75702d306fa6cae81a32594740e58b7fdfdad36ade22819dfcf7e396dc9880'
+token="eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6InRva2VucG9ja2V0IiwidmVyc2lvbiI6IjAiLCJleHAiOjE4NTQ1MDY3NDF9.GuKpXkwGeJMdzcXwnsl_TkDgwfWotibJ7d1BXkx9mC4"
+
 priv = '0x004a79ef53fc93c919201f4bfe00ee28cc701627899da0147dee6e4adf0ec52b'
 addr = '0xaF73D1072794A386F9505906299F3E2e963581ce'
-input = 'input msg 6a957501785f6c211e606c1fd945169a3f35691f3b9be11146146200e99a8bcd'
-# https://eips.ethereum.org/EIPS/eip-191
-sign_str = web3.eth.Account.sign_message(encode_defunct(input.encode()), priv).signature.hex()
-print("sign_str",sign_str) # 0x011bb13f789dcdbbb0e407e071751ae2d6b4726525cdc8791b9af96efd77f95262143b64faca866843c24031411ac95a1ad7fb69ed0ca502580b030b00e624fc1c
 
-# 签名校验
-signer = web3.eth.Account.recover_message(encode_defunct(input.encode()), signature=bytes.fromhex(sign_str[2:]))
-print(signer, addr) # 0xaF73D1072794A386F9505906299F3E2e963581ce 0xaF73D1072794A386F9505906299F3E2e963581ce
+# 1. 用户私钥签名，用于证实用户身份
+api_params = {
+        "source":"CHANNEL_1",
+        "type":"retail",
+        "address":addr,
+        "unstake_amt":"123.3244",
+        "sub_uid":2,
+        "amount_gwei":12345678,
+        "order_id":"eacd4721811a4b64bbfd3d9d7a87a8bf"
+    }
+
+sign_obj = {
+    "sign_time" : 1681709412, #int(time.time()),下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
+    "token" : "eth",
+    "addr" : addr,
+    "url" : "/eth2/v1/subminer/withdraw_reward_v2",
+    "method" : "post",
+    "api_param" : api_params
+}
+
+# https://eips.ethereum.org/EIPS/eip-191
+sign_obj_str = json.dumps(sign_obj)
+user_sign_str = web3.eth.Account.sign_message(encode_defunct(sign_obj_str.encode()), priv).signature.hex()
+print("user_sign_str: ", user_sign_str) 
+# user_sign_str:  0x3dd0366f8eaf6d56454553f79a56fa6a1c1edfb25f9399e5d9f606bd0f6dc8436e6a80bc8e33cc231be29a828877198350cd96a3936925c9c2bbbe7517adda1f1c
+
+params = {
+    "_pirv_sign_raw":sign_obj_str
+}
+sign_str = '&'.join(['%s=%s' % (k, params[k]) for k in sorted(params)])
+
+# 2.渠道token签名，用于证实渠道身份
+sign=hmac.new(authority_key.encode(), sign_str.encode('utf-8'), digestmod=hashlib.blake2b).hexdigest()
+
+# 3. 发起请求
+headers = {
+'Content-Type': 'application/json', 
+'Accept':'application/json',
+'Kele-ThirdParty-Authority':token,
+'Kele-ThirdParty-Sign':sign,
+'Kele-Private-Sign':user_sign_str
+}
+
+r_json = requests.post(url,params=None,json=params,headers=headers)
+
+print("sign_str: "+sign_str)
+# sign_str: _pirv_sign_raw={"sign_time": 1681709412, "token": "eth", "addr": "0xaF73D1072794A386F9505906299F3E2e963581ce", "url": "/eth2/v1/subminer/withdraw_reward_v2", "method": "post", "api_param": {"source": "CHANNEL_1", "type": "retail", "address": "0xaF73D1072794A386F9505906299F3E2e963581ce", "unstake_amt": "123.3244", "sub_uid": 2, "amount_gwei": 12345678, "order_id": "eacd4721811a4b64bbfd3d9d7a87a8bf"}}
+
+print("signature: "+sign)
+# signature: df2f0309aa875a72e4f30c47c7362dcc59a592af0dcebd375bc5a9f51eeaff0419721a6e61e83ea003e2a5f407b69f20f596144980cb6284a485dcc4ad410387
+
+print("response: "+r_json.text)
+
 ```
 
 ### 3.JS签名样例
