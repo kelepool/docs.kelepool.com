@@ -216,7 +216,7 @@ import requests
 import web3
 from eth_account.messages import encode_defunct
 
-url = 'https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce&ok=3ijXtimSZT8L8jhTBzjHStGKLMxiaoQSFqs7ZBttaq2PYjx2yg5Eh19m8DvWTSQXuDr31yXVFEqSmpss9NjRUMHoPueNEV1CSf8cxZUnqE6wnC&lan=zh&isMobile=false'
+url = 'https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce'
 
 authority_key='6b0a8e85c994cd11129f10e7e85e7c509fe359f9aa79f8f191810deb7cfb3a209d75702d306fa6cae81a32594740e58b7fdfdad36ade22819dfcf7e396dc9880'
 token="eyJ0eXAiOiJqd3QiLCJhbGciOiJIUzI1NiJ9.eyJ0eXBlIjoiZnVsbCIsIm9wZW5pZCI6InRva2VucG9ja2V0IiwidmVyc2lvbiI6IjAiLCJleHAiOjE4NTQ1MDY3NDF9.GuKpXkwGeJMdzcXwnsl_TkDgwfWotibJ7d1BXkx9mC4"
@@ -226,16 +226,15 @@ addr = '0xaF73D1072794A386F9505906299F3E2e963581ce'
 
 # 1. 用户私钥签名，用于证实用户身份(这里是这个API本身的参数)
 api_params = {
-        "source":"kelepool",
-        "type":"retail",
-        "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
-        "unstake_amt":"123.3244"
-    }
+    "type": "retail",
+    "address": "0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+    "unstake_amt": "1"
+}
 
 sign_obj = {
     "sign_time":1681709412, # 签名时间 下边的返回结果是用1681709412时间生成的，正常需要用最新时间，不然时间会检验错误
     "token":"eth", # 签名币种
-    "addr":"0x71c7aDBF701f5724291953561790c9c4e870b029",# 签名钱包地址
+    "addr":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",# 签名钱包地址
     "url":"/eth2/v2/miner/unstake", # 请求api路由
     "method":"post", # 请求api方法
     "api_param" : api_params
