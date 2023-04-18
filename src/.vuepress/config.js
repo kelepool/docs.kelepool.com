@@ -339,6 +339,7 @@ module.exports = {
                 '/zh/wiki/pos/kelepool.md',
                 '/zh/wiki/pos/merge.md',
                 '/zh/wiki/pos/fork.md',
+                '/zh/wiki/pos/0x00address.md',
                 '/zh/wiki/pos/aleo.md'
               ],
             },
