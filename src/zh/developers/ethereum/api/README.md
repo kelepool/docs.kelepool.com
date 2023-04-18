@@ -857,6 +857,56 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 }
 ```
 
+### 查询可赎回节点列表
+
+##### GET [/eth2/v2/miner/unstake_check](https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=32&node_ids=468230,468231)
+
+
+> 请求参数：
+> - `address` ：用户地址
+> - `unstake_amt` ：赎回ETH数量，系统根据数量按时间降序选择节点赎回（这个字段与node_ids任选一个填写，用于按数量赎回）
+> - `node_ids`：赎回节点链上ID列表，多个逗号分隔（这个字段与unstake_amt任选一个填写，用于按节点ID赎回）
+> - `num2str` ：是否将返回的全部字段转字符串类型
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=32&node_ids=468106,468105,464352,468230
+```
+
+> 请求返回值：availables中是目前可以赎回的节点，unusables中是目前暂时无法赎回的节点（3天内激活的节点）。
+
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `identifer` ：验证者链上ID
+> - `public_key` ：验证者公钥匙
+
+```json
+{
+    "code": 0,
+    "message": "success",
+    "data": {
+        "availables": [
+            {
+                "identifer": 468106,
+                "public_key": "893c775be276f3b908a5bc7c06d82119947ea15223738d61222d29d491d0dbc826544b1989bb41834a2ed28112052d32"
+            },
+            {
+                "identifer": 468105,
+                "public_key": "b945c815c0151966a3da434298b8634be71d0015064acefa84f7900bbd87a2eb42d404ea9550bca65d5d7ac4692224fb"
+            },
+            {
+                "identifer": 464352,
+                "public_key": "a6b53f3fb8c35a4b8ebb0fd4046dc5235655fde408222bb3feab7b81432e11e0766abe0abfd1f3b0017e08da75b59017"
+            }
+        ],
+        "unusables": [
+            {
+                "identifer": 468230,
+                "public_key": "a432e7d747543b9d646c9e5aea05a8681092c24549cc17743e283f4dd4f7b667754212b5c14399f13784bef4f5b65abc"
+            }
+        ]
+    }
+}
+```
 
 ### 查询可赎回金额
 
@@ -906,6 +956,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 > - `type` ：赎回类型  retail:小额赎回， retail_fast:小额快速赎回, whale:大额质押赎回
 > - `address` ：用户地址
 > - `unstake_amt` ：赎回金额
+> - `node_ids`：赎回节点链上ID列表，多个逗号分隔（仅大额赎回可用，用于按节点ID来赎回。此字段填写后，不允许再填写unstake_amt字段，unstake_amt设置为0或留空都行）
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/miner/unstake
