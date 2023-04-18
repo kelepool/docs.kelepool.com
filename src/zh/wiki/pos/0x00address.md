@@ -16,7 +16,7 @@ https://beaconcha.in/validators/deposits?q=YourEthDepositAddress
 
 如果您的提款凭证（Withdrawal credential）前缀显示为`0x00`，则执行层提款地址尚未设置，请继续阅读并设置。
 
-![](<../../.gitbook/assets/0417/01.PNG>)
+![](<../../guides/.gitbook/assets/0417/01.PNG>)
 
 
 ---
@@ -34,11 +34,11 @@ https://beaconcha.in/validators/deposits?q=YourEthDepositAddress
 
 每个验证者在加入信标链时都会被分配一个链上ID。要查找验证器链上ID，请使用步骤1中的链接查找与您ETH存款地址关联的验证者。
 
-![](<../../.gitbook/assets/0417/01.png>)
+![](<../../guides/.gitbook/assets/0417/01.png>)
 
 单击验证者密钥（Validator Key）。它将加载一个在顶部显示验证者索引的页面。
 
-![](<../../.gitbook/assets/0417/03.png>)
+![](<../../guides/.gitbook/assets/0417/03.png>)
 
 
 在此示例中，链上ID为107619。如果有多个验证者，请用逗号分隔验证者链上ID。例如107619，107620，107621。
@@ -47,7 +47,7 @@ https://beaconcha.in/validators/deposits?q=YourEthDepositAddress
 
 旧BLS为最初在创建时分配给您的验证者的提款凭证。使用步骤1中的查找功能查找与您的ETH存款地址关联的验证者。
 
-![](<../../.gitbook/assets/0417/01.png>)
+![](<../../guides/.gitbook/assets/0417/01.png>)
 
 “提款凭证（Withdrawal credential）”列包含每个验证者的旧BLS提款凭证。在此示例中，凭证为0x009690e5d4472c7c0dbdf490425d89862535d2a52fb686333f3a0a9ff5d2125e。如果您有多个验证者，请用逗号分隔BLS提款凭证。例如0x00.，0x00.，0x00.。
 
@@ -108,50 +108,50 @@ deposit.exe generate-bls-to-execution-change
 ```
 选择你所需的语言：
 
-![](<../../.gitbook/assets/0417/05.png>)
+![](<../../guides/.gitbook/assets/0417/05.png>)
 
 选择网络。主网用于生产，其他为测试网
 
-![](<../../.gitbook/assets/0417/06.png>)
+![](<../../guides/.gitbook/assets/0417/06.png>)
 
 输入助记词
 
-![](<../../.gitbook/assets/0417/07.png>)
+![](<../../guides/.gitbook/assets/0417/07.png>)
 
 输入索引位置
 
-![](<../../.gitbook/assets/0417/08.png>)
+![](<../../guides/.gitbook/assets/0417/08.png>)
 
 输入验证者索引号码
 
-![](<../../.gitbook/assets/0417/09.png>)
+![](<../../guides/.gitbook/assets/0417/09.png>)
 
 输入旧的BLS提款凭证
 
-![](<../../.gitbook/assets/0417/10.png>)
+![](<../../guides/.gitbook/assets/0417/10.png>)
 
 输入将作为新提款地址的eth1地址
 
-![](<../../.gitbook/assets/0417/11.png>)
+![](<../../guides/.gitbook/assets/0417/11.png>)
 
 再次输入以确认。注意！地址一旦设置，将不能更改。
 
-![](<../../.gitbook/assets/0417/12.png>)
+![](<../../guides/.gitbook/assets/0417/12.png>)
 
 完成
 
-![](<../../.gitbook/assets/0417/13.png>)
+![](<../../guides/.gitbook/assets/0417/13.png>)
 
 >注意：该验证步骤用于确保旧的BLS提款凭证是由助记词创建的。如果它们不匹配，则该过程将失败。例如：“[错误]给定的提款凭证与助记词生成的旧BLS提款凭证不匹配。”
 
 在指定位置创建`SignedBLsToExecutionChange` JSON文件。目录的内容如下所示。
 
-![](<../../.gitbook/assets/0417/14.png>)
+![](<../../guides/.gitbook/assets/0417/14.png>)
 
 该文件包含每个验证者的凭证更改数据。它已签名，因此您不应手动修改任何内容。  
 仔细检查，特别是“执行地址”。如果发现错误，请删除JSON文件，并使用正确的值重新生成该文件。
 
-![](<../../.gitbook/assets/0417/15.png>)
+![](<../../guides/.gitbook/assets/0417/15.png>)
 
 如果您是在无网的计算机上运行，请将`SignedBLsToExecutionChange` JSON文件复制到USB驱动器上。
 
@@ -165,13 +165,13 @@ deposit.exe generate-bls-to-execution-change
 
 按照提示提供JSON文件，再次仔细检查所有内容后，单击Submit&Broadcast按钮
 
-![](<../../.gitbook/assets/0417/16.png>)
+![](<../../guides/.gitbook/assets/0417/16.png>)
 
 >注意：在这里有额外验证以确保提供的旧BLS提款凭证与验证者索引匹配。如果不匹配，提交将无效。例如：“FromBLSPubKey与索引为1000的验证者的WithdrawalCredentials不匹配”。您应返回并使用正确的值重新生成签名消息JSON文件。
 
 如果成功收到您的请求，将显示回执。
 
-![](<../../.gitbook/assets/0417/17.png>)
+![](<../../guides/.gitbook/assets/0417/17.png>)
 
 现在，您已经提供了一条已签名的消息来更新您的验证者提款凭证，该消息将于上海升级后通过信标链进行广播。
 
