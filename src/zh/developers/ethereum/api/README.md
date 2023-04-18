@@ -859,7 +859,7 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 
 ### 查询可赎回节点列表
 
-##### GET [/eth2/v2/miner/unstake_check](https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=32&node_ids=468230,468231)
+##### GET [/eth2/v2/miner/unstake_check](https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=0&node_ids=468230,468231)
 
 
 > 请求参数：
@@ -869,7 +869,7 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 > - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=32&node_ids=468106,468105,464352,468230
+https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=0&node_ids=468106,468105,464352,468230
 ```
 
 > 请求返回值：availables中是目前可以赎回的节点，unusables中是目前暂时无法赎回的节点（3天内激活的节点）。
@@ -963,8 +963,9 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake
 
 {
     "type":"retail",
-    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
-    "unstake_amt":"123.3244"
+    "address":"0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE",
+    "unstake_amt":"123.3244",
+    "node_ids":"468106,468230"
 }
 ```
 
