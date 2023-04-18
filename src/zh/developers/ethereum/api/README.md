@@ -471,6 +471,7 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `reward` ：曲线图上的共识收益（ETH）
 > - `mev_reward` ：曲线图上的mev收益（ETH） (需要注意mev收益是小时级结算，共识收益是天级结算，两者结算进度不同)
 > - `snap_time` ：曲线图上的时间
+
 ```json
 {
     "code":0,
@@ -857,9 +858,7 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 ```
 
 
-### 用户赎回
-
-#### 查询可赎回金额
+### 查询可赎回金额
 
 ##### GET [/eth2/v2/miner/unstake](https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
 
@@ -897,7 +896,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 }
 ```
 
-#### 发起赎回
+### 发起赎回
 
 - 先需要用户私钥签名，详见ETH私钥签名章节
 - 然后用auth token对整个json body签名
@@ -932,9 +931,8 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake
 }
 ```
 
-### 用户提现
 
-#### 查询可提现信息
+### 查询可提现信息
 
 ##### GET [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87)
 
@@ -967,7 +965,7 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb
 }
 ```
 
-#### 发起提现
+### 发起提现
 
 ##### POST [/eth2/v2/miner/withdrawal](https://test-api.kelepool.com/eth2/v2/miner/withdrawal)
 
