@@ -859,7 +859,7 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 
 ### 查询可赎回节点列表
 
-##### GET [/eth2/v2/miner/unstake_check](https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=32&node_ids=468230,468231)
+##### GET [/eth2/v2/miner/unstake_check](https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=0&node_ids=468230,468231)
 
 
 > 请求参数：
@@ -869,10 +869,10 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 > - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=32&node_ids=468106,468105,464352,468230
+https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=0&node_ids=468106,468105,464352,468230
 ```
 
-> 请求返回值：availables中是目前可以赎回的节点，unusables中是目前暂时无法赎回的节点（3天内激活的节点）。
+> 请求返回值：availables中是目前可以赎回的节点，unusables中是目前暂时无法赎回的节点（1天内激活的节点）。
 
 > - `code` ：整型数字，等于0表示成功，大于0表示失败
 > - `message` ：失败后返回的消息
@@ -955,7 +955,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 > 请求参数：
 > - `type` ：赎回类型  retail:小额赎回， retail_fast:小额快速赎回, whale:大额质押赎回
 > - `address` ：用户地址
-> - `unstake_amt` ：赎回金额
+> - `unstake_amt` ：赎回金额，这里要注意如果是大额赎回，必须是32的整数倍，系统根据数量按时间降序选择节点赎回（这个字段与node_ids任选一个填写，用于按数量赎回）
 > - `node_ids`：赎回节点链上ID列表，多个逗号分隔（仅大额赎回可用，用于按节点ID来赎回。此字段填写后，不允许再填写unstake_amt字段，unstake_amt设置为0或留空都行）
 
 ```bash
@@ -963,8 +963,9 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake
 
 {
     "type":"retail",
-    "address":"0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87",
-    "unstake_amt":"123.3244"
+    "address":"0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE",
+    "unstake_amt":"123.3244",
+    "node_ids":"468106,468230"
 }
 ```
 
