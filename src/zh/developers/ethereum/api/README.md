@@ -956,7 +956,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 > - `type` ：赎回类型  retail:小额赎回， retail_fast:小额快速赎回, whale:大额质押赎回
 > - `address` ：用户地址
 > - `unstake_amt` ：赎回金额，这里要注意如果是大额赎回，必须是32的整数倍，系统根据数量按时间降序选择节点赎回（这个字段与node_ids任选一个填写，用于按数量赎回）
-> - `node_ids`：赎回节点链上ID列表，多个逗号分隔（仅大额赎回可用，用于按节点ID来赎回。此字段填写后，不允许再填写unstake_amt字段，unstake_amt设置为0或留空都行）
+> - `node_ids`：赎回节点链上ID列表，多个逗号分隔（仅大额赎回可用，用于按节点ID来赎回。此字段填写后，不允许再填写unstake_amt字段，unstake_amt设置为0）
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/miner/unstake

@@ -719,8 +719,58 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
 }
 ```
 
-
 ## User Unstake
+
+### Query the list of redeemable nodes
+
+##### GET [/eth2/v2/miner/unstake_check](https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=0&node_ids=468230,468231)
+
+
+> Request parameters:
+> - `address` : user address
+> - `unstake_amt`: Redeem the amount of ETH, the system selects nodes to redeem according to the amount in descending order of time (this field and node_ids can be filled in for redemption by amount)
+> - `node_ids`: A list of IDs on the redemption node chain, separated by multiple commas (this field and unstake_amt are optional to fill in, for redemption by node ID)
+> - `num2str`: whether to convert all returned fields to string type
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/unstake_check?address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&unstake_amt=0&node_ids=468106,468105,464352,468230
+```
+
+> Request return value: availables is the node that can be redeemed at present, and unusables is the node that cannot be redeemed temporarily (node activated within 1 day).
+
+> - `code`: integer number, equal to 0 means success, greater than 0 means failure
+> - `message` : the message to return on failure
+> - `identifer` : validator on-chain ID
+> - `public_key` : validator public key
+
+```json
+{
+     "code": 0,
+     "message": "success",
+     "data": {
+         "available": [
+             {
+                 "identifer": 468106,
+                 "public_key": "893c775be276f3b908a5bc7c06d82119947ea15223738d61222d29d491d0dbc826544b1989bb41834a2ed28112052d32"
+             },
+             {
+                 "identifer": 468105,
+                 "public_key": "b945c815c0151966a3da434298b8634be71d0015064acefa84f7900bbd87a2eb42d404ea9550bca65d5d7ac4692224fb"
+             },
+             {
+                 "identifer": 464352,
+                 "public_key": "a6b53f3fb8c35a4b8ebb0fd4046dc5235655fde408222bb3feab7b81432e11e0766abe0abfd1f3b0017e08da75b59017"
+             }
+         ],
+         "unusables": [
+             {
+                 "identifer": 468230,
+                 "public_key": "a432e7d747543b9d646c9e5aea05a8681092c24549cc17743e283f4dd4f7b667754212b5c14399f13784bef4f5b65abc"
+             }
+         ]
+     }
+}
+```
 
 ### Query the amount that can be unstake
 
