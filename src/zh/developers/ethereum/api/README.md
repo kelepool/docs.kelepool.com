@@ -434,7 +434,7 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 }
 ```
 
-## 用户API接口
+## 用户查询API接口
 
 ### 用户质押总览
 ##### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
@@ -856,6 +856,8 @@ https://test-api.kelepool.com/eth2/v2/op_history?address=0x5dd3bd08cbc8498c8640a
     ]
 }
 ```
+
+## 赎回提现API接口
 
 ### 查询可赎回节点列表
 

@@ -132,6 +132,7 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/en/developers/ethereum/faq/README.md',
                 '/en/developers/ethereum/api/Hardware.md',
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
@@ -349,6 +350,7 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/zh/developers/ethereum/faq/README.md',
                 '/zh/developers/ethereum/api/Hardware.md',
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
