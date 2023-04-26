@@ -577,43 +577,54 @@ https://test-api.kelepool.com/eth2/v2/global?num2str=1
 
 ### 收益历史列表
 
-#### 共识收益
-##### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+#### 收益日账单
+##### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
+> - `bill_type` ：账单类型  默认值0,1:查共识收益日账单; 可传0,1,2:查共识收益+mev收益整体日账单
 > - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
+https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce
 ```
 
 > 请求返回值：
 > - `date` ：分红日期
-> - `reward` ：截止当天累计收益
-> - `deposit` ：截止当天累计充值本金
-> - `balance` ：截止当天账户总余额（截止当天累计充值本金+截止当天累计收益）
+> - `reward` ：当天收益
+> - `deposit` ：截止当天累计本金(截止当天累计充值本金-截止当天累计提现)
+> - `balance` ：截止当天账户总余额（截止当天累计充值本金+截止当天累计收益-截止当天累计提现）
+> - `total_deposit` ：截止当天累计充值金额
+> - `total_withdrawal` ：截止当天累计提现金额
+> - `total_reward` ：截止当天累计收益
+
 ```json
 {
-    "code":0,
-    "message":"success",
-    "data":[
-        {
-            "date":"2022-07-09 00:00:00",
-            "reward":0.0172946,
-            "deposit":173.3,
-            "balance":174.12885933
-        },
-        {
-            "date":"2022-07-08 00:00:00",
-            "reward":0.03071118,
-            "deposit":173.3,
-            "balance":174.11156473
-        }
+  "code": 0,
+  "message": "success",
+  "data": [
+    {
+      "date": "2023-04-25 00:00:00",
+      "reward": 0.00043776,
+      "deposit": 157.68972252,
+      "balance": 158.18080674,
+      "total_deposit": "254.6243",
+      "total_withdrawal": "96.934577477",
+      "total_reward": "0.289752687771953251"
+    },
+    {
+      "date": "2023-04-24 00:00:00",
+      "reward": 0.20050686,
+      "deposit": 157.69163767,
+      "balance": 158.18228413,
+      "total_deposit": "254.6243",
+      "total_withdrawal": "96.932662325",
+      "total_reward": "0.289314919943093251"
+    }
     ]
 }
 ```
-#### MEV收益
+#### MEV收益明细
 
 - 来自合作商的大额质押节点，将按私池模式独立部署，节点获得的mev收益独立结算
 - mev收益记入质押地址
@@ -1178,6 +1189,71 @@ https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=2
                 "32.00",
                 "32.00639918"
             ]
+        ]
+    }
+}
+```
+
+### 节点链上自动转账记录查询
+
+> 大额质押节点，其基础收益提取/本金赎回由节点自动完成转账，转账记录可通过此接口查询
+##### GET [/eth2/v2/validator/node_withdrawal](https://test-api.kelepool.com/eth2/v2/validator/node_withdrawal?vids=464352,468105&address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&order_by=-time&page_size=5&page_number=1)
+
+> 请求参数：
+> - `page_size` 分页大小
+> - `page_number` 分页页号
+> - `vids` ：验证节点id过滤，可传多个，建议不超过10个
+> - `address` ：节点质押人过滤 (vids和address必须至少一个有效，查询结果取两者交集)
+> - `order_by` ：转账记录排序，目前支持`time`,`-time`
+> - `timezone` ：指定返回时间的时区
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validator/node_withdrawal?timezone=0&vids=464352,468105&address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&order_by=-time&page_size=5&page_number=1
+```
+
+> 请求返回值：
+> - `timezone` ：时区
+> - `index` ：转账记录在链上的唯一索引号
+> - `amount` ：转账金额(gwei)
+> - `amount_eth` ：转账金额(eth)
+> - `address` ：转账收款地址
+> - `time` ：转账时间
+> - `validator_index` ：验证节点唯一id
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":21,
+        "page_size":3,
+        "page_number":1,
+        "timezone":"8",
+        "data":[
+            {
+                "index":"0x329de0",
+                "amount":32000000000,
+                "address":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+                "time":"2023-04-21 08:47:36",
+                "validator_index":468105,
+                "amount_eth":"32"
+            },
+            {
+                "index":"0x328ffd",
+                "amount":32000000000,
+                "address":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+                "time":"2023-04-21 07:51:00",
+                "validator_index":464352,
+                "amount_eth":"32"
+            },
+            {
+                "index":"0x303d39",
+                "amount":1371538,
+                "address":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+                "time":"2023-04-19 14:17:00",
+                "validator_index":468105,
+                "amount_eth":"0.001371538"
+            }
         ]
     }
 }
