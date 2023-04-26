@@ -425,38 +425,49 @@ https://test-api.kelepool.com/eth2/v2/global&num2str=1
 ## Earnings history list
 
 ### Consensus Benefits
-#### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+#### GET [/eth2/v2/miner/income/query](https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce)
 
 > Request parameters:
 > - `address`: user staking wallet address
+> - `bill_type`: bill type default value 0,1: query consensus income daily bills; can use 0,1,2: to query the overall daily bill of consensus reward+mev reward
 > - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/miner/income/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&num2str=1
+https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address=0x3ef51b5079021a11b1cab3d36eea45facf2b00ce&num2str=1
 ```
 
 > Request return value:
 > - `date` : dividend date
-> - `reward` : accumulated earnings as of the current day
-> - `deposit` : the cumulative recharge principal as of the current day
-> - `balance`: the total balance of the account as of the day (accumulated recharge principal as of the day + accumulated income as of the day)
+> - `reward` ：Current day earnings
+> - `deposit` ：accumulated principal as of the current day (accumulated recharge principal as of the current day - accumulated withdrawal as of the current day)
+> - `balance` ：total account balance as of the current day (accumulated recharge principal as of the current day+accumulated income as of the current day - accumulated withdrawal as of the current day)
+> - `total_deposit` ：accumulated recharge amount as of the current day
+> - `total_withdrawal` ：accumulated withdrawal amount as of the current day
+> - `total_reward` ：accumulated income as of the current day
+
 ```json
 {
-    "code":0,
-    "message":"success",
-    "data":[
-        {
-            "date":"2022-07-09 00:00:00",
-            "reward":0.0172946,
-            "deposit":173.3,
-            "balance":174.12885933
-        },
-        {
-            "date":"2022-07-08 00:00:00",
-            "reward":0.03071118,
-            "deposit":173.3,
-            "balance":174.11156473
-        }
+  "code": 0,
+  "message": "success",
+  "data": [
+    {
+      "date": "2023-04-25 00:00:00",
+      "reward": 0.00043776,
+      "deposit": 157.68972252,
+      "balance": 158.18080674,
+      "total_deposit": "254.6243",
+      "total_withdrawal": "96.934577477",
+      "total_reward": "0.289752687771953251"
+    },
+    {
+      "date": "2023-04-24 00:00:00",
+      "reward": 0.20050686,
+      "deposit": 157.69163767,
+      "balance": 158.18228413,
+      "total_deposit": "254.6243",
+      "total_withdrawal": "96.932662325",
+      "total_reward": "0.289314919943093251"
+    }
     ]
 }
 ```
@@ -1234,6 +1245,71 @@ https://test-api.kelepool.com/eth2/v2/validator_reward?page_number=1&page_size=2
                 "32.00",
                 "32.00639918"
             ]
+        ]
+    }
+}
+```
+
+### Node chain automatic transfer record query
+
+> large amount pledge nodes, whose basic income extraction/principal redemption are automatically transferred by the node, and transfer records can be queried through this interface
+##### GET [/eth2/v2/validator/node_withdrawal](https://test-api.kelepool.com/eth2/v2/validator/node_withdrawal?vids=464352,468105&address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&order_by=-time&page_size=5&page_number=1)
+
+> Request parameters：
+> - `page_size` Page Size
+> - `page_number` Page Number
+> - `vids` ：node id filter, can transmit multiple, recommended not to exceed 10
+> - `address` ：staking user filter (vids and address must be at least one valid, and the query results take the intersection of the two)
+> - `order_by` ：sort transfer records, currently supported:`time`,`-time`
+> - `timezone` ：specify the time zone for the return time
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validator/node_withdrawal?timezone=0&vids=464352,468105&address=0x3ef51B5079021a11b1CAB3d36eEa45FaCF2B00CE&order_by=-time&page_size=5&page_number=1
+```
+
+> Request return value：
+> - `timezone` ：timezone
+> - `index` ：unique index number for transfer records on the chain
+> - `amount` ：transfer amount(gwei)
+> - `amount_eth` ：transfer amount(eth)
+> - `address` ：transfer recipient address
+> - `time` ：transfer time
+> - `validator_index` ：node unique ID
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":21,
+        "page_size":3,
+        "page_number":1,
+        "timezone":"8",
+        "data":[
+            {
+                "index":"0x329de0",
+                "amount":32000000000,
+                "address":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+                "time":"2023-04-21 08:47:36",
+                "validator_index":468105,
+                "amount_eth":"32"
+            },
+            {
+                "index":"0x328ffd",
+                "amount":32000000000,
+                "address":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+                "time":"2023-04-21 07:51:00",
+                "validator_index":464352,
+                "amount_eth":"32"
+            },
+            {
+                "index":"0x303d39",
+                "amount":1371538,
+                "address":"0x3ef51b5079021a11b1cab3d36eea45facf2b00ce",
+                "time":"2023-04-19 14:17:00",
+                "validator_index":468105,
+                "amount_eth":"0.001371538"
+            }
         ]
     }
 }
