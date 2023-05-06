@@ -479,18 +479,20 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address
 - The mev handling fee is credited to the partner's dedicated address, and the handling fee ratio is configurable
 - Small stakings from partners, unified as the overall settlement of Coke's retail investors
 
-#### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
+#### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
 
 > Request parameters:
 > - `page_number`/`page_size`: page number, page size
 > - `address`: user staking wallet address / partner mev fee address
+> - `timezone` ：specify the time zone for the return time
 > - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
+https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
 ```
 
 > Request return value:
+> - `timezone` ：timezone
 > - `amount` : the amount of a single income
 > - `balance` : account balance
 > - `total_reward` : historical cumulative reward
@@ -499,7 +501,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 > - `height` mev reward block height
 > - `mev_addr`: node mev receiving address
 > - `trx_id`: transaction id (mev reward/withdrawal)
-> - `time` : settlement time utc8
+> - `time` : settlement time
 
 ```json
 {
@@ -509,6 +511,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
         "total":1428,
         "page_size":1,
         "page_number":1,
+        "timezone":"8",
         "data":[
             {
                 "amount":"0.03249061",
