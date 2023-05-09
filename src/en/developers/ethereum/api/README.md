@@ -647,6 +647,46 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 ## User Operation History
 
+#### GET [/eth2/v4/op_history](https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=1,2,3,4)
+
+> Request parameters:
+> - `address` : User wallet address
+> - `op_type` : query record type，default:1,2,3,4; 1: stake 2: unstake 3: withdrawal 4:on chain node automatic transfer
+> - `page_size` : Page Size
+> - `page_number` : Page Number
+> - `num2str` : whether to convert all returned fields to string type
+
+```bash
+https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8&num2str=1
+```
+
+
+> Response Result:
+> - `transaction_id` : Transaction Hash
+> - `amount` : Amount(ETH)
+> - `op_type` : opertion type
+> - `history_time` : operation time
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data": {
+        "total":30,
+        "page_size":20,
+        "page_number":1,
+        "data":[
+            {
+                "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
+                "amount":0.01,
+                "op_type":0,
+                "history_time":"2023-03-22 06:49:33"
+            }
+        ]
+    }
+}
+```
+
 #### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
 
 > Request parameters:
