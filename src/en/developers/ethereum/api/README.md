@@ -479,18 +479,20 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address
 - The mev handling fee is credited to the partner's dedicated address, and the handling fee ratio is configurable
 - Small stakings from partners, unified as the overall settlement of Coke's retail investors
 
-#### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
+#### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
 
 > Request parameters:
 > - `page_number`/`page_size`: page number, page size
 > - `address`: user staking wallet address / partner mev fee address
+> - `timezone` ：specify the time zone for the return time
 > - `num2str` ：whether to convert all returned fields to string type
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
+https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
 ```
 
 > Request return value:
+> - `timezone` ：timezone
 > - `amount` : the amount of a single income
 > - `balance` : account balance
 > - `total_reward` : historical cumulative reward
@@ -499,7 +501,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 > - `height` mev reward block height
 > - `mev_addr`: node mev receiving address
 > - `trx_id`: transaction id (mev reward/withdrawal)
-> - `time` : settlement time utc8
+> - `time` : settlement time
 
 ```json
 {
@@ -509,6 +511,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
         "total":1428,
         "page_size":1,
         "page_number":1,
+        "timezone":"8",
         "data":[
             {
                 "amount":"0.03249061",
@@ -649,6 +652,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > Request parameters:
 > - `address` : User wallet address
 > - `op_type` : query record type，default:1,2,3,4; 1: stake 2: unstake 3: withdrawal 4:on chain node automatic transfer
+> - `op_id` ：operation id, default to empty. can be used to filter and query the on-chain transaction id for withdrawal operations
 > - `page_size` : Page Size
 > - `page_number` : Page Number
 > - `num2str` : whether to convert all returned fields to string type
@@ -662,6 +666,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `transaction_id` : Transaction Hash
 > - `amount` : Amount(ETH)
 > - `op_type` : opertion type
+> - `op_id` : opertion id
 > - `history_time` : operation time
 
 ```json
@@ -677,6 +682,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
                 "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
                 "amount":0.01,
                 "op_type":0,
+                "op_id":"0bc9a32803054b5a8c6138c3df2bc959",
                 "history_time":"2023-03-22 06:49:33"
             }
         ]
@@ -697,6 +703,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8&num2str=1
 ```
 
+> not recommended to use v3, please use eth2/v4/op_history
 
 > Response Result:
 > - `transaction_id` : Transaction Hash
@@ -953,11 +960,15 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal
 > Response Result:
 > - `code` : an integer number, equal to 0 for success, greater than 0 for failure
 > - `message` : the message to return after failure
+> - `op_id` ：withdrawal operation id, which can be query trx_id by eth2/v4/op_history
+
 ```json
 {
     "code":0,
     "message":"success",
-    "data":{}
+    "data":{
+        "op_id":"ef3b5866c3f146f18c5b93e1a51a0506"
+    }
 }
 ```
 

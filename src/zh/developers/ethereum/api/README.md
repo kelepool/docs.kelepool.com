@@ -631,18 +631,20 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address
 - mev手续费记入合作商专用地址,手续费比例可配置
 - 来自合作商的小额质押，统一作为可乐的散户整体结算
 
-##### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
+##### GET [/eth2/v2/mev_reward](https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689)
 
 > 请求参数：
 > - `page_number`/`page_size` ：页码，页尺寸
 > - `address` ：用户质押钱包地址/合作商mev手续费地址
+> - `timezone` ：指定返回时间的时区
 > - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
-https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
+https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_size=5&address=0x1ba59c6ba6fa7b14ec63fe499d649595cf3b8689&num2str=1
 ```
 
 > 请求返回值：
+> - `timezone` ：时区
 > - `amount` ：单笔收益金额
 > - `balance` ：账户余额
 > - `total_reward` ：历史累计收益
@@ -651,7 +653,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
 > - `height` mev奖励块高
 > - `mev_addr` ：节点mev收款地址
 > - `trx_id` ：交易id(mev奖励/提现)
-> - `time` ：结算时间utc8
+> - `time` ：结算时间
 
 ```json
 {
@@ -661,6 +663,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?page_number=1&page_size=5&addre
         "total":1428,
         "page_size":1,
         "page_number":1,
+        "timezone":"8",
         "data":[
             {
                 "amount":"0.03249061",
@@ -788,6 +791,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > 请求参数：
 > - `address` ：用户质押钱包地址
 > - `op_type` ：查询记录类型，默认值1,2,3,4; 1: 质押 2: 赎回 3: 平台提现 4: 链上提现
+> - `op_id` ：操作id，默认为空。可用于过滤查询提现操作对应链上交易id
 > - `page_size` ：分页大小
 > - `page_number` ：分页页号
 > - `num2str` ：是否将返回的全部字段转字符串类型
@@ -800,6 +804,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `transaction_id` ：交易Hash
 > - `amount` ：质押数量（ETH）
 > - `op_type` ：操作类型
+> - `op_id` ：操作id
 > - `history_time` ：操作时间
 
 ```json
@@ -815,6 +820,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
                 "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
                 "amount":0.01,
                 "op_type":0,
+                "op_id":"0bc9a32803054b5a8c6138c3df2bc959",
                 "history_time":"2023-03-22 06:49:33"
             }
         ]
@@ -824,9 +830,11 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 
 #### GET [/eth2/v3/op_history](https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6)
 
+> 不推荐使用v3，请使用eth2/v4/op_history
+
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现中 7:已到账 8:链上节点自动转账
+> - `op_type` ：查询记录类型，默认值0,6; 0: 已充值等待质押  1: 质押中  2: 质押生效中 3:等待赎回 4: 赎回中  5: 已赎回  6: 提现中(待广播) 7:已提现(已广播) 8:链上节点自动转账记录
 > - `page_size` 分页大小
 > - `page_number` 分页页号
 > - `num2str` ：是否将返回的全部字段转字符串类型
@@ -1086,12 +1094,18 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal
 }
 ```
 
-请求返回
+> 请求返回值：
+> - `code` ：整型数字，等于0表示成功，大于0表示失败
+> - `message` ：失败后返回的消息
+> - `op_id` ：提现操作id，可通过eth2/v4/op_history接口异步查询链上广播的trx_id
+
 ```json
 {
     "code":0,
     "message":"success",
-    "data":{}
+    "data":{
+        "op_id":"0bc9a32803054b5a8c6138c3df2bc959"
+    }
 }
 ```
 
