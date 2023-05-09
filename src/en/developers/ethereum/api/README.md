@@ -652,6 +652,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > Request parameters:
 > - `address` : User wallet address
 > - `op_type` : query record type，default:1,2,3,4; 1: stake 2: unstake 3: withdrawal 4:on chain node automatic transfer
+> - `op_id` ：operation id, default to empty. can be used to filter and query the on-chain transaction id for withdrawal operations
 > - `page_size` : Page Size
 > - `page_number` : Page Number
 > - `num2str` : whether to convert all returned fields to string type
@@ -665,6 +666,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `transaction_id` : Transaction Hash
 > - `amount` : Amount(ETH)
 > - `op_type` : opertion type
+> - `op_id` : opertion id
 > - `history_time` : operation time
 
 ```json
@@ -680,6 +682,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
                 "transaction_id":"0x2090670ba4810ebd4683e98dee19a26128c1e5263c6e9cf7ea637cf1a006b28f",
                 "amount":0.01,
                 "op_type":0,
+                "op_id":"0bc9a32803054b5a8c6138c3df2bc959",
                 "history_time":"2023-03-22 06:49:33"
             }
         ]
@@ -700,6 +703,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 https://test-api.kelepool.com/eth2/v3/op_history?address=0xd8f8799bc41b9eb55b5c22c6f75e54b5b98f6f87&op_type=0,1,2,3,4,5,6,7,8&num2str=1
 ```
 
+> not recommended to use v3, please use eth2/v4/op_history
 
 > Response Result:
 > - `transaction_id` : Transaction Hash
@@ -956,11 +960,15 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal
 > Response Result:
 > - `code` : an integer number, equal to 0 for success, greater than 0 for failure
 > - `message` : the message to return after failure
+> - `op_id` ：withdrawal operation id, which can be query trx_id by eth2/v4/op_history
+
 ```json
 {
     "code":0,
     "message":"success",
-    "data":{}
+    "data":{
+        "op_id":"ef3b5866c3f146f18c5b93e1a51a0506"
+    }
 }
 ```
 
