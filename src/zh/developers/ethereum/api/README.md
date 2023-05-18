@@ -403,11 +403,8 @@ try {
 
 ```
 
-
-## 用户查询API接口
-
 ### 用户地址注册
-##### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
+#### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
 此接口只需在用户**第一次质押**的时候调用，当然你也可以在用户每次质押时调用，注意此接口**必须在用户质押前**调用。
 
@@ -438,7 +435,7 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
 ```
 
 ### 用户质押总览
-##### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
+#### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
@@ -522,7 +519,7 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 ```
 
 ### 平台数据总览
-##### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
+#### GET [/eth2/v2/global](https://test-api.kelepool.com/eth2/v2/global)
 
 > 请求参数：
 > - `num2str` ：是否将返回的全部字段转字符串类型
@@ -683,6 +680,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_s
 ```
 
 ### 用户节点列表
+
 #### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 仅返回大额质押节点记录，小额质押节点不返回
