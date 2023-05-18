@@ -403,6 +403,9 @@ try {
 
 ```
 
+
+## 用户查询API接口
+
 ### 用户地址注册
 ##### POST [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
@@ -433,8 +436,6 @@ https://test-api.kelepool.com/user/v2/anonymouslogin
    "message":"success"
 }
 ```
-
-## 用户查询API接口
 
 ### 用户质押总览
 ##### GET [/eth2/v2/miner/dashboard](https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606&interval=day)
@@ -682,7 +683,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_s
 ```
 
 ### 用户节点列表
-##### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
+#### GET [/eth2/v2/miner/validator/query](https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cbc8498c8640abc26d19480219bb0606)
 
 仅返回大额质押节点记录，小额质押节点不返回
 
@@ -805,6 +806,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `amount` ：质押数量（ETH）
 > - `op_type` ：操作类型
 > - `op_id` ：操作id
+> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 ）才能使用，表示质押或赎回记录的预估生效时间（单位：秒）
 > - `history_time` ：操作时间
 
 ```json
@@ -821,7 +823,8 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
                 "amount":0.01,
                 "op_type":0,
                 "op_id":"0bc9a32803054b5a8c6138c3df2bc959",
-                "history_time":"2023-03-22 06:49:33"
+                "history_time":"2023-03-22 06:49:33",
+                "remain_time":0
             }
         ]
     }
