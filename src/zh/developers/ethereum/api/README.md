@@ -804,7 +804,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `amount` ：质押数量（ETH）
 > - `op_type` ：操作类型
 > - `op_id` ：操作id
-> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 ）才能使用，表示质押或赎回记录的预估生效时间（单位：秒）
+> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 ）才能使用，表示质押或赎回记录剩余多少秒生效（单位：秒）
 > - `history_time` ：操作时间
 
 ```json
