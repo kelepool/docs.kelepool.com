@@ -1349,6 +1349,77 @@ https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20
 ```
 
 
+### 节点状态批量查询
+##### GET [/eth2/v2/validators](https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e60756f5a0fe6aaed34f6fb85f1cc3b3d823a11d000febfde2f8982c2a398324dd36f8fee97fde9e63a8fde131e630)
+
+> 请求参数：
+> - `pubkeys` ：验证节点公钥列表，逗号分隔 (已生效节点优先用vids传参)
+> - `vids` ：验证节点id过滤,逗号分隔  (查询返回vids+pubkeys对应节点信息)
+> - `page_size` 分页大小
+> - `page_number` 分页页号
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e60756f5a0fe6aaed34f6fb85f1cc3b3d823a11d000febfde2f8982c2a398324dd36f8fee97fde9e63a8fde131e630
+```
+
+> 请求返回值：
+> - `identifer` ：验证者id
+> - `public_key` ：验证者公钥
+> - `chain_status` ：验证者链上状态
+> - `status` ：节点状态(系统内)  0-未质押，1-质押中，2-已生效，3-等待赎回，4-赎回中(退出)，5-已赎回
+> - `effective_ts` ：验证者生效时间，0为无效值
+> - `exiting_ts` ：验证者开始退出时间，0为无效值
+> - `exited_ts` ：验证者退出链上工作时间，0为无效值
+> - `withdrawal_done_ts` ：验证者完成本金提款，完全退出，0为无效值
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":3,
+        "page_size":20,
+        "page_number":1,
+        "data":[
+            {
+                "identifer":459869,
+                "public_key":"90604806e530b73ad9c2d1949b5d241098293d2d5ca73d9c9da0f3d581f8dd5f9121ec9a028aa718c48e0106f8944186",
+                "status":2,
+                "chain_status":"active_ongoing",
+                "effective_ts":1679368172,
+                "pending_queued_ts":0,
+                "exiting_ts":0,
+                "exited_ts":0,
+                "withdrawal_done_ts":0
+            },
+            {
+                "identifer":460009,
+                "public_key":"9296eeffaca8103a5279ea9e1ef0694e28e5c90df845a8e3218b6e83706e912f178269ea206943f2ef3695b5a13525c9",
+                "status":5,
+                "chain_status":"withdrawal_done",
+                "effective_ts":1679517069,
+                "pending_queued_ts":0,
+                "exiting_ts":222,
+                "exited_ts":444,
+                "withdrawal_done_ts":5555
+            },
+            {
+                "identifer":459868,
+                "public_key":"a1e60756f5a0fe6aaed34f6fb85f1cc3b3d823a11d000febfde2f8982c2a398324dd36f8fee97fde9e63a8fde131e630",
+                "status":2,
+                "chain_status":"active_ongoing",
+                "effective_ts":1679343856,
+                "pending_queued_ts":0,
+                "exiting_ts":0,
+                "exited_ts":0,
+                "withdrawal_done_ts":0
+            }
+        ]
+    }
+}
+```
+
+
 
 ## 合作商API接口
 
