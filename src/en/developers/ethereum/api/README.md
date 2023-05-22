@@ -1401,6 +1401,77 @@ https://test-api.kelepool.com/eth2/v2/slashes/history?page_number=1&page_size=20
 }
 ```
 
+
+## Batch query of validator status
+##### GET [/eth2/v2/validators](https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e60756f5a0fe6aaed34f6fb85f1cc3b3d823a11d000febfde2f8982c2a398324dd36f8fee97fde9e63a8fde131e630)
+
+> Request parameters:
+> - `pubkeys` ：public key list, comma separated
+> - `vids` ：validator id filtering, separated by commas
+> - `page_size` Page Size
+> - `page_number` Page Number
+
+```bash
+https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e60756f5a0fe6aaed34f6fb85f1cc3b3d823a11d000febfde2f8982c2a398324dd36f8fee97fde9e63a8fde131e630
+```
+
+> Request return value:
+> - `identifer` ：validator id
+> - `public_key` ：public key
+> - `chain_status` ：status on chain
+> - `status` ：validator status 0-pending 1-staking 2-effective 3-exiting 4-withdrawing 5-withdrawn_done
+> - `effective_ts` ：effective time, 0 is an invalid value
+> - `exiting_ts` ：start exit time, 0 is an invalid value
+> - `exited_ts` ：exit work time，0 is an invalid value
+> - `withdrawal_done_ts` ：withdrawal done time, exit completely，0 is an invalid value
+
+```json
+{
+    "code":0,
+    "message":"success",
+    "data":{
+        "total":3,
+        "page_size":20,
+        "page_number":1,
+        "data":[
+            {
+                "identifer":459869,
+                "public_key":"90604806e530b73ad9c2d1949b5d241098293d2d5ca73d9c9da0f3d581f8dd5f9121ec9a028aa718c48e0106f8944186",
+                "status":2,
+                "chain_status":"active_ongoing",
+                "effective_ts":1679368172,
+                "pending_queued_ts":0,
+                "exiting_ts":0,
+                "exited_ts":0,
+                "withdrawal_done_ts":0
+            },
+            {
+                "identifer":460009,
+                "public_key":"9296eeffaca8103a5279ea9e1ef0694e28e5c90df845a8e3218b6e83706e912f178269ea206943f2ef3695b5a13525c9",
+                "status":5,
+                "chain_status":"withdrawal_done",
+                "effective_ts":1679517069,
+                "pending_queued_ts":0,
+                "exiting_ts":222,
+                "exited_ts":444,
+                "withdrawal_done_ts":5555
+            },
+            {
+                "identifer":459868,
+                "public_key":"a1e60756f5a0fe6aaed34f6fb85f1cc3b3d823a11d000febfde2f8982c2a398324dd36f8fee97fde9e63a8fde131e630",
+                "status":2,
+                "chain_status":"active_ongoing",
+                "effective_ts":1679343856,
+                "pending_queued_ts":0,
+                "exiting_ts":0,
+                "exited_ts":0,
+                "withdrawal_done_ts":0
+            }
+        ]
+    }
+}
+```
+
 ## Set partner fee and payment address
 
 1. Partners can contact Coke Mining Pool to set up large pledge procedures, channel marks, payment address, fee type, etc. After the pledge is completed, the contract will automatically transfer the handling fee to the payment address set by the partner. Kele Pool currently charges 0.05ETH as a handling fee for 32ETH staking. 
