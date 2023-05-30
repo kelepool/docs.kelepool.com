@@ -1644,7 +1644,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 ```
 
 > 请求参数：
-> - `num2str` ：是否将返回的全部字段转字符串类型
+> - 无
 
 ```bash
 https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake
