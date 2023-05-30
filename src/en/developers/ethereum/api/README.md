@@ -1479,19 +1479,21 @@ In order to allow users to take effect quickly after staking/redemption (current
 
 The third party can contact us to configure an independent fast deposit address. If no independent deposit address is configured, this interface will return the Coke Pool deposit address by default.
 
+```
 Fast pledge:
-1. The user transfers a certain amount of ETH to the system advance address returned by this interface
-2. If the balance of the advance address is sufficient, the system will automatically transfer the funds of the advance address to the user's account, and it will take effect after 64 blocks on the chain are confirmed
-3. If the balance of the deposit address is insufficient, the system will automatically deposit the insufficient part into the withdrawable balance under the user account, which can be withdrawn directly
+- The user transfers a certain amount of ETH to the system advance address returned by this interface
+- If the balance of the advance address is sufficient, the system will automatically transfer the funds of the advance address to the user's account, and it will take effect after 64 blocks on the chain are confirmed
+- If the balance of the deposit address is insufficient, the system will automatically deposit the insufficient part into the withdrawable balance under the user account, which can be withdrawn directly
 
 Quick pledge example: Suppose there is 100ETH effective funds under the advance address, the user transfers 200ETH from the wallet to the advance address, the 100ETH under the advance address is transferred to the user, and the other 100ETH is deposited into the user's withdrawal balance.
 
 Quick redemption:
-1. The user pays 1% of the redemption amount as a handling fee, and the pledged funds can be redeemed immediately
-2. If the deposit address has enough funds, the system will automatically transfer the effective funds under the user address to the deposit address, and transfer the user's redemption funds to the cashable
-3. If the deposit address has insufficient funds, the user will be prompted that the current deposit address balance is insufficient and cannot be redeemed quickly
+- The user pays 1% of the redemption amount as a handling fee, and the pledged funds can be redeemed immediately
+- If the deposit address has enough funds, the system will automatically transfer the effective funds under the user address to the deposit address, and transfer the user's redemption funds to the cashable
+- If the deposit address has insufficient funds, the user will be prompted that the current deposit address balance is insufficient and cannot be redeemed quickly
 
 Example of quick redemption: Assume that the initial maximum fund of the deposit address is set to 200ETH, user A redeems 100ETH, and there is only 100ETH left under the deposit address, and user B redeems 200, which prompts that the balance is insufficient.
+```
 
 > Request parameters:
 > - `num2str`: whether to convert all returned fields to string type
