@@ -1504,21 +1504,22 @@ https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake
 > - `fund_addr`: System advance fund address
 > - `stake_fee`: fast pledge fee, if it is 0, no fee will be charged
 > - `init_max_eth`: the maximum redeemable funds (ETH) under the deposit address
-> - `balance`: the current available funds (ETH) when the user quickly pledges
-> - `pending`: When the user quickly pledges, the funds under the advance address are waiting for 64 blocks to be confirmed
+> - `fast_stake_balance` : current available funds (ETH) when user fast stakes
+> - `fast_unstake_balance`: current available funds (ETH) when the user fast redeems
+> - `fast_stake_pending`: When the user fast stakes, the funds under the advance address are waiting for 64 blocks to be confirmed
 ```json
 {
-     "code": 0,
-     "message": "success",
-     "data": {
-         "fund_addr": "0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
-         "stake_fee": 0.0,
-         "init_max_amount": 15,
-         "balance": 0,
-         "pending": 15.0
-     }
+   "code": 0,
+   "message": "success",
+   "data": {
+     "fund_addr": "0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
+     "stake_fee": "0",
+     "init_max_eth": "10",
+     "fast_stake_balance": "0",
+     "fast_unstake_balance": "10",
+     "fast_stake_pending": "0"
+   }
 }
-```
 
 ## Set partner fee and payment address
 

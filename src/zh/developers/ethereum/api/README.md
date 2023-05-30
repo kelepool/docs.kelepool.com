@@ -1649,19 +1649,21 @@ https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake
 > - `fund_addr` ：系统垫资地址
 > - `stake_fee` ：快速质押手续费，为0则不收手续费
 > - `init_max_eth` ：垫资地址下最大可赎回资金（ETH）
-> - `balance` ：用户快速质押时，当前可用的资金（ETH）
-> - `pending` ：用户快速质押时，垫资地址下正在等待64个区块确认的待生效资金
+> - `fast_stake_balance` ：用户快速质押时，当前可用资金（ETH）
+> - `fast_unstake_balance`：用户快速赎回时，当前可用资金（ETH）
+> - `fast_stake_pending` ：用户快速质押时，垫资地址下正在等待64个区块确认的待生效资金
 ```json
 {
-    "code": 0,
-    "message": "success",
-    "data": {
-        "fund_addr": "0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
-        "stake_fee": 0.0,
-        "init_max_amount": 15,
-        "balance": 0,
-        "pending": 15.0
-    }
+  "code": 0,
+  "message": "success",
+  "data": {
+    "fund_addr": "0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
+    "stake_fee": "0",
+    "init_max_eth": "10",
+    "fast_stake_balance": "0",
+    "fast_unstake_balance": "10",
+    "fast_stake_pending": "0"
+  }
 }
 ```
 
