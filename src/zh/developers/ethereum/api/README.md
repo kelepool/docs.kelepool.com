@@ -1617,7 +1617,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 ```
 
 
-### 合作商快速质押接口（用于查询目前垫资地址下还有多少可用资金）
+### 合作商快速质押接口
 ##### GET [/eth2/v2/miner/fund/fast_stake](https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake)
 
 为了让用户在质押/赎回后可以快速生效（目前质押需等待38天左右），提高资金利用率，我们增加了系统垫资账户。用户可从钱包直接转入ETH到系统垫资地址，只需等待64个区块（约13分钟），即可获得链上质押收益。快速赎回原理相同，只需支付赎回资金的1%作为手续费，就可以立即到账，无需等待链上节点赎回的漫长时间。

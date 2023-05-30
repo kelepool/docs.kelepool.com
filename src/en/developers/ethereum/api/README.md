@@ -1472,7 +1472,7 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 }
 ```
 
-### Quick pledge interface for partners (used to query how much money is available under the current advance address)
+### Quick pledge interface for partners 
 ##### GET [/eth2/v2/miner/fund/fast_stake](https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake)
 
 In order to allow users to take effect quickly after staking/redemption (currently staking takes about 38 days), and improve the utilization rate of funds, we have added a system advance account. Users can directly transfer ETH from the wallet to the system advance address, and only need to wait for 64 blocks (about 13 minutes) to obtain the pledge income on the chain. The principle of fast redemption is the same. You only need to pay 1% of the redemption funds as a handling fee, and you can arrive immediately without waiting for the long time for redemption by nodes on the chain.
