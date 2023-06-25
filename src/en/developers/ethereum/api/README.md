@@ -1472,6 +1472,57 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 }
 ```
 
+### Quick pledge interface for partners 
+##### GET [/eth2/v2/miner/fund/fast_stake](https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake)
+
+In order to allow users to take effect quickly after staking/redemption (currently staking takes about 38 days), and improve the utilization rate of funds, we have added a system advance account. Users can directly transfer ETH from the wallet to the system advance address, and only need to wait for 64 blocks (about 13 minutes) to obtain the pledge income on the chain. The principle of fast redemption is the same. You only need to pay 1% of the redemption funds as a handling fee, and you can arrive immediately without waiting for the long time for redemption by nodes on the chain.
+
+The third party can contact us to configure an independent fast deposit address. If no independent deposit address is configured, this interface will return the Coke Pool deposit address by default.
+
+```
+Fast pledge:
+- The user transfers a certain amount of ETH to the system advance address returned by this interface
+- If the balance of the advance address is sufficient, the system will automatically transfer the funds of the advance address to the user's account, and it will take effect after 64 blocks on the chain are confirmed
+- If the balance of the deposit address is insufficient, the system will automatically deposit the insufficient part into the withdrawable balance under the user account, which can be withdrawn directly
+
+Quick pledge example: Suppose there is 100ETH effective funds under the advance address, the user transfers 200ETH from the wallet to the advance address, the 100ETH under the advance address is transferred to the user, and the other 100ETH is deposited into the user's withdrawal balance.
+
+Quick redemption:
+- The user pays 1% of the redemption amount as a handling fee, and the pledged funds can be redeemed immediately
+- If the deposit address has enough funds, the system will automatically transfer the effective funds under the user address to the deposit address, and transfer the user's redemption funds to the cashable
+- If the deposit address has insufficient funds, the user will be prompted that the current deposit address balance is insufficient and cannot be redeemed quickly
+
+Example of quick redemption: Assume that the initial maximum fund of the deposit address is set to 200ETH, user A redeems 100ETH, and there is only 100ETH left under the deposit address, and user B redeems 200, which prompts that the balance is insufficient.
+```
+
+> Request parameters:
+> - `num2str`: whether to convert all returned fields to string type
+
+```bash
+https://test-api.kelepool.com/eth2/v2/miner/fund/fast_stake
+```
+
+> Request return value:
+> - `fund_addr`: System advance fund address
+> - `stake_fee`: fast pledge fee, if it is 0, no fee will be charged
+> - `init_max_eth`: the maximum redeemable funds (ETH) under the deposit address
+> - `fast_stake_balance` : current available funds (ETH) when user fast stakes
+> - `fast_unstake_balance`: current available funds (ETH) when the user fast redeems
+> - `fast_stake_pending`: When the user fast stakes, the funds under the advance address are waiting for 64 blocks to be confirmed
+```json
+{
+   "code": 0,
+   "message": "success",
+   "data": {
+     "fund_addr": "0x5dd3bd08cbc8498c8640abc26d19480219bb0606",
+     "stake_fee": "0",
+     "init_max_eth": "10",
+     "fast_stake_balance": "0",
+     "fast_unstake_balance": "10",
+     "fast_stake_pending": "0"
+   }
+}
+
 ## Set partner fee and payment address
 
 1. Partners can contact Coke Mining Pool to set up large pledge procedures, channel marks, payment address, fee type, etc. After the pledge is completed, the contract will automatically transfer the handling fee to the payment address set by the partner. Kele Pool currently charges 0.05ETH as a handling fee for 32ETH staking. 
