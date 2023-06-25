@@ -15,8 +15,7 @@
 https://beaconcha.in/validators/deposits?q=YourEthDepositAddress
 
 如果您的提款凭证（Withdrawal credential）前缀显示为`0x00`，则执行层提款地址尚未设置，请继续阅读并设置。
-
-![](<../../guides/.gitbook/assets/0417/01.PNG>)
+![](<../../guides/.gitbook/assets/0417/01.png>)
 
 
 ---

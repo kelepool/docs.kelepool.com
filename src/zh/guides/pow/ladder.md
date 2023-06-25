@@ -52,7 +52,7 @@ description: 本教程适合各个币种
 
 ![设置基本参数](../.gitbook/assets/1.png)
 
-![代理状态](<../.gitbook/assets/2(1).png>)
+![代理状态](<../.gitbook/assets/2.png>)
 
 3.使用矿梯过程中，如果矿机与矿池通信延时过高或观察者地址上矿机拒绝率过高，可以尝试切换其他线路。
 

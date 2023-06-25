@@ -121,6 +121,7 @@ module.exports = {
                          '/en/wiki/pos/staking-guide.md',
                          '/en/wiki/pos/staking-difference.md',
                          '/en/wiki/pos/kelepool.md',
+                         '/en/wiki/pos/knowledge.md',
                          '/en/wiki/pos/merge.md',
                          '/en/wiki/pos/fork.md'
                         ],
@@ -131,10 +132,12 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/en/developers/ethereum/faq/README.md',
+                '/en/developers/ethereum/api/Hardware.md',
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
                 '/en/developers/ethereum/api/README.md',
-                '/en/developers/ethereum/api/Hardware.md',
+                '/en/developers/ethereum/api/knowledge.md',
               ]
             },
             {
@@ -337,7 +340,7 @@ module.exports = {
                 '/zh/wiki/pos/kelepool.md',
                 '/zh/wiki/pos/merge.md',
                 '/zh/wiki/pos/fork.md',
-                '/zh/wiki/0x00address.md',
+                '/zh/wiki/pos/0x00address.md',
                 '/zh/wiki/pos/aleo.md'
               ],
             },
@@ -347,10 +350,12 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/zh/developers/ethereum/faq/README.md',
+                '/zh/developers/ethereum/api/Hardware.md',
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
-                '/zh/developers/ethereum/api/Hardware.md'
+                '/zh/developers/ethereum/api/knowledge.md',
               ]
             },
             {
