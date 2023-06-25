@@ -497,7 +497,7 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_s
 > - `balance` : account balance
 > - `total_reward` : historical cumulative reward
 > - `staked_amt` : staked amount
-> - `record_type`: record type (reward:reward record withdrawal:withdrawal record)
+> - `record_type`: record type (reward:reward record)
 > - `height` mev reward block height
 > - `mev_addr`: node mev receiving address
 > - `trx_id`: transaction id (mev reward/withdrawal)

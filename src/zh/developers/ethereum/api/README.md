@@ -580,7 +580,7 @@ https://test-api.kelepool.com/eth2/v2/global?num2str=1
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `bill_type` ：账单类型  默认值0,1:查共识收益日账单; 可传0,1,2:查共识收益+mev收益整体日账单
+> - `bill_type` ：账单类型  默认值0,1:查共识收益日账单; 可传0,1,2:查共识收益+mev收益整体日账单   (0:小额质押基础收益，1:大额质押基础收益，2:总的mev收益)
 > - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
@@ -588,7 +588,7 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address
 ```
 
 > 请求返回值：
-> - `date` ：分红日期
+> - `date` ：分红日期 (仅返回最近31天数据)
 > - `reward` ：当天收益
 > - `deposit` ：截止当天累计本金(截止当天累计充值本金-截止当天累计提现)
 > - `balance` ：截止当天账户总余额（截止当天累计充值本金+截止当天累计收益-截止当天累计提现）
@@ -647,10 +647,10 @@ https://test-api.kelepool.com/eth2/v2/mev_reward?timezone=8&page_number=1&page_s
 > - `balance` ：账户余额
 > - `total_reward` ：历史累计收益
 > - `staked_amt` ：质押金额
-> - `record_type` ：记录类型(reward:奖励记录 withdrawal:提现记录)
+> - `record_type` ：记录类型(reward:奖励记录)
 > - `height` mev奖励块高
 > - `mev_addr` ：节点mev收款地址
-> - `trx_id` ：交易id(mev奖励/提现)
+> - `trx_id` ：交易id(mev奖励)
 > - `time` ：结算时间
 
 ```json
@@ -1061,7 +1061,7 @@ https://test-api.kelepool.com/eth2/v2/miner/withdrawal?address=0xd8f8799bc41b9eb
 > - `code` ：整型数字，等于0表示成功，大于0表示失败
 > - `message` ：失败后返回的消息
 > - `balance` ：可提现金额
-> - `user_fee` ：预估链上手续费，目前仅支持向普通地址转账
+> - `user_fee` ：预估链上手续费，目前仅支持向普通地址转账 (链上实际转账采用动态费用，预估费用一般略小于实际gas费用，差额部分由平台承担)
 > - `fee_free_threshold` ：免除链上手续费的最小提现金额
 > - `pay_addr` : 目前固定返回请求中的用户地址，暂不支持向其他地址提现
 
