@@ -580,7 +580,7 @@ https://test-api.kelepool.com/eth2/v2/global?num2str=1
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `bill_type` ：账单类型  默认值0,1:查共识收益日账单; 可传0,1,2:查共识收益+mev收益整体日账单
+> - `bill_type` ：账单类型  默认值0,1:查共识收益日账单; 可传0,1,2:查共识收益+mev收益整体日账单   (0:小额质押基础收益，1:大额质押基础收益，2:总的mev收益)
 > - `num2str` ：是否将返回的全部字段转字符串类型
 
 ```bash
@@ -588,7 +588,7 @@ https://test-api.kelepool.com/eth2/v2/miner/income/query?bill_type=0,1,2&address
 ```
 
 > 请求返回值：
-> - `date` ：分红日期
+> - `date` ：分红日期 (仅返回最近31天数据)
 > - `reward` ：当天收益
 > - `deposit` ：截止当天累计本金(截止当天累计充值本金-截止当天累计提现)
 > - `balance` ：截止当天账户总余额（截止当天累计充值本金+截止当天累计收益-截止当天累计提现）
