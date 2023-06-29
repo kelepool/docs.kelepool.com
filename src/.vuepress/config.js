@@ -121,6 +121,7 @@ module.exports = {
                          '/en/wiki/pos/staking-guide.md',
                          '/en/wiki/pos/staking-difference.md',
                          '/en/wiki/pos/kelepool.md',
+                         '/en/wiki/pos/knowledge.md',
                          '/en/wiki/pos/merge.md',
                          '/en/wiki/pos/fork.md'
                         ],
@@ -131,10 +132,12 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/en/developers/ethereum/faq/README.md',
+                '/en/developers/ethereum/api/Hardware.md',
                 '/en/developers/ethereum/introductions/README.md',
                 '/en/developers/ethereum/contracts/README.md',
                 '/en/developers/ethereum/api/README.md',
-                '/en/developers/ethereum/api/Hardware.md',
+                '/en/developers/ethereum/api/knowledge.md',
               ]
             },
             {
@@ -200,11 +203,21 @@ module.exports = {
                       '/zh/guides/pos/how-to-stake/Supported networks.md',
                     ]
                   },{
-                    text: '🪙 ETH质押教程',
+                    text: '🪙 ETH质押赎回教程',
                     collapsible: true,
                     children:[
                       '/zh/guides/pos/eth/whale.md',
                       '/zh/guides/pos/eth/micro.md',
+                      '/zh/guides/pos/eth/whale-unstake.md',
+                      '/zh/guides/pos/eth/micro-unstake.md',
+                      '/zh/guides/pos/eth/withdraw.md',
+                    ]
+                  },
+                  {
+                    text: '🪙 MINA委托教程',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/pos/mina/ledger-install-mina-app.md',
                     ]
                   },
                   {
@@ -224,6 +237,7 @@ module.exports = {
                       '/zh/guides/pow/how-to-mining/account.md',
                       '/zh/guides/pow/how-to-mining/cha-kan-shou-yi-zhi-fu-zhuang-tai.md',
                       '/zh/guides/pow/how-to-mining/cha-kan-suan-li-kuang-ji-qing-kuang.md',
+                      '/zh/guides/pow/how-to-mining/zi-zhu-ti-bi.md',
                       '/zh/guides/pow/how-to-mining/chuang-jian-xiu-gai-shan-chu-guan-cha-zhe-di-zhi.md',
                       '/zh/guides/pow/how-to-mining/collection.md',
                       '/zh/guides/pow/how-to-mining/Supported currency.md',
@@ -246,18 +260,21 @@ module.exports = {
                       '/zh/guides/pow/mining/BTC.md',
                       '/zh/guides/pow/mining/CKB.md',
                       '/zh/guides/pow/mining/ETC.md',
-                      '/zh/guides/pow/mining/ETH.md',
                       '/zh/guides/pow/mining/HNS.md',
                       '/zh/guides/pow/mining/KDA.md',
                       '/zh/guides/pow/mining/LTC.md',
                       '/zh/guides/pow/mining/STC.md',
+                      '/zh/guides/pow/mining/RVN.md',
                     ]
                   },
                   {
                     text: '💰 其他挖矿工具教程',
                     collapsible: true,
                     children:[
+                      '/zh/guides/pow/bixin/aceminer-wa-kuang-jiao-cheng.md',
+                      '/zh/guides/pow/bixin/hiveos-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.md',
+                      '/zh/guides/pow/bixin/kai-yuan-kuang-gong-wa-kuang-jiao-cheng.md',
                       '/zh/guides/pow/bixin/qing-song-kuang-gong-shi-yong-jiao-cheng.md',
                       '/zh/guides/pow/bixin/stcbox-ka-shua-liu-cheng.md',
                       '/zh/guides/pow/bixin/stcbox1.md',
@@ -286,6 +303,20 @@ module.exports = {
                   }
                   ]
                 },
+                {
+                  text: '条款',
+                  children:[{
+                    text: '📗 服务条款',
+                    collapsible: true,
+                    children:[
+                      '/zh/guides/terms/terms-of-service.md',
+                    ]
+                  },{
+                    text: '🪜 ETH安全审计',
+                    link: '/zh/guides/terms/eth-an-quan-shen-ji.md',
+                  },
+                  ]
+                },
               ],
             },
           ],
@@ -309,6 +340,7 @@ module.exports = {
                 '/zh/wiki/pos/kelepool.md',
                 '/zh/wiki/pos/merge.md',
                 '/zh/wiki/pos/fork.md',
+                '/zh/wiki/pos/0x00address.md',
                 '/zh/wiki/pos/aleo.md'
               ],
             },
@@ -318,10 +350,12 @@ module.exports = {
               text: 'Ethereum',
               collapsible: true,
               children:[
+                '/zh/developers/ethereum/faq/README.md',
+                '/zh/developers/ethereum/api/Hardware.md',
                 '/zh/developers/ethereum/introductions/README.md',
                 '/zh/developers/ethereum/contracts/README.md',
                 '/zh/developers/ethereum/api/README.md',
-                '/zh/developers/ethereum/api/Hardware.md'
+                '/zh/developers/ethereum/api/knowledge.md',
               ]
             },
             {

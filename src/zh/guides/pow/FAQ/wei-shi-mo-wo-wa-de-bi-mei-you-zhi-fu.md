@@ -5,6 +5,6 @@
 
 2.您挖的币种未达到起付额度，起付额度可通过”首页-支持的币种“查看。
 
-![](<../../.gitbook/assets/image(94).png>)
+![](<../../.gitbook/assets/new/faq3.png>)
 
-![](<../../.gitbook/assets/image(38).png>)
+![](<../../.gitbook/assets/new/faq4.png>)

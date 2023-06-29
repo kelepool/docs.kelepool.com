@@ -2,7 +2,7 @@
 
 ### 挖矿地址
 
-**URL1：**stratum+tcp://etc.kelepool.com:80
+**URL1：** stratum+tcp://etc.kelepool.com:80
 
 ### 支付计划
 
@@ -10,9 +10,10 @@
 
 收益账单于次日早8点生成，**如果余额达到支付门槛，链上支付**将在次日完成。
 
-## 1.注册一个可乐矿池账号
+## 1.登录可乐矿池账号
 
-注册及设置收款地址流程参考[新手入门](../../)，注册完成记录下子账户名称备用；
+登录及设置收款地址流程参考[新手入门](../../)，使用邮箱登录后，记录下子账户名称备用；
+若使用钱包或匿名登录，则子账户为登录地址；
 
 **网站地址（需VPN开全局代理）：** [**`https://www.kelepool.com/`**](https://www.kelepool.com/)
 
@@ -22,14 +23,13 @@
 
 ## **3. 配置挖矿设备(不使用矿梯)**
 
-{% hint style="info" %}
-**GPU(NVIDIA或AMD)**
-{% endhint %}
+> **GPU(NVIDIA或AMD)**
 
 ### **a. 常用软件**
 
 **常用ETH挖矿软件：**
 
+* AceMiner：[**`https://www.aceminer.io/`**](https://www.aceminer.io/)**``**
 * Hiveon：[**`https://hiveon.com/`**](https://hiveon.com/)**``**
 * 开源矿工：[**`http://dl.ntminer.top/`**](http://dl.ntminer.top/)**``**
 * MinerOS：[**`https://mineros.info/`**](https://mineros.info/)**``**
@@ -49,19 +49,19 @@
 
 通过上述途径获取内核挖矿软件，选择“将文件解压缩到当前文件夹”，找到或新建一个批处理文件。 右键点击此批处理文件，选择“编辑”，各项参数设置如下：
 
-> **PhoenixMiner：**PhoenixMiner.exe -epool etc.kelepool.com:80 -ewal username -worker worker\_name -pass x
+> **PhoenixMiner：** PhoenixMiner.exe -epool etc.kelepool.com:80 -ewal username -worker worker\_name -pass x
 >
-> **Bminer：**bminer -uri ethstratum://username.worker\_name@etc.kelepool.com:80
+> **Bminer：** bminer -uri ethstratum://username.worker\_name@etc.kelepool.com:80
 >
-> **NBminer：**nbminer -a etchash -o stratum+tcp://etc.kelepool.com:80 -u username.worker\_name
+> **NBminer：** nbminer -a etchash -o stratum+tcp://etc.kelepool.com:80 -u username.worker\_name
 >
-> **Gminer：**miner.exe --algo etchash --server etc.kelepool.com:80 --user username.worker\_name
+> **Gminer：** miner.exe --algo etchash --server etc.kelepool.com:80 --user username.worker\_name
 
-其中“**etc.kelepool.com:80”**为可乐矿池地址，其他可选ETH挖矿地址为
+其中“**etc.kelepool.com:80”** 为可乐矿池地址，其他可选ETH挖矿地址为
 
-**“username”**要替换成你的矿池注册用户名（若是匿名挖矿则为链上地址）；
+**“username”** 要替换成你的矿池注册用户名（若是匿名挖矿则为链上地址）；
 
-**“worker\_name”**为矿机编号，自定义即可如编号或字母组合（不能有汉字或特殊字符）；
+**“worker\_name”** 为矿机编号，自定义即可如编号或字母组合（不能有汉字或特殊字符）；
 
 修改时只把对应的字符修改掉，空格、标点均不要增减。
 
@@ -75,7 +75,7 @@
 
 ### b. 填写挖矿地址
 
-**挖矿地址即对应矿池的矿池地址**，可前往**可乐矿池-矿池挖矿-总览右下角（左上角切换币种）**查看最新地址，需注意的是可能因为杀毒软件/防火墙等原因会导致地址无法显示，关闭杀毒软件/防火墙即可，可乐矿池目前**ETC地址如下**（不同币种地址不一样）：
+**挖矿地址即对应矿池的矿池地址**，可前往**可乐矿池-矿池挖矿-总览右下角（左上角切换币种）**查看最新地址，需注意的是可能因为杀毒软件/防火墙等原因会导致地址无法显示，关闭杀毒软件/防火墙即可，可乐矿池目前**RVN地址如下**（不同币种地址不一样）：
 
 **通用挖矿地址：**
 
@@ -104,7 +104,7 @@
 
 **2) 交易所钱包**
 
-[币安](https://www.binance.com/cn)、[OKEx](https://www.okex.com/)等。大部分交易所都支持ETC充值和交易，注册交易所并找到ETC充值即可获取钱包地址。
+[币安](https://www.binance.com/cn)、[OKEx](https://www.okex.com/)等。大部分交易所都支持RVN充值和交易，注册交易所并找到RVN充值即可获取钱包地址。
 
 **3) App钱包：**
 
@@ -120,4 +120,4 @@
 
 2、前往可乐矿池的总览页面查看活跃矿机数量和算力是否正常，预估收益可能出现偏差，以第二天实际结算的收益为准。
 
-![](<../../.gitbook/assets/image(66).png>)
+![](<../../.gitbook/assets/new/etc.png>)

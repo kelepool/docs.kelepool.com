@@ -9,7 +9,7 @@
 
 Mainnet主网合约：[0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758](https://etherscan.io/address/0xACBA4cFE7F30E64dA787c6Dc7Dc34f623570e758#code)
 
-Ropsten测试网合约：[0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa](https://etherscan.io/address/0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa#code)
+Goerli测试网合约：[0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7](https://goerli.etherscan.io/address/0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7#code)
 
 ## 大额质押
 
@@ -30,7 +30,7 @@ ETH2提款凭证：0x0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219b
 
 #####  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
-此接口主要用于统计第三方各个用户的质押数量等，只需在用户第一次质押的时候调用，当然你也可以在每次用户质押时候调用。
+此接口只需在用户**第一次质押**的时候调用，当然你也可以在用户每次质押时调用，注意此接口**必须在用户质押前**调用。
 
 ```bash
 POST https://test-api.kelepool.com/user/v2/anonymouslogin
@@ -70,7 +70,9 @@ POST https://test-api.kelepool.com/eth2/v2/validator/keypair
     // 上面转换好的ETH2提款凭证（去掉0x）
     "deposit_credentials":"0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606",
     // 验证节点数量，计算方式 =（用户质押ETH数量 - （用户质押ETH数量 % 32））/ 32
-    "count":2
+    "count":2,
+    // 是否重新生成新的keystore。（0=否，1=是）
+    "recreate":0
 }
 
 返回值：
@@ -90,14 +92,14 @@ POST https://test-api.kelepool.com/eth2/v2/validator/keypair
             // 默克尔树根
             "deposit_data_root":"ebb84a75e241501cc64c4e42dd3cdb7a2f72e6af60ab828b2fb246905eb629e5",
             // ETH网络
-            "network_name":"ropsten"
+            "network_name":"Goerli"
         },
         {
             "pubkey":"83909737754d15dd3ad1281a3f0e62baa64d3c0abb3ed218c3baf7ff250058a24fe1143a5243c3b015e3f93ed6af1e18",
             "withdrawal_credentials":"0100000000000000000000005dd3bd08cbc8498c8640abc26d19480219bb0606",
             "signature":"b95af475d67e8438e49cfaad12dacd789c705938fd6a8fee93a1a170ef6322c2cf37c643d1d010b23734c04e9028b58d034435dd6c9f19610090bfdefb7522c69e99b0a7830f6d967f1d07e3ff30128c8b516d40232e5595ac91d746420da993",
             "deposit_data_root":"f08ca526395300d60ccc6db28d931ba129944f44d4bb92c773424e120dde222b",
-            "network_name":"ropsten"
+            "network_name":"Goerli"
         }
     ]
 }
@@ -126,7 +128,7 @@ let userAddress = await signer.getAddress();
 
 // 初始化合约参数
 const kelepool = {
-  address: "0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa",// 可乐矿池【代理合约】，这里必须是代理合约！！！
+  address: "0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7",// 可乐矿池【代理合约】，这里必须是代理合约！！！
   abi: [{"anonymous":false....　}] // 将上面的合约ABI数组放到这里,
 };
 const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
@@ -154,11 +156,27 @@ let deposit_data_root = stakingRoot
 
 // 执行合约大额质押方法，最低质押32ETH，这里我们质押64ETH，由于每个节点需要0.05ETH手续费，因此2个节点需要质押64.1ETH
 let amount = ethers.utils.parseUnits('64.1', 'ether')
+
+// 以下是V1版本（已经弃用），无法传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 使用V1版本必须在用户质押前先请求：用户地址注册接口（/user/v2/anonymouslogin）建立用户地址与source渠道的关联，我们才能区分渠道质押金额。
 const tx = await contract.createValidator(1, pubkey, withdrawal_credentials, signature, deposit_data_root, {
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
     gasLimit: 10000000 // 最大Gas限制
 })
+
+// 以下是V2版本（推荐使用），可以传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 如果你之前接入了V1版本也没关系，更新成V2版本后，用户质押完成会优先写入从合约传递过来的source。
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("ThirdParty"))
+const tx = await contract.createValidatorV2(1, source, pubkey, withdrawal_credentials, signature, deposit_data_root, {
+    from: userAddress, // 调用者账号
+    value: amount,// 质押金额
+    gasLimit: 10000000 // 最大Gas限制
+})
+
+
 console.log(`大额质押交易哈希: ${tx.hash}`);
 ```
 
@@ -169,7 +187,7 @@ console.log(`大额质押交易哈希: ${tx.hash}`);
 
 ####  [/user/v2/anonymouslogin](https://test-api.kelepool.com/user/v2/anonymouslogin)
 
-此接口主要用于统计第三方各个用户的质押数量等，只需在第一次使用可乐矿池API时调用，当然你也可以多次调用。
+此接口只需在用户**第一次质押**的时候调用，当然你也可以在用户每次质押时调用，注意此接口**必须在用户质押前**调用。
 
 ```bash
 POST https://test-api.kelepool.com/user/v2/anonymouslogin
@@ -204,19 +222,51 @@ let userAddress = await signer.getAddress();
 
 // 初始化合约参数
 const kelepool = {
-  address: "0x09D93B9d2E7fb79f5Bf26687b35844cf1993DAFa",// 可乐矿池【代理合约】，这里必须是代理合约！！！
+  address: "0xdCAe38cC28606e61B1e54D8b4b134588e4ca7Ab7",// 可乐矿池【代理合约】，这里必须是代理合约！！！
   abi: [{"anonymous":false....　}] // 将上面的合约ABI数组放到这里,
 };
 const contract = new ethers.Contract(kelepool.address, kelepool.abi, signer);
 
 // 执行合约小额质押方法，最低质押0.01 ETH，这里我们质押125.0172ETH
 let amount = ethers.utils.parseUnits("125.0172", 'ether')
+
+// 以下是V1版本（已经弃用），无法传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 使用V1版本必须在用户质押前先请求：用户地址注册接口（/user/v2/anonymouslogin）建立用户地址与source渠道的关联，我们才能区分渠道质押金额。
 const tx = await contract.deposit({
     from: userAddress, // 调用者账号
     value: amount,// 质押金额
     gasLimit: 10000000 // 最大Gas限制
 });
+
+// 以下是V2版本（推荐使用），可以传递source渠道参数。
+// source渠道参数是可乐矿池分配给第三方渠道的标识，用于分红统计时区分是哪个渠道过来的质押金额。
+// 如果你之前接入了V1版本也没关系，更新成V2版本后，用户质押完成会优先写入从合约传递过来的source。
+let source = ethers.utils.arrayify(ethers.utils.formatBytes32String("ThirdParty"))
+const tx = await contract.depositV2(source,{
+    from: userAddress, // 调用者账号
+    value: amount,// 质押金额
+    gasLimit: 10000000 // 最大Gas限制
+});
+
 console.log(`小额质押交易哈希: ${tx.hash}`);
 
 
 ```
+
+## 大额质押设置合作商手续费及收款地址
+
+1.合作商可以联系可乐矿池设置大额质押手续、渠道标记、收款地址、费用类型等，质押完成后合约自动将手续费转入合作商设置的收款地址，可乐矿池目前按每个验证节点收取0.05ETH手续费。
+
+- 若用户质押时的source与合作商设置的partner渠道标记匹配，合约将要求用户支付合作商手续费
+
+- 合作商可通过合约的getPartnerInfo查询自己的手续费信息
+
+- 合作商未设置手续费或手续费设置为0，默认每个节点收取0.05手续费
+
+
+2.收取手续费有两种方式（以用户一次质押10个验证节点，合作商设置0.1ETH手续费为例）
+
+- 按节点数量收取：合约将收取1.5ETH手续费，其中0.5ETH给可乐矿池，1ETH自动转给合作商
+
+- 按每次质押收取：合约将收取0.6ETH手续费，其中0.5ETH给可乐矿池，0.1ETH自动转给合作商
