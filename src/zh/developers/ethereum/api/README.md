@@ -789,7 +789,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `op_type` ：查询记录类型，默认值1,2,3,4; 1: 质押 2: 赎回 3: 平台提现 4: 链上提现
+> - `op_type` ：查询记录类型，默认值1,2,3,4,5,6,7; 1: 质押 2: 赎回 3: 平台提现 4: 链上提现 5: 快速质押 6:快速赎回 7:快速质押不足（部分退款）
 > - `op_id` ：操作id，默认为空。可用于过滤查询提现操作对应链上交易id
 > - `page_size` ：分页大小
 > - `page_number` ：分页页号
@@ -804,7 +804,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `amount` ：质押数量（ETH）
 > - `op_type` ：操作类型
 > - `op_id` ：操作id
-> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 ）才能使用，表示质押或赎回记录剩余多少秒生效（单位：秒）
+> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 5:快速质押 ）才能使用，表示质押或赎回记录剩余多少秒生效（单位：秒）
 > - `history_time` ：操作时间
 
 ```json
