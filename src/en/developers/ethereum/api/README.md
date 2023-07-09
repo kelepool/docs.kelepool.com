@@ -1424,6 +1424,10 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > - `exiting_ts` ：start exit time, 0 is an invalid value
 > - `exited_ts` ：exit work time，0 is an invalid value
 > - `withdrawal_done_ts` ：withdrawal done time, exit completely，0 is an invalid value
+> - `reward` ：total basic income of nodes
+> - `mev_reward` ：total revenue of node mev
+> - `7d_reward` ：basic income of node in the past 7 days (first 7 utc accounting days)
+> - `7d_mev_reward` ：node's mev revenue in the past 7 days
 
 ```json
 {
@@ -1443,7 +1447,13 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
                 "pending_queued_ts":0,
                 "exiting_ts":0,
                 "exited_ts":0,
-                "withdrawal_done_ts":0
+                "withdrawal_done_ts":0,
+                "settle_for_node": {
+                    "reward": "0.150282352000000008",
+                    "mev_reward": "0.172310744158634649",
+                    "7d_reward": "0.014664574999999999",
+                    "7d_mev_reward": "0"
+                }
             },
             {
                 "identifer":460009,
@@ -1454,7 +1464,13 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
                 "pending_queued_ts":0,
                 "exiting_ts":222,
                 "exited_ts":444,
-                "withdrawal_done_ts":5555
+                "withdrawal_done_ts":5555,
+                "settle_for_node": {
+                    "reward": "0.150282352000000008",
+                    "mev_reward": "0.172310744158634649",
+                    "7d_reward": "0.014664574999999999",
+                    "7d_mev_reward": "0"
+                }
             },
             {
                 "identifer":459868,
@@ -1465,7 +1481,13 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
                 "pending_queued_ts":0,
                 "exiting_ts":0,
                 "exited_ts":0,
-                "withdrawal_done_ts":0
+                "withdrawal_done_ts":0,
+                "settle_for_node": {
+                    "reward": "0.150282352000000008",
+                    "mev_reward": "0.172310744158634649",
+                    "7d_reward": "0.014664574999999999",
+                    "7d_mev_reward": "0"
+                }
             }
         ]
     }
