@@ -1371,6 +1371,10 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > - `exiting_ts` ：验证者开始退出时间，0为无效值
 > - `exited_ts` ：验证者退出链上工作时间，0为无效值
 > - `withdrawal_done_ts` ：验证者完成本金提款，完全退出，0为无效值
+> - `reward` ：节点总基础收益(截止当日utc0)
+> - `mev_reward` ：节点mev总收益(截止当前时间)
+> - `7d_reward` ：节点近7日基础收益(前7个utc日)
+> - `7d_mev_reward` ：节点近7日mev收益(前7个utc日)
 
 ```json
 {
@@ -1390,7 +1394,13 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
                 "pending_queued_ts":0,
                 "exiting_ts":0,
                 "exited_ts":0,
-                "withdrawal_done_ts":0
+                "withdrawal_done_ts":0,
+                "settle_for_node": {
+                    "reward": "0.150282352000000008",
+                    "mev_reward": "0.172310744158634649",
+                    "7d_reward": "0.014664574999999999",
+                    "7d_mev_reward": "0"
+                }
             },
             {
                 "identifer":460009,
@@ -1401,7 +1411,13 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
                 "pending_queued_ts":0,
                 "exiting_ts":222,
                 "exited_ts":444,
-                "withdrawal_done_ts":5555
+                "withdrawal_done_ts":5555,
+                "settle_for_node": {
+                    "reward": "0.150282352000000008",
+                    "mev_reward": "0.172310744158634649",
+                    "7d_reward": "0.014664574999999999",
+                    "7d_mev_reward": "0"
+                }
             },
             {
                 "identifer":459868,
@@ -1412,7 +1428,13 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
                 "pending_queued_ts":0,
                 "exiting_ts":0,
                 "exited_ts":0,
-                "withdrawal_done_ts":0
+                "withdrawal_done_ts":0,
+                "settle_for_node": {
+                    "reward": "0.150282352000000008",
+                    "mev_reward": "0.172310744158634649",
+                    "7d_reward": "0.014664574999999999",
+                    "7d_mev_reward": "0"
+                }
             }
         ]
     }
