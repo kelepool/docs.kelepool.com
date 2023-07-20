@@ -550,6 +550,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `amount` : amount to stake
 > - `staked_amount` ：current effective amount of staked (may have been partially unstaked)
 > - `status` : node status 1: not active, 2: active, 5: exited
+> - `chain_status` ：status on chain(pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time`: effective time, format: %Y-%m-%d %H:%M:%S, null if not effective
 > - `address` ETH1 deposit address
 > - `deposit_credentials` : ETH2 withdrawal credentials
@@ -1169,6 +1170,7 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 > - `public_key` : validator public key
 > - `amount` : the staked amount
 > - `status` : 0: pending 1: staking, 2: effective, 3: exiting, 4: withdrawing, 5: withdrawn
+> - `chain_status` ：status on chain(pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time`: effective time, format: %Y-%m-%d %H:%M:%S, null if not effective
 > - `address` ETH1 deposit address
 > - `deposit_credentials`: ETH2 withdrawal credentials
@@ -1418,7 +1420,7 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > Request return value:
 > - `identifer` ：validator id
 > - `public_key` ：public key
-> - `chain_status` ：status on chain
+> - `chain_status` ：status on chain(pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `status` ：validator status 0-pending 1-staking 2-effective 3-exiting 4-withdrawing 5-withdrawn_done
 > - `effective_ts` ：effective time, 0 is an invalid value
 > - `exiting_ts` ：start exit time, 0 is an invalid value

@@ -700,7 +700,8 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `public_key` ：验证节点公钥
 > - `amount` ：用户初始质押金额
 > - `staked_amount` ：当前质押生效金额，可能已部分赎回
-> - `status` ：节点状态 0:待质押 1：质押中，2：生效中，3:待赎回 4:赎回中，5：已退出
+> - `status` ：节点状态 0:待质押 1：质押中，2：生效中，3:待赎回 4:赎回中(提现中)，5：已退出(且已到账)
+> - `chain_status` ：链上原始状态(可能取值：空/pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
@@ -1365,7 +1366,7 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > 请求返回值：
 > - `identifer` ：验证者id
 > - `public_key` ：验证者公钥
-> - `chain_status` ：验证者链上状态
+> - `chain_status` ：链上原始状态(可能取值：空/pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `status` ：节点状态(系统内)  0-未质押，1-质押中，2-已生效，3-等待赎回，4-赎回中(退出)，5-已赎回
 > - `effective_ts` ：验证者生效时间，0为无效值
 > - `exiting_ts` ：验证者开始退出时间，0为无效值
@@ -1543,7 +1544,8 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 > - `identifer` ：验证节点编号（验证节点生效后才有）
 > - `public_key` ：验证节点公钥
 > - `amount` ：质押数量
-> - `status` ：节点状态 0:待处理 1：质押中，2：已生效，3:退出中，4:提款中，5：已退出
+> - `status` ：节点状态 0:待处理 1：质押中，2：已生效，3:退出中，4:提款中，5：已退出(且已到账)
+> - `chain_status` ：链上原始状态(可能取值：空/pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
