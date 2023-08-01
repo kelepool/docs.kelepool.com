@@ -1425,6 +1425,7 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > - `effective_ts` ：effective time, 0 is an invalid value
 > - `exiting_ts` ：start exit time, 0 is an invalid value
 > - `exited_ts` ：exit work time，0 is an invalid value
+> - `pending_queued_ts` ：queues to take effect time, 0 is an invalid value
 > - `withdrawal_done_ts` ：withdrawal done time, exit completely，0 is an invalid value
 > - `reward` ：total basic income of nodes
 > - `mev_reward` ：total revenue of node mev
