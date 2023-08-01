@@ -1371,6 +1371,7 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > - `effective_ts` ：验证者生效时间，0为无效值
 > - `exiting_ts` ：验证者开始退出时间，0为无效值
 > - `exited_ts` ：验证者退出链上工作时间，0为无效值
+> - `pending_queued_ts` ：验证者排队待生效时间, 0为无效值
 > - `withdrawal_done_ts` ：验证者完成本金提款，完全退出，0为无效值
 > - `reward` ：节点总基础收益(截止当日utc0)
 > - `mev_reward` ：节点mev总收益(截止当前时间)
