@@ -703,6 +703,8 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `status` ：节点状态 0:待质押 1：质押中，2：生效中，3:待赎回 4:赎回中(提现中)，5：已退出(且已到账)
 > - `chain_status` ：链上原始状态(可能取值：空/pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
+> - `node_active_est_date` ：预估生效时间，精度只到天，建议只展示到天，在节点状态为 1 质押中时有效
+> - `node_exit_est_date` ：预估赎回时间，精度只到天，建议只展示到天，在节点状态为 3 待赎回时有效
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押
@@ -1369,6 +1371,8 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > - `chain_status` ：链上原始状态(可能取值：空/pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `status` ：节点状态(系统内)  0-未质押，1-质押中，2-已生效，3-等待赎回，4-赎回中(退出)，5-已赎回
 > - `effective_ts` ：验证者生效时间，0为无效值
+> - `node_active_est_date` ：预估生效时间，精度只到天，建议只展示到天，在节点状态为 1 质押中时有效
+> - `node_exit_est_date` ：预估赎回时间，精度只到天，建议只展示到天，在节点状态为 3 待赎回时有效
 > - `exiting_ts` ：验证者开始退出时间，0为无效值
 > - `exited_ts` ：验证者退出链上工作时间，0为无效值
 > - `pending_queued_ts` ：验证者排队待生效时间, 0为无效值
@@ -1548,6 +1552,8 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 > - `status` ：节点状态 0:待处理 1：质押中，2：已生效，3:退出中，4:提款中，5：已退出(且已到账)
 > - `chain_status` ：链上原始状态(可能取值：空/pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time` ：生效时间，格式：%Y-%m-%d %H:%M:%S，未生效时为null
+> - `node_active_est_date` ：预估生效时间，精度只到天，建议只展示到天，在节点状态为 1 质押中时有效
+> - `node_exit_est_date` ：预估赎回时间，精度只到天，建议只展示到天，在节点状态为 3 待赎回时有效
 > - `address` ETH1存款地址
 > - `deposit_credentials` ：ETH2提款凭证
 > - `type` ：质押账户类型 0：小额质押，1：大额质押

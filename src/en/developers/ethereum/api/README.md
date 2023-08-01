@@ -552,6 +552,8 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 > - `status` : node status 1: not active, 2: active, 5: exited
 > - `chain_status` ：status on chain(pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time`: effective time, format: %Y-%m-%d %H:%M:%S, null if not effective
+> - `node_active_est_date` ：Estimated effective time, the accuracy is only up to days, it is recommended to only display up to days, and it is valid when the node status is 1 staking
+> - `node_exit_est_date` ：Estimated exit time, the accuracy is only up to days, it is recommended to only display up to days, it is valid when the node status is 3 to be exiting
 > - `address` ETH1 deposit address
 > - `deposit_credentials` : ETH2 withdrawal credentials
 > - `type` : staking account type 0: small staking, 1: large staking
@@ -1172,6 +1174,8 @@ https://test-api.kelepool.com/eth2/v2/partner/validator?num2str=1
 > - `status` : 0: pending 1: staking, 2: effective, 3: exiting, 4: withdrawing, 5: withdrawn
 > - `chain_status` ：status on chain(pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `effective_time`: effective time, format: %Y-%m-%d %H:%M:%S, null if not effective
+> - `node_active_est_date` ：Estimated effective time, the accuracy is only up to days, it is recommended to only display up to days, and it is valid when the node status is 1 staking
+> - `node_exit_est_date` ：Estimated exit time, the accuracy is only up to days, it is recommended to only display up to days, it is valid when the node status is 3 to be exiting
 > - `address` ETH1 deposit address
 > - `deposit_credentials`: ETH2 withdrawal credentials
 > - `type`: staking account type 0: small staking, 1: large staking
@@ -1423,6 +1427,8 @@ https://test-api.kelepool.com/eth2/v2/validators?vids=460009,459869&pubkeys=a1e6
 > - `chain_status` ：status on chain(pending_initialized/pending_queued/active_ongoing/active_exiting/active_slashed/exited_unslashed/exited_slashed/withdrawal_possible/withdrawal_done)
 > - `status` ：validator status 0-pending 1-staking 2-effective 3-exiting 4-withdrawing 5-withdrawn_done
 > - `effective_ts` ：effective time, 0 is an invalid value
+> - `node_active_est_date` ：Estimated effective time, the accuracy is only up to days, it is recommended to only display up to days, and it is valid when the node status is 1 staking
+> - `node_exit_est_date` ：Estimated exit time, the accuracy is only up to days, it is recommended to only display up to days, it is valid when the node status is 3 to be exiting
 > - `exiting_ts` ：start exit time, 0 is an invalid value
 > - `exited_ts` ：exit work time，0 is an invalid value
 > - `pending_queued_ts` ：queues to take effect time, 0 is an invalid value
