@@ -457,6 +457,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `whale_staked` ：大额质押生效金额（ETH）
 > - `whale_unstaking` ：大额赎回中金额（ETH）
 > - `total_reward` ：共识总收益（ETH）
+> - `retail_total_reward` ：小额质押总收益（ETH）
+> - `whale_total_reward` ：大额质押总收益（ETH）
 > - `mev_total_reward` ：mev总收益（ETH）
 > - `staked_days` ：总质押天数
 > - `apr` ：预估总年化收益率
@@ -466,9 +468,12 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `unactived_validater` ：待生效节点数量
 > - `actived_validater` ：已生效节点数量
 > - `closed_validater` ：已关闭节点数量
-> - `reward` ：曲线图上的共识收益（ETH）
-> - `mev_reward` ：曲线图上的mev收益（ETH） (需要注意mev收益是小时级结算，共识收益是天级结算，两者结算进度不同)
 > - `snap_time` ：曲线图上的时间
+> - `reward` ：曲线图上snap_time对应时间的共识收益（ETH）
+> - `retail_reward` ：曲线图上snap_time对应时间的小额收益（ETH）
+> - `whale_reward` ：曲线图上snap_time对应时间的大额收益（ETH）
+> - `mev_reward` ：曲线图上snap_time对应时间的mev收益（ETH） (需要注意mev收益是小时级结算，共识收益是天级结算，两者结算进度不同)
+
 
 ```json
 {
@@ -476,44 +481,51 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
     "message":"success",
     "data":{
         "amount":{
-            "total_amount":173.3,
-            "staked_amount":173.23,
-            "staking_amount":0.07,
-            "ongoing_amount":0,
-            "withdrawable":"234",
-            "retail_staked":"0.123",
-            "retail_unstaking":"0.123",
-            "whale_staked":"0.123",
-            "whale_unstaking":"0.123"
+            "total_amount":"50.0882747824796",
+            "staked_amount":"50.0882747824796",
+            "staking_amount":"0",
+            "ongoing_amount":"13.474380185510504244",
+            "withdrawable":"13.474380185510504244",
+            "retail_staked":"18.0882747824796",
+            "retail_unstaking":"0",
+            "whale_staked":"32",
+            "whale_unstaking":"0"
         },
         "income":{
-            "total_reward":0.82885946,
-            "mev_total_reward": 0.006513841990230327,
-            "staked_days":34,
-            "apr":0.0487,
+            "total_reward":0.27640085,
+            "retail_total_reward":0.18313304,
+            "whale_total_reward":0.09326781,
+            "mev_total_reward":0.05771468379912863,
+            "staked_days":127,
+            "apr":0.0378,
             "apr_detail":{
-                "basic":0.0367,
-                "mev":0.012
+                "basic":0.0213,
+                "mev":0.0165
             }
         },
         "validater":{
-            "total_validaters":8,
-            "unactived_validater":1,
-            "actived_validater":7,
+            "total_validaters":4,
+            "unactived_validater":0,
+            "actived_validater":4,
             "closed_validater":0
         },
         "income_curve":[
             {
-                "reward":"0.02563727",
-                "snap_time":"2022-06-13 00:00:00",
-                "mev_reward": "0.000145631351140014"
+                "snap_time":"2023-08-10 17:00:00",
+                "reward":"0.00013111",
+                "retail_reward":"0.0000379",
+                "whale_reward":"0.00009321",
+                "mev_reward":"0"
             },
             {
-                "reward":"0.02423282",
-                "snap_time":"2022-06-14 00:00:00",
-                "mev_reward": "0.000145631351140014"
-            }
-        ]
+                "snap_time":"2023-08-10 18:00:00",
+                "reward":"0.00010854",
+                "retail_reward":"0.00003676",
+                "whale_reward":"0.00007178",
+                "mev_reward":"0"
+            },
+            // ...
+         ]
     }
 }
 ```

@@ -308,6 +308,8 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `whale_staked` ：amount of whale staked（ETH）
 > - `whale_unstaking` ：amount of whale unstaking（ETH）
 > - `total_reward` : consensus total reward (ETH)
+> - `retail_total_reward` : retail stake reward (ETH)
+> - `whale_total_reward` : whale stake reward (ETH)
 > - `mev_total_reward` : mev total reward (ETH)
 > - `staked_days` : total number of days staked
 > - `apr` ：estimate total APR
@@ -317,53 +319,63 @@ https://test-api.kelepool.com/eth2/v2/miner/dashboard?address=0x5dd3bd08cbc8498c
 > - `unactived_validater` : the number of nodes to be valid
 > - `actived_validater` : Number of active nodes
 > - `closed_validater` : number of closed nodes
-> - `reward` : the consensus reward (ETH) on the graph
-> - `mev_reward` : the mev reward (ETH) on the graph (It should be noted that mev revenue is settled immediately and consensus revenue is settled daily. The settlement progress of the two is different)
 > - `snap_time` : time on the graph
+> the consensus reward (ETH) corresponding to the time of snap_time on the graph
+> - `reward` : the consensus reward (ETH) corresponding to the time of snap_time on the graph
+> - `retail_reward` : the retail stake reward (ETH) corresponding to the time of snap_time on the graph
+> - `whale_reward` : the whale stake reward (ETH) corresponding to the time of snap_time on the graph
+> - `mev_reward` : the mev reward (ETH) corresponding to the time of snap_time on the graph (It should be noted that mev revenue is settled immediately and consensus revenue is settled daily. The settlement progress of the two is different)
 ```json
 {
     "code":0,
     "message":"success",
     "data":{
         "amount":{
-            "total_amount":173.3,
-            "staked_amount":173.23,
-            "staking_amount":0.07,
-            "ongoing_amount":0,
-            "withdrawable":"0.123",
-            "retail_staked":"0.123",
-            "retail_unstaking":"0.123",
-            "whale_staked":"0.123",
-            "whale_unstaking":"0.123"
+            "total_amount":"50.0882747824796",
+            "staked_amount":"50.0882747824796",
+            "staking_amount":"0",
+            "ongoing_amount":"13.474380185510504244",
+            "withdrawable":"13.474380185510504244",
+            "retail_staked":"18.0882747824796",
+            "retail_unstaking":"0",
+            "whale_staked":"32",
+            "whale_unstaking":"0"
         },
         "income":{
-            "total_reward":0.82885946,
-            "mev_total_reward": 0.006513841990230327,
-            "staked_days":34,
-            "apr":0.0487,
+            "total_reward":0.27640085,
+            "retail_total_reward":0.18313304,
+            "whale_total_reward":0.09326781,
+            "mev_total_reward":0.05771468379912863,
+            "staked_days":127,
+            "apr":0.0378,
             "apr_detail":{
-                "basic":0.0367,
-                "mev":0.012
+                "basic":0.0213,
+                "mev":0.0165
             }
         },
         "validater":{
-            "total_validaters":8,
-            "unactived_validater":1,
-            "actived_validater":7,
+            "total_validaters":4,
+            "unactived_validater":0,
+            "actived_validater":4,
             "closed_validater":0
         },
         "income_curve":[
             {
-                "reward":"0.02563727",
-                "mev_reward": "0.000145631351140014",
-                "snap_time":"2022-06-13 00:00:00"
+                "snap_time":"2023-08-10 17:00:00",
+                "reward":"0.00013111",
+                "retail_reward":"0.0000379",
+                "whale_reward":"0.00009321",
+                "mev_reward":"0"
             },
             {
-                "reward":"0.02423282",
-                "mev_reward": "0.000145631351140014",
-                "snap_time":"2022-06-14 00:00:00"
-            }
-        ]
+                "snap_time":"2023-08-10 18:00:00",
+                "reward":"0.00010854",
+                "retail_reward":"0.00003676",
+                "whale_reward":"0.00007178",
+                "mev_reward":"0"
+            },
+            // ...
+         ]
     }
 }
 ```
