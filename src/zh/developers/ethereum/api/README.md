@@ -804,7 +804,7 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `op_type` ：查询记录类型，默认值[1,2,3,4];
+> - `op_type` ：查询记录类型，默认值1,2,3,4;
 >   - 1: 质押，用户质押记录
 >   - 2: 赎回，用户赎回记录
 >   - 3: 平台提现，用户在Kelepool的提现记录
