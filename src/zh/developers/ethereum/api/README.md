@@ -804,8 +804,18 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > 请求参数：
 > - `address` ：用户质押钱包地址
-> - `op_type` ：查询记录类型，默认值1,2,3,4,5,6,7; 1: 质押 2: 赎回 3: 平台提现 4: 链上提现 5: 快速质押 6:快速赎回 7:快速质押不足（部分退款）
+> - `op_type` ：查询记录类型，默认值[1,2,3,4];
+>   - 1: 质押，用户质押记录
+>   - 2: 赎回，用户赎回记录
+>   - 3: 平台提现，用户在Kelepool的提现记录
+>   - 4: 链上提现，ETH链上自动提现记录
+>   - 5: 快速质押，直接转入Kelepool快速质押地址的记录
+>   - 6: 快速赎回，支付手续费后快速赎回的记录
+>   - 7: 快速质押退款，快速质押时，由于基金账户不足，导致部分成交后的退款记录
 > - `op_id` ：操作id，默认为空。可用于过滤查询提现操作对应链上交易id
+> - `type` ：质押类型，默认查询所有类型
+>   - 0: 小额质押
+>   - 1: 大额质押
 > - `page_size` ：分页大小
 > - `page_number` ：分页页号
 > - `num2str` ：是否将返回的全部字段转字符串类型
@@ -819,8 +829,9 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `amount` ：质押数量（ETH）
 > - `op_type` ：操作类型
 > - `op_id` ：操作id
-> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 5:快速质押 ）才能使用，表示质押或赎回记录剩余多少秒生效（单位：秒）
+> - `type` ：质押类型
 > - `history_time` ：操作时间
+> - `remain_time` ：此字段需要上面的op_type是（ 1: 质押 2: 赎回 5:快速质押 ）才能使用，表示质押或赎回记录剩余多少秒生效（单位：秒）
 
 ```json
 {
@@ -836,6 +847,7 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
                 "amount":0.01,
                 "op_type":0,
                 "op_id":"0bc9a32803054b5a8c6138c3df2bc959",
+                "type": 0,
                 "history_time":"2023-03-22 06:49:33",
                 "remain_time":0
             }

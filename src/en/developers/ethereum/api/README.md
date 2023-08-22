@@ -666,8 +666,18 @@ https://test-api.kelepool.com/eth2/v2/miner/validator/query?address=0x5dd3bd08cb
 
 > Request parameters:
 > - `address` : User wallet address
-> - `op_type` : query record type，default:1,2,3,4; 1: stake 2: unstake 3: withdrawal 4:on chain node automatic transfer
+> - `op_type` : query record type，default:1,2,3,4; 
+>   - 1: stake 
+>   - 2: unstake 
+>   - 3: withdrawal 
+>   - 4: on chain node automatic transfer
+>   - 5: fast stake
+>   - 6: fast unstake
+>   - 7: fast stake refund
 > - `op_id` ：operation id, default to empty. can be used to filter and query the on-chain transaction id for withdrawal operations
+> - `type` ：stake type, All types are searched by default
+>   - 0: type of retail stake
+>   - 1: type of whale stake
 > - `page_size` : Page Size
 > - `page_number` : Page Number
 > - `num2str` : whether to convert all returned fields to string type
@@ -682,7 +692,9 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
 > - `amount` : Amount(ETH)
 > - `op_type` : opertion type
 > - `op_id` : opertion id
+> - `type` : stake type
 > - `history_time` : operation time
+> - `remain_time` : This field requires the above op_type to be (1: stake 2: unstake 5: fast stake) to be used, indicating how many seconds remaining for the pledge or redemption record to take effect (unit: second)
 
 ```json
 {
@@ -698,7 +710,9 @@ https://test-api.kelepool.com/eth2/v4/op_history?address=0xd8f8799bc41b9eb55b5c2
                 "amount":0.01,
                 "op_type":0,
                 "op_id":"0bc9a32803054b5a8c6138c3df2bc959",
-                "history_time":"2023-03-22 06:49:33"
+                "type": 0,
+                "history_time":"2023-03-22 06:49:33",
+                "remain_time":0
             }
         ]
     }
