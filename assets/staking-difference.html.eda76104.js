@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-14f267ce","path":"/en/wiki/pos/staking-difference.html","title":"Crypto Mining VS Staking: What is the Difference?","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/wiki/pos/staking-difference.md"}');export{e as data};

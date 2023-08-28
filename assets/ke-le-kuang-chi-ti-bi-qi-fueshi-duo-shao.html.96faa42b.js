@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1545fa90","path":"/zh/guides/pow/FAQ/ke-le-kuang-chi-ti-bi-qi-fueshi-duo-shao.html","title":"\u53EF\u4E50\u77FF\u6C60\u63D0\u5E01\u8D77\u4ED8\u989D\u662F\u591A\u5C11\uFF1F","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pow/FAQ/ke-le-kuang-chi-ti-bi-qi-fueshi-duo-shao.md"}');export{e as data};

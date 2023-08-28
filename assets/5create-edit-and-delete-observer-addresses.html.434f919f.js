@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-1787ef1d","path":"/en/guides/pow/beginner-guide/5create-edit-and-delete-observer-addresses.html","title":"Create, edit, and delete observer addresses","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/guides/pow/beginner-guide/5create-edit-and-delete-observer-addresses.md"}');export{e as data};

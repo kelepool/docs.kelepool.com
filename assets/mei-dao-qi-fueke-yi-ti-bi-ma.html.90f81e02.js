@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-bd45f3d6","path":"/zh/guides/pow/FAQ/mei-dao-qi-fueke-yi-ti-bi-ma.html","title":"\u6CA1\u5230\u8D77\u4ED8\u989D\u53EF\u4EE5\u63D0\u5E01\u5417\uFF1F","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pow/FAQ/mei-dao-qi-fueke-yi-ti-bi-ma.md"}');export{e as data};

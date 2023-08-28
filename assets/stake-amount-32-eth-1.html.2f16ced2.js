@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5b4c2cda","path":"/en/guides/staking/beginner-guide/stake-amount-32-eth-1.html","title":"Stake Amount \uFF1C 32 ETH","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/guides/staking/beginner-guide/stake-amount-32-eth-1.md"}');export{e as data};

@@ -1,0 +1,1 @@
+const e=JSON.parse(`{"key":"v-0f0e5a6b","path":"/en/guides/","title":"Beginner Guide","lang":"en-US","frontmatter":{"description":"This guide is a beginner's guide on how to use the mining features of Kele Pool."},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/guides/README.md"}`);export{e as data};

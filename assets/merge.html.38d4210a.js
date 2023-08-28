@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-33fdcb64","path":"/en/wiki/pos/merge.html","title":"All You Need to Know About the Merge of Ethereum","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/wiki/pos/merge.md"}');export{e as data};

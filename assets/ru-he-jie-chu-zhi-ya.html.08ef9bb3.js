@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6cfa5696","path":"/zh/guides/pos/how-to-stake/ru-he-jie-chu-zhi-ya.html","title":"\u5982\u4F55\u89E3\u9664\u8D28\u62BC","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pos/how-to-stake/ru-he-jie-chu-zhi-ya.md"}');export{e as data};

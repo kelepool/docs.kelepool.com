@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-04cdaa4a","path":"/zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.html","title":"MinerOS\u6316\u77FF\u6559\u7A0B","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pow/bixin/mineros-wa-kuang-jiao-cheng.md"}');export{e as data};

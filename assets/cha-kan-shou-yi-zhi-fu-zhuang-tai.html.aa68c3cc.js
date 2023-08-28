@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-42100b4d","path":"/zh/guides/pow/how-to-mining/cha-kan-shou-yi-zhi-fu-zhuang-tai.html","title":"\u67E5\u770B\u6536\u76CA\u3001\u652F\u4ED8\u72B6\u6001","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pow/how-to-mining/cha-kan-shou-yi-zhi-fu-zhuang-tai.md"}');export{t as data};

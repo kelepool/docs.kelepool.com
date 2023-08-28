@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-90adb506","path":"/en/wiki/pos/kelepool.html","title":"Is it a Good Idea to Stake Your Ethereum on KelePool?","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/wiki/pos/kelepool.md"}');export{e as data};

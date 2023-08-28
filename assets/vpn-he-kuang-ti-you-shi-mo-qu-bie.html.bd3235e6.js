@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-35a3fbf8","path":"/zh/guides/pow/FAQ/vpn-he-kuang-ti-you-shi-mo-qu-bie.html","title":"VPN\u548C\u77FF\u68AF\u6709\u4EC0\u4E48\u533A\u522B\uFF1F","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pow/FAQ/vpn-he-kuang-ti-you-shi-mo-qu-bie.md"}');export{e as data};

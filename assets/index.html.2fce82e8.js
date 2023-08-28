@@ -1,0 +1,1 @@
+const e=JSON.parse(`{"key":"v-af6e412a","path":"/en/guides/staking/beginner-guide/","title":"Beginner guide","lang":"en-US","frontmatter":{"description":"This guide is a beginner's guide on how to use the staking features of Kele Pool."},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/guides/staking/beginner-guide/README.md"}`);export{e as data};

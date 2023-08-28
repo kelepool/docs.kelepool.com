@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-f4105336","path":"/zh/wiki/pos/fork.html","title":"\u4EE5\u592A\u574A\u5373\u5C06\u5206\u53C9\uFF1F\u53D8\u8FC1\u4E4B\u9645\u6211\u4EEC\u771F\u6B63\u5E94\u8BE5\u5173\u6CE8\u4EC0\u4E48","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/wiki/pos/fork.md"}');export{t as data};

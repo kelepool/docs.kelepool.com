@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-6ef405de","path":"/en/guides/pow/beginner-guide/2add-and-change-sub-accounts.html","title":"Add and change sub-accounts","lang":"en-US","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"en/guides/pow/beginner-guide/2add-and-change-sub-accounts.md"}');export{e as data};

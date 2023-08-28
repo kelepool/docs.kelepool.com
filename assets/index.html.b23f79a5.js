@@ -1,0 +1,1 @@
+import{_ as t,o as a,c as o,a as e,d as r}from"./app.aa16d652.js";const n={},c=e("h1",{id:"platon-network",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#platon-network","aria-hidden":"true"},"#"),r(" PlatON Network")],-1),s=[c];function d(_,i){return a(),o("div",null,s)}var h=t(n,[["render",d],["__file","index.html.vue"]]);export{h as default};

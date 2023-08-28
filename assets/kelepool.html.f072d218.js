@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-b0d3c550","path":"/zh/wiki/pos/kelepool.html","title":"\u5982\u4F55\u9009\u62E9\u8D28\u62BCETH\u7684\u5E73\u53F0\uFF1A\u901A\u8FC7\u53EF\u4E50\u77FF\u6C60\u964D\u4F4E\u6295\u8D44\u98CE\u9669","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/wiki/pos/kelepool.md"}');export{e as data};

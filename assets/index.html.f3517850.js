@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-3d4f70d2","path":"/zh/developers/mina/api/","title":"API Reference","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/developers/mina/api/README.md"}');export{e as data};

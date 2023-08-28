@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-14384a37","path":"/zh/guides/pos/how-to-stake/cha-kan-yan-zheng-jie-dian.html","title":"\u67E5\u770B\u9A8C\u8BC1\u8282\u70B9","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pos/how-to-stake/cha-kan-yan-zheng-jie-dian.md"}');export{a as data};

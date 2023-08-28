@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-66637ede","path":"/zh/guides/pos/how-to-stake/Stake.html","title":"\u8D28\u62BC\u6316\u77FF","lang":"zh-CN","frontmatter":{},"excerpt":"","headers":[],"git":{},"filePathRelative":"zh/guides/pos/how-to-stake/Stake.md"}');export{e as data};
