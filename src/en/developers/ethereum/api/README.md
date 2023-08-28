@@ -881,6 +881,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
 > - `whale_unstaking` ：amount of whale unstaking（ETH）
 > - `estimate_use_sec` ：Estimated unstaking time, seconds
 > - `fast_fee_ratio` ：Quick unstak fee 5%
+> - `credentials` ： List of Withdrawal Credentials of Validated Validator
 
 ```json
 {
@@ -893,6 +894,7 @@ https://test-api.kelepool.com/eth2/v2/miner/unstake?address=0xd8f8799bc41b9eb55b
         "whale_unstaking":"0.123",
         "estimate_use_sec":1234,
         "fast_fee_ratio":0.05,
+        "credentials": ["01000000000000000000000011aaba2dddfa00cb565722b608c034d6e84073cd"]
   }
 }
 ```
